@@ -1,0 +1,29 @@
+{
+  "name": "accessibility-toolkit",
+  "version": "1.0.0",
+  "description": "An AI powered accessibility toolkit for websites.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hassanShakur/accessibility-toolkit.git"
+  },
+  "keywords": [
+    "accessibility"
+  ],
+  "author": "Hassan Shakur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hassanShakur/accessibility-toolkit/issues"
+  },
+  "homepage": "https://github.com/hassanShakur/accessibility-toolkit#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.3",
+    "morgan": "^1.10.0"
+  }
+}

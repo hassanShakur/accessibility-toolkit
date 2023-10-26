@@ -1,13 +1,16 @@
 'use client'
 import { useState, FormEvent } from 'react';
+import axios from 'axios';
 
 
 const Home = () => {
     const [url, setUrl] = useState('')
 
-    const urlSubmitHandler = (e: FormEvent) => {
+    const urlSubmitHandler = async (e: FormEvent) => {
         e.preventDefault()
-        console.log(url)
+        const res = await axios.get('http://127.0.0.1:7000/test')
+        const data = res.data;
+        console.log(data)
     }
 
   return (

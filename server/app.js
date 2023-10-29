@@ -1,17 +1,17 @@
-const express = require('express')
-const setupApp = require('./appSetup')
+const express = require('express');
+const setupApp = require('./appSetup');
 
-const app = express()
-setupApp(app)
+const siteScraper = require('./helpers/scraper');
 
-// Receive a url from the client and send it to the scraper
-app.post('/api/scrape', (req, res) => {
-  const url = req.body.url
+const app = express();
+setupApp(app);
 
-//   Execute the scraper here (./pythoneer/scrape.py)
-  console.log('url', url)
-  res.send('ok')
-})
+app.post('/api/scrape', async (req, res) => {
+  const { url } = req.body;
+
+  siteScraper(url);
+
+  res.send('ok');
+});
 
 module.exports = app;
-

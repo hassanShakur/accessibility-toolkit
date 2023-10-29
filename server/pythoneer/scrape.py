@@ -3,6 +3,7 @@ import requests
 import json
 import sys
 import time
+import os
 
 
 def scrape(url):
@@ -23,12 +24,16 @@ def get_image_links(url):
 
 
 def save_to_json(data):
-    with open("data/data.json", "w") as outfile:
-        json.dump(data, outfile)
+    path = os.path.join(os.getcwd(), "data")
+    os.makedirs(path, exist_ok=True)
+    with open(f"{path}/data.json", "w") as json_file:
+        json.dump(data, json_file)
 
 
 def log_details(url):
-    with open("logs/log.txt", "a") as log:
+    path = os.path.join(os.getcwd(), "logs")
+    os.makedirs(path, exist_ok=True)
+    with open(f"{path}/log.txt", "a") as log:
         log.write(f"{time.ctime()} {url} {time.time() - start_time:.5f}\n")
 
 

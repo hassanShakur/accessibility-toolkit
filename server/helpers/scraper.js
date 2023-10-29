@@ -1,23 +1,25 @@
-import { spawn } from 'child_process';
-import { resolve } from 'path';
+const { spawn } = require('child_process');
+const { resolve } = require('path');
 
-const scrapeSite = (url) => {
-  return new Promise((resolve, reject) => {
+const siteScraper = async (url) => {
+  try {
     const path = resolve(__dirname, '../pythoneer/scrape.py');
-    const scraper = spawn('python3', [path, url]);
+    const scraper = spawn('python', [path, url]);
 
     scraper.stdout.on('data', (data) => {
-      resolve(data.toString());
+      console.log(data.toString());
     });
 
     scraper.stderr.on('data', (data) => {
-      reject(data.toString());
+      console.log(data.toString());
     });
 
     scraper.on('close', (code) => {
       console.log(`child process exited with code ${code}`);
     });
-  });
+  } catch (err) {
+    console.log(err);
+  }
 };
 
-export default scrapeSite;
+module.exports = siteScraper;

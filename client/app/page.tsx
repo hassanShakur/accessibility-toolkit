@@ -2,15 +2,19 @@
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
 
+const backendUrl = 'http://localhost:7000/api/scrape'
 
 const Home = () => {
     const [url, setUrl] = useState('')
 
     const urlSubmitHandler = async (e: FormEvent) => {
-        e.preventDefault()
-        const res = await axios.get('http://127.0.0.1:7000/test')
-        const data = res.data;
-        console.log(data)
+        e.preventDefault();
+        try {
+            const res = await axios.post(backendUrl, {url})
+            console.log(res.data)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
   return (

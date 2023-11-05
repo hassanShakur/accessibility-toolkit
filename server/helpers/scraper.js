@@ -2,30 +2,22 @@ const { spawn } = require('child_process');
 const { resolve } = require('path');
 
 const siteScraper = (url) => {
-  let exitCode = 0;
+  const pythoneer = spawn('python', [
+    resolve(__dirname, '../pythoneer/scrape.py'),
+    url,
+  ]);
 
-  try {
-    const path = resolve(__dirname, '../pythoneer/scrape.py');
-    const scraper = spawn('python', [path, url]);
+  return new Promise((resolve, reject) => {
+    pythoneer.on('close', (code) => {
+      if (code !== 0) {
+        console.log(`pythoneer process exited with code ${code}`);
+        return reject(code);
+      }
 
-    scraper.stdout.on('data', (data) => {
-      console.log(data.toString());
+      console.log('pythoneer process exited with code 0');
+      return resolve(code);
     });
-
-    scraper.stderr.on('data', (data) => {
-      console.log(data.toString());
-    });
-
-    scraper.on('close', (code) => {
-      console.log(`child process exited with code ${code}`);
-      exitCode = code;
-    });
-  } catch (err) {
-    console.log(err);
-    exitCode = 1;
-  }
-
-  return exitCode;
+  });
 };
 
 module.exports = siteScraper;

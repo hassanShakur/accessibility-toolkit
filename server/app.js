@@ -8,22 +8,17 @@ setupApp(app);
 
 app.post('/api/scrape', (req, res) => {
   const { url } = req.body;
-  const code = siteScraper(url);
 
-  if (code !== 0)
-    return res.status(500).json({
-      status: 'error',
-      message: 'something went wrong',
+  siteScraper(url)
+    .then(() => {
+      const data = fs.readFileSync('./pythoneer/data/data.json');
+      const parsedData = JSON.parse(data);
+      res.send(parsedData);
+    })
+    .catch((err) => {
+      console.log('err');
+      res.sendStatus(500);
     });
-
-  const scrappedData = fs.readFileSync('./pythoneer/data/data.json', 'utf8');
-  const data = JSON.parse(scrappedData);
-
-  return res.status(200).json({
-    status: 'success',
-    message: 'scraping complete',
-    data,
-  });
 });
 
 module.exports = app;

@@ -1,2 +1,14 @@
 Sun Oct 29 17:02:01 2023 http://127.0.0.1:5500/index.html 0.01797
 Sun Oct 29 17:02:26 2023 http://127.0.0.1:5500/index.html 0.02513
+Mon Oct 30 11:36:01 2023 http://127.0.0.1:5500/index.html 0.00694
+Mon Oct 30 11:36:37 2023 http://127.0.0.1:5500/index.html 0.00693
+Mon Oct 30 11:37:10 2023 http://127.0.0.1:5500/index.html 0.00694
+Mon Oct 30 11:37:25 2023 http://127.0.0.1:5500/index.html 0.00906
+Mon Oct 30 11:38:00 2023 http://127.0.0.1:5500/index.html 0.00857
+Mon Oct 30 11:38:14 2023 http://127.0.0.1:5500/index.html 0.00699
+Mon Oct 30 11:45:16 2023 http://127.0.0.1:5500/index.html 0.00729
+Mon Oct 30 11:45:30 2023 http://127.0.0.1:5500/index.html 0.00806
+Mon Oct 30 11:47:21 2023 http://127.0.0.1:5500/index.html 0.00805
+Mon Oct 30 11:48:35 2023 https://hassanshakur.vercel.app 2.02063
+Mon Oct 30 11:48:41 2023 https://hassanshakur.vercel.app 0.60705
+Mon Oct 30 11:48:54 2023 https://hassanshakur.vercel.app 0.59947

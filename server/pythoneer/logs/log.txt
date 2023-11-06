@@ -18,3 +18,32 @@ Mon Nov  6 09:30:22 2023 https://www.mmu.ac.ke/ 15.40047
 Mon Nov  6 09:32:33 2023 https://www.mmu.ac.ke/ 14.89910
 Mon Nov  6 09:33:39 2023 https://www.mmu.ac.ke/ 16.53761
 Mon Nov  6 10:00:04 2023 https://www.mmu.ac.ke/ 15.98006
+Mon Nov  6 10:37:43 2023  0.00499
+Mon Nov  6 10:39:03 2023  0.00504
+Mon Nov  6 10:39:21 2023  0.00299
+Mon Nov  6 10:39:23 2023  0.00299
+Mon Nov  6 10:40:14 2023  0.00301
+Mon Nov  6 10:40:30 2023  0.00400
+Mon Nov  6 10:41:34 2023 https://mmu.ac.ke/ 8.21097
+Mon Nov  6 10:42:26 2023 https://mmu.ac.ke/ 8.62073
+Mon Nov  6 10:43:53 2023 https://mmu.ac.ke/ 8.46946
+Mon Nov  6 10:49:15 2023 https://mmu.ac.ke/ 8.70677
+Mon Nov  6 10:50:04 2023 https://hassanshakur.vercel.app 1.21208
+Mon Nov  6 10:51:17 2023 https://hassanshakur.vercel.app 0.75618
+Mon Nov  6 11:16:07 2023 https://mmu.ac.ke/ 8.68339
+Mon Nov  6 11:17:26 2023 https://mmu.ac.ke/ 11.49914
+Mon Nov  6 11:17:50 2023 https://mmu.ac.ke/ 8.03643
+Mon Nov  6 11:18:53 2023 https://mmu.ac.ke/ 7.91289
+Mon Nov  6 11:19:32 2023 https://mmu.ac.ke/ 7.63079
+Mon Nov  6 11:20:11 2023 http://127.0.0.1:5500/index.html 0.00847
+Mon Nov  6 11:21:34 2023 http://127.0.0.1:5500/index.html 0.00898
+Mon Nov  6 11:22:20 2023 http://127.0.0.1:5500/index.html 0.00903
+Mon Nov  6 11:24:11 2023 http://127.0.0.1:5500/index.html 0.00803
+Mon Nov  6 11:24:49 2023 http://127.0.0.1:5500/index.html 0.00841
+Mon Nov  6 11:25:49 2023 https://www.mmu.ac.ke/ 15.39386
+Mon Nov  6 11:27:39 2023 https://www.mmu.ac.ke/ 15.42751
+Mon Nov  6 11:29:04 2023 https://www.mmu.ac.ke/ 18.18893
+Mon Nov  6 11:36:08 2023 https://www.mmu.ac.ke/ 17.75393
+Mon Nov  6 11:39:44 2023 https://www.mmu.ac.ke/ 16.31792
+Mon Nov  6 11:41:58 2023 http://127.0.0.1:5500/index.html 0.01895
+Mon Nov  6 11:43:20 2023 http://127.0.0.1:5500/index.html 0.01926

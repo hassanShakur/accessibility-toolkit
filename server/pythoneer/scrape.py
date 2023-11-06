@@ -11,10 +11,12 @@ def scrape(url):
         page = requests.get(url)
         soup = bs(page.content, "html.parser")
 
-        links = extract_links(soup)
-        images = extract_images(soup)
+        # links = extract_links(soup)
+        # images = extract_images(soup)
+        heading_structure = extract_heading_structure(soup)
 
-        data = {"links": links, "images": images}
+        # data = {"links": links, "images": images, "heading_structure": heading_structure}
+        data = {"heading_structure": heading_structure}
         save_to_json(data)
     except Exception as e:
         print(e)
@@ -36,7 +38,49 @@ def extract_images(soup):
         images.append({"src": image_src, "alt": image_alt})
 
     return images
-    
+
+
+def extract_heading_structure(soup):
+    body = soup.find('body')
+    block_elements = [ 'article', 'aside', 'div', 'footer', 'form', 'header', 'li', 'main', 'nav', 'ol', 'p', 'pre', 'section', 'table', 'ul']
+    elements_headings_dict = {}
+
+    for element in block_elements:
+        element_instances = body.findChildren(element, recursive=True)
+        element_headings_dict = {}
+
+        for i, instance in enumerate(element_instances):
+            headings = instance.findChildren(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'], recursive=False)
+            heading_levels = [int(heading.name[1]) for heading in headings]
+
+            element_headings_dict[f'{element}_{i+1}'] = heading_levels
+
+        elements_headings_dict[element] = element_headings_dict
+
+    return elements_headings_dict
+
+
+
+
+
+
+    # divs = body.findChildren('div', recursive=True)
+    # div_headings_dict = {}
+
+    # for i, div in enumerate(divs):
+    #     headings = div.findChildren(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'], recursive=False)
+    #     heading_levels = [int(heading.name[1]) for heading in headings]
+
+    #     div_headings_dict[f'div_{i+1}'] = heading_levels
+
+    #     # for j in range(len(heading_levels) - 1):
+    #         # if heading_levels[j + 1] - heading_levels[j] > 1:
+    #             # print(f"Warning: Heading structure in div_{i+1} does not follow the recommended structure. Jump from h{heading_levels[j]} to h{heading_levels[j + 1]}.")
+
+    # return div_headings_dict
+
+
+
 
 
 def save_to_json(data):

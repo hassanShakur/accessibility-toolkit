@@ -41,8 +41,24 @@ def extract_images(soup):
 
 
 def extract_heading_structure(soup):
-    body = soup.find('body')
-    block_elements = [ 'article', 'aside', 'div', 'footer', 'form', 'header', 'li', 'main', 'nav', 'ol', 'p', 'pre', 'section', 'table', 'ul']
+    body = soup.find("body")
+    block_elements = [
+        "article",
+        "aside",
+        "div",
+        "footer",
+        "form",
+        "header",
+        "li",
+        "main",
+        "nav",
+        "ol",
+        "p",
+        "pre",
+        "section",
+        "table",
+        "ul",
+    ]
     elements_headings_dict = {}
 
     for element in block_elements:
@@ -50,37 +66,23 @@ def extract_heading_structure(soup):
         element_headings_dict = {}
 
         for i, instance in enumerate(element_instances):
-            headings = instance.findChildren(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'], recursive=False)
+            headings = instance.findChildren(
+                ["h1", "h2", "h3", "h4", "h5", "h6"], recursive=False
+            )
             heading_levels = [int(heading.name[1]) for heading in headings]
 
-            element_headings_dict[f'{element}_{i+1}'] = heading_levels
+            element_headings_dict[f"{element}_{i+1}"] = heading_levels
+
+            # if len(heading_levels) > 1:
+            #     for j in range(len(heading_levels) - 1):
+            #         if heading_levels[j + 1] - heading_levels[j] > 1:
+            #             print(
+            #                 f"Warning: Heading structure in {element}_{i+1} does not follow the recommended structure. Jump from h{heading_levels[j]} to h{heading_levels[j + 1]}."
+            #             )
 
         elements_headings_dict[element] = element_headings_dict
 
     return elements_headings_dict
-
-
-
-
-
-
-    # divs = body.findChildren('div', recursive=True)
-    # div_headings_dict = {}
-
-    # for i, div in enumerate(divs):
-    #     headings = div.findChildren(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'], recursive=False)
-    #     heading_levels = [int(heading.name[1]) for heading in headings]
-
-    #     div_headings_dict[f'div_{i+1}'] = heading_levels
-
-    #     # for j in range(len(heading_levels) - 1):
-    #         # if heading_levels[j + 1] - heading_levels[j] > 1:
-    #             # print(f"Warning: Heading structure in div_{i+1} does not follow the recommended structure. Jump from h{heading_levels[j]} to h{heading_levels[j + 1]}.")
-
-    # return div_headings_dict
-
-
-
 
 
 def save_to_json(data):

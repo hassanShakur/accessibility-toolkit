@@ -7,20 +7,36 @@ import os
 
 
 def scrape(url):
-    data = get_image_links(url)
-    return data
+    try:
+        page = requests.get(url)
+        soup = bs(page.content, "html.parser")
+
+        links = extract_links(soup)
+        images = extract_images(soup)
+
+        data = {"links": links, "images": images}
+        save_to_json(data)
+    except Exception as e:
+        print(e)
+        return None
 
 
-def get_image_links(url):
-    page = requests.get(url)
-    soup = bs(page.content, "html.parser")
+def extract_links(soup):
+    links = [{"href": link["href"], "text": link.text} for link in soup.find_all("a")]
+    return links
 
-    images = soup.findAll("img")
-    img_data = [{"src": image["src"], "alt": image["alt"]} for image in images]
 
-    save_to_json(img_data)
+def extract_images(soup):
+    image_data = soup.find_all("img")
+    images = []
 
-    return img_data
+    for image in image_data:
+        image_src = image["src"]
+        image_alt = image["alt"] if image.has_attr("alt") else ""
+        images.append({"src": image_src, "alt": image_alt})
+
+    return images
+    
 
 
 def save_to_json(data):
@@ -48,3 +64,4 @@ if __name__ == "__main__":
     scrape(url)
     print(f"Scraped {url} in {time.time() - start_time:.5f} seconds.")
     log_details(url)
+# scrape("https://mmu.ac.ke/")

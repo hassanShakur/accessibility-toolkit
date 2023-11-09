@@ -2,33 +2,30 @@ const fs = require('fs');
 const express = require('express');
 const setupApp = require('./appSetup');
 const siteScraper = require('./helpers/scraper');
-// const scrapeSite = require('./helpers/scrape');
 
 const app = express();
 setupApp(app);
 
-app.post('/api/scrape', (req, res) => {
+app.post('/api/scrape', async (req, res) => {
   const { url } = req.body;
-  console.log(url);
-  // scrapeSite(url)
-  //   .then((data) => {
-  //     res.send(data);
-  //   })
-  //   .catch((err) => {
-  //     console.log('err');
-  //     res.sendStatus(500);
-  //   });
 
-  siteScraper(url)
-    .then(() => {
-      const data = fs.readFileSync('./pythoneer/data/data.json');
-      const parsedData = JSON.parse(data);
-      res.send(parsedData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.sendStatus(500);
+  try {
+    const scrapeStatus = await siteScraper(url);
+    console.log(scrapeStatus);
+
+    const data = fs.readFileSync('./pythoneer/data/data.json');
+    const siteData = JSON.parse(data);
+
+    res.status(200).json({
+      status: 'success',
+      data: siteData,
     });
+  } catch (err) {
+    res.status(500).json({
+      status: 'error',
+      message: err,
+    });
+  }
 });
 
 module.exports = app;

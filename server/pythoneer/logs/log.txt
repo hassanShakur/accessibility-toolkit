@@ -51,3 +51,6 @@ Thu Nov  9 16:58:02 2023 https://hassanshakur.vercel.app 1.97403
 Thu Nov  9 17:11:56 2023 https://hassanshakur.vercel.app 1.03212
 Thu Nov  9 17:12:28 2023 https://google.com 2.91066
 Thu Nov  9 17:13:42 2023 https://google.com 2.44207
+Thu Nov  9 17:20:22 2023 https://google.com 3.13925
+Thu Nov  9 17:24:57 2023 http://127.0.0.1:5500/index.html 0.02271
+Thu Nov  9 17:29:30 2023 https://google.com 2.81333

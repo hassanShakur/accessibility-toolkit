@@ -11,11 +11,11 @@ const siteScraper = (url) => {
     pythoneer.on('close', (code) => {
       if (code !== 0) {
         console.log(`pythoneer process exited with code ${code}`);
-        return reject(code);
+        return reject(`failed with code ${code}`);
       }
 
       console.log('pythoneer process exited with code 0');
-      return resolve(code);
+      return resolve('success');
     });
   });
 };

@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup as bs
+import cssutils
 import requests
 import json
 import sys
@@ -15,11 +16,13 @@ class Scraper:
             self.links = self.extract_links()
             self.images = self.extract_images()
             self.heading_structure = self.extract_heading_structure()
+            self.color_contrast = self.extract_color_contrast()
 
             self.data = {
                 "links": self.links,
                 "images": self.images,
                 "heading_structure": self.heading_structure,
+                "color_contrast": self.color_contrast,
             }
             self.save_to_json(self.data)
         except Exception as e:
@@ -88,6 +91,24 @@ class Scraper:
 
         return elements_headings_dict
 
+    def extract_color_contrast(self):
+        # Check color contrast based on WCAG 2.0
+        sheet = cssutils.parseString(self.page.content)
+
+        color_info = {}
+
+        for rule in sheet:
+            if rule.type == rule.STYLE_RULE:
+                style = rule.style
+                color = style.getPropertyValue('color')
+                background_color = style.getPropertyValue('background-color')
+
+                if color and background_color:
+                    selector = rule.selectorText
+                    color_info[selector] = {'color': color, 'background-color': background_color}
+
+        return color_info
+
     def save_to_json(self, data):
         path = self.build_file_path("data")
         with open(f"{path}/data.json", "w") as json_file:
@@ -104,10 +125,11 @@ class Scraper:
         return path
 
 
-if __name__ == "__main__":
-    start_time = time.time()
-    print("Scraping...")
-    url = sys.argv[1]
-    scraper = Scraper(url)
-    print(f"Scraped {url} in {time.time() - start_time:.5f} seconds.")
-    scraper.log_details(url)
+# if __name__ == "__main__":
+#     start_time = time.time()
+#     print("Scraping...")
+#     url = sys.argv[1]
+#     scraper = Scraper(url)
+#     print(f"Scraped {url} in {time.time() - start_time:.5f} seconds.")
+#     scraper.log_details(url)
+scraper = Scraper("https://www.google.com")

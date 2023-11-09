@@ -47,3 +47,7 @@ Mon Nov  6 11:36:08 2023 https://www.mmu.ac.ke/ 17.75393
 Mon Nov  6 11:39:44 2023 https://www.mmu.ac.ke/ 16.31792
 Mon Nov  6 11:41:58 2023 http://127.0.0.1:5500/index.html 0.01895
 Mon Nov  6 11:43:20 2023 http://127.0.0.1:5500/index.html 0.01926
+Thu Nov  9 16:58:02 2023 https://hassanshakur.vercel.app 1.97403
+Thu Nov  9 17:11:56 2023 https://hassanshakur.vercel.app 1.03212
+Thu Nov  9 17:12:28 2023 https://google.com 2.91066
+Thu Nov  9 17:13:42 2023 https://google.com 2.44207

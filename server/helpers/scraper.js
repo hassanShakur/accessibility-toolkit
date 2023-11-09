@@ -3,7 +3,7 @@ const { resolve } = require('path');
 
 const siteScraper = (url) => {
   const pythoneer = spawn('python', [
-    resolve(__dirname, '../pythoneer/scrape.py'),
+    resolve(__dirname, '../pythoneer/scraper.py'),
     url,
   ]);
 

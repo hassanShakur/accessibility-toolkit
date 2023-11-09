@@ -54,3 +54,9 @@ Thu Nov  9 17:13:42 2023 https://google.com 2.44207
 Thu Nov  9 17:20:22 2023 https://google.com 3.13925
 Thu Nov  9 17:24:57 2023 http://127.0.0.1:5500/index.html 0.02271
 Thu Nov  9 17:29:30 2023 https://google.com 2.81333
+Thu Nov  9 21:29:45 2023 www.google.com 0.00400
+Thu Nov  9 21:30:36 2023 www.google.com 0.00467
+Thu Nov  9 21:33:19 2023 https://www.google.com 1.95005
+Thu Nov  9 21:40:09 2023 https://www.google.com 1.62717
+Thu Nov  9 21:41:36 2023 https://www.google.com 1.51684
+Thu Nov  9 21:43:10 2023 http://127.0.0.1:5500/index.html 0.03488

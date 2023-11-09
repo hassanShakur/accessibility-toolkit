@@ -6,7 +6,6 @@ const dotenv = require('dotenv')
 const setupApp = (app) => {
     dotenv.config({ path: './config.env' })
 
-    console.log(process.env.FRONT_END_URL)
     // Parse frontend data
     app.use(bodyParser.urlencoded({
         extended: true,

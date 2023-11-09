@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup as bs
-import cssutils
 import requests
 import json
 import sys
@@ -16,18 +15,21 @@ class Scraper:
             self.links = self.extract_links()
             self.images = self.extract_images()
             self.heading_structure = self.extract_heading_structure()
-            self.color_contrast = self.extract_color_contrast()
+            # self.color_contrast = self.extract_color_contrast()
+            self.form_fields = self.extract_form_fields()
 
             self.data = {
                 "links": self.links,
-                "images": self.images,
-                "heading_structure": self.heading_structure,
-                "color_contrast": self.color_contrast,
+                # "images": self.images,
+                # "heading_structure": self.heading_structure,
+                # "color_contrast": self.color_contrast,
+                "form_fields": self.form_fields,
             }
             self.save_to_json(self.data)
         except Exception as e:
-            print(e)
-            return None
+            print(f"Error: {e}")
+            self.error = e
+            return self.error
 
     def extract_links(self):
         links = [
@@ -91,7 +93,7 @@ class Scraper:
 
         return elements_headings_dict
 
-    def extract_color_contrast(self):
+    # def extract_color_contrast(self):
         # Check color contrast based on WCAG 2.0
         sheet = cssutils.parseString(self.page.content)
 
@@ -100,14 +102,31 @@ class Scraper:
         for rule in sheet:
             if rule.type == rule.STYLE_RULE:
                 style = rule.style
-                color = style.getPropertyValue('color')
-                background_color = style.getPropertyValue('background-color')
+                if style.getPropertyValue("color") and style.getPropertyValue(
+                    "background-color"
+                ):
+                    color = style.getPropertyValue("color")
+                    background_color = style.getPropertyValue("background-color")
+                    color_info[color] = background_color
 
-                if color and background_color:
-                    selector = rule.selectorText
-                    color_info[selector] = {'color': color, 'background-color': background_color}
-
+        # print(color_info)
         return color_info
+
+    def extract_form_fields(self):
+        # Extract form fields and their labels if any
+        form_fields = self.soup.find_all("input")
+        form_fields_dict = {}
+
+        for field in form_fields:
+            label = field.find_previous_sibling("label")
+            if label:
+                label_text = label.text
+            else:
+                label_text = ""
+
+            form_fields_dict[field["name"]] = label_text
+
+        return form_fields_dict
 
     def save_to_json(self, data):
         path = self.build_file_path("data")
@@ -125,11 +144,11 @@ class Scraper:
         return path
 
 
-# if __name__ == "__main__":
-#     start_time = time.time()
-#     print("Scraping...")
-#     url = sys.argv[1]
-#     scraper = Scraper(url)
-#     print(f"Scraped {url} in {time.time() - start_time:.5f} seconds.")
-#     scraper.log_details(url)
-scraper = Scraper("https://www.google.com")
+if __name__ == "__main__":
+    start_time = time.time()
+    print("Scraping...")
+    url = sys.argv[1]
+    scraper = Scraper(url)
+    print(f"Scraped {url} in {time.time() - start_time:.5f} seconds.")
+    scraper.log_details(url)
+# scraper = Scraper("https://www.google.com")

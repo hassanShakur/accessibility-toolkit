@@ -1,8 +1,1 @@
-{
-  "page_info": {
-    "title": "Document",
-    "description": "Some base website template",
-    "viewport": "width=device-width, initial-scale=1.0",
-    "language": "en"
-  }
-}
+{"page_structure": {"header": false, "footer": true, "nav": false, "main": false}}

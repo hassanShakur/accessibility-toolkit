@@ -13,6 +13,7 @@ class Scraper:
             self.soup = bs(self.page.content, "html.parser")
 
             self.page_info = self.extract_page_info()
+            self.page_structure = self.extract_page_structure()
             self.links = self.extract_links()
             self.images = self.extract_images()
             self.heading_structure = self.extract_heading_structure()
@@ -20,7 +21,8 @@ class Scraper:
             self.form_fields = self.extract_form_fields()
 
             self.data = {
-                "page_info": self.page_info,
+                # "page_info": self.page_info,
+                "page_structure": self.page_structure,
                 # "links": self.links,
                 # "images": self.images,
                 # "heading_structure": self.heading_structure,
@@ -46,6 +48,14 @@ class Scraper:
         page_info["language"] = self.soup.find("html")["lang"]
 
         return page_info
+
+    def extract_page_structure(self):
+        page_structure = {}
+        structure_elements = ["header", "footer", "nav", "main"]
+        for element in structure_elements:
+            page_structure[element] = self.soup.find(element) != None
+
+        return page_structure
 
     def extract_links(self):
         links = [

@@ -1,1 +1,8 @@
-{"page_info": {"title": "Google", "description": null, "language": "sw-KE"}}
+{
+  "page_info": {
+    "title": "Document",
+    "description": "Some base website template",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "language": "en"
+  }
+}

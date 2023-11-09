@@ -38,7 +38,11 @@ class Scraper:
         page_info["title"] = self.soup.title.string
 
         meta_tags = ["description", "keywords", "author", "viewport"]
-        page_info["description"] = self.soup.find("meta", {"name": "description"})
+        for tag in meta_tags:
+            tag_data = self.soup.find("meta", attrs={"name": tag})
+            if tag_data:
+                page_info[tag] = tag_data["content"]
+
         page_info["language"] = self.soup.find("html")["lang"]
 
         return page_info

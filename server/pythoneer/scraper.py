@@ -12,6 +12,7 @@ class Scraper:
             self.page = requests.get(url)
             self.soup = bs(self.page.content, "html.parser")
 
+            self.page_info = self.extract_page_info()
             self.links = self.extract_links()
             self.images = self.extract_images()
             self.heading_structure = self.extract_heading_structure()
@@ -19,17 +20,28 @@ class Scraper:
             self.form_fields = self.extract_form_fields()
 
             self.data = {
-                "links": self.links,
+                "page_info": self.page_info,
+                # "links": self.links,
                 # "images": self.images,
                 # "heading_structure": self.heading_structure,
                 # "color_contrast": self.color_contrast,
-                "form_fields": self.form_fields,
+                # "form_fields": self.form_fields,
             }
             self.save_to_json(self.data)
         except Exception as e:
             print(f"Error: {e}")
             self.error = e
-            return self.error
+            return None
+
+    def extract_page_info(self):
+        page_info = {}
+        page_info["title"] = self.soup.title.string
+
+        meta_tags = ["description", "keywords", "author", "viewport"]
+        page_info["description"] = self.soup.find("meta", {"name": "description"})
+        page_info["language"] = self.soup.find("html")["lang"]
+
+        return page_info
 
     def extract_links(self):
         links = [
@@ -93,7 +105,7 @@ class Scraper:
 
         return elements_headings_dict
 
-    # def extract_color_contrast(self):
+        # def extract_color_contrast(self):
         # Check color contrast based on WCAG 2.0
         sheet = cssutils.parseString(self.page.content)
 

@@ -15,7 +15,11 @@ app.post('/api/scrape', async (req, res) => {
     console.log(scrapeStatus);
 
     const data = fs.readFileSync('./pythoneer/data/data.json');
-    const siteData = JSON.parse(data);
+    let siteData = {};
+
+    if (data) {
+      siteData = JSON.parse(data);
+    }
 
     res.status(200).json({
       status: 'success',

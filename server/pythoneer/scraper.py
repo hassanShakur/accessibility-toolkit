@@ -17,17 +17,15 @@ class Scraper:
             self.links = self.extract_links()
             self.images = self.extract_images()
             self.heading_structure = self.extract_heading_structure()
-            # self.color_contrast = self.extract_color_contrast()
             self.form_fields = self.extract_form_fields()
 
             self.data = {
-                # "page_info": self.page_info,
+                "page_info": self.page_info,
                 "page_structure": self.page_structure,
-                # "links": self.links,
-                # "images": self.images,
-                # "heading_structure": self.heading_structure,
-                # "color_contrast": self.color_contrast,
-                # "form_fields": self.form_fields,
+                "links": self.links,
+                "images": self.images,
+                "heading_structure": self.heading_structure,
+                "form_fields": self.form_fields,
             }
             self.save_to_json(self.data)
         except Exception as e:
@@ -118,25 +116,6 @@ class Scraper:
             elements_headings_dict[element] = element_headings_dict
 
         return elements_headings_dict
-
-        # def extract_color_contrast(self):
-        # Check color contrast based on WCAG 2.0
-        sheet = cssutils.parseString(self.page.content)
-
-        color_info = {}
-
-        for rule in sheet:
-            if rule.type == rule.STYLE_RULE:
-                style = rule.style
-                if style.getPropertyValue("color") and style.getPropertyValue(
-                    "background-color"
-                ):
-                    color = style.getPropertyValue("color")
-                    background_color = style.getPropertyValue("background-color")
-                    color_info[color] = background_color
-
-        # print(color_info)
-        return color_info
 
     def extract_form_fields(self):
         # Extract form fields and their labels if any

@@ -1,0 +1,78 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  width: 30rem;
+  height: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 30rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--btn-color);
+  color: var(--font-color);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--sec-color);
+}
+
+button:active {
+  background-color: var(--ter-color);
+}
+
+/* path app/page.tsx
+/* <main>
+      <div className='hero'>
+        <h1>AxeTool</h1>
+        <p>The accessibility toolkit handler</p>
+      </div>
+      <form onSubmit={urlSubmitHandler}>
+        <input
+          type='text'
+          onChange={(e) => setUrl(e.target.value)}
+          placeholder='Enter site url...'
+        />
+        <button type='submit'>Submit</button>
+      </form>
+    </main> */

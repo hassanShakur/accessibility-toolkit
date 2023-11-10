@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,400;0,700;1,400&family=Signika:wght@300;400;500;600&display=swap');
+
+
+:root {
+  --back-color: #25272a;
+  --pri-color: #ff33b8;
+  --btn-color: #dd0b78;
+  --sec-color: #0056b3;
+  --ter-color: #00b3ff;
+  --font-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Signika', sans-serif;
+}
+
+a,
+a:link,
+a:active,
+a:visited {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--pri-color);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--back-color);
+  color: var(--font-color);
+}

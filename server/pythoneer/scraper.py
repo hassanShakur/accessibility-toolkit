@@ -27,6 +27,7 @@ class Scraper:
                 "heading_structure": self.heading_structure,
                 "form_fields": self.form_fields,
             }
+            print(self.data)
             self.save_to_json(self.data)
         except Exception as e:
             print(f"Error: {e}")
@@ -129,7 +130,12 @@ class Scraper:
             else:
                 label_text = ""
 
-            form_fields_dict[field["name"]] = label_text
+            if field.has_attr("name"):
+                form_fields_dict[field["name"]] = label_text
+            elif field.has_attr("id"):
+                form_fields_dict[field["id"]] = label_text
+            else:
+                form_fields_dict[field["type"]] = label_text
 
         return form_fields_dict
 

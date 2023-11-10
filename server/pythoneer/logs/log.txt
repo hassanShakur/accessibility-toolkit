@@ -85,3 +85,13 @@ Thu Nov  9 22:07:49 2023 https://www.google.com 2.53880
 Thu Nov  9 22:08:06 2023 https://www.google.com 1.59105
 Thu Nov  9 22:09:01 2023 http://127.0.0.1:5500/index.html 0.01684
 Fri Nov 10 07:55:14 2023 https://www.google.com 1.75070
+Fri Nov 10 07:58:47 2023 https://www.mmu.ac.ke 22.06069
+Fri Nov 10 07:59:51 2023 https://www.mmu.ac.ke 17.67398
+Fri Nov 10 08:02:16 2023 https://www.mmu.ac.ke 18.13977
+Fri Nov 10 08:02:54 2023 https://www.mmu.ac.ke 18.09211
+Fri Nov 10 08:03:28 2023 https://www.mmu.ac.ke 18.53029
+Fri Nov 10 08:04:12 2023 https://www.mmu.ac.ke 19.63952
+Fri Nov 10 08:04:54 2023 https://www.mmu.ac.ke 17.48327
+Fri Nov 10 08:05:30 2023 https://www.mmu.ac.ke 18.89370
+Fri Nov 10 08:06:01 2023 https://www.mmu.ac.ke 17.27343
+Fri Nov 10 08:07:43 2023 https://www.mmu.ac.ke 18.38963

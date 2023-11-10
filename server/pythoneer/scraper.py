@@ -119,7 +119,6 @@ class Scraper:
         return elements_headings_dict
 
     def extract_form_fields(self):
-        # Extract form fields and their labels if any
         form_fields = self.soup.find_all("input")
         form_fields_dict = {}
 

@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,400;0,700;1,400&family=Signika:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,400;0,700;1,600&family=Salsa&family=Signika:wght@300;400;500;600&family=Sue+Ellen+Francisco&display=swap');
 
 :root {
   --back-color: #25272a;
-  --pri-color: #ff33b8;
-  --btn-color: #dd0b78;
-  --sec-color: #0056b3;
+  // --pri-color: #ff33b8;
+  --pri-color: #dd0b78;
+  --sec-color: #ef1083;
   --ter-color: #00b3ff;
   --font-color: #ffffff;
 }
@@ -50,3 +50,8 @@ body {
   background-color: var(--back-color);
   color: var(--font-color);
 }
+
+// font-family: 'Kanit', sans-serif;
+// font-family: 'Salsa', cursive;
+// font-family: 'Signika', sans-serif;
+// font-family: 'Sue Ellen Francisco', cursive;

@@ -2,9 +2,10 @@
 
 :root {
   --back-color: #25272a;
-  // --pri-color: #ff33b8;
+  --nav-back-color: #101317;
   --pri-color: #dd0b78;
   --sec-color: #ef1083;
+  --link-color: #ff33b8;
   --ter-color: #00b3ff;
   --font-color: #ffffff;
 }
@@ -23,10 +24,10 @@ a:active,
 a:visited {
   color: var(--font-color);
   text-decoration: none;
-}
 
-a:hover {
-  color: var(--pri-color);
+  &:hover {
+    color: var(--link-color);
+  }
 }
 
 ul {
@@ -58,6 +59,14 @@ h4,
 h5,
 h6 {
   font-family: 'Salsa', cursive;
+}
+
+// flex-column-center mixin
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 // font-family: 'Kanit', sans-serif;

@@ -20,7 +20,6 @@ const ReportLayout = ({
           <a href='/'>Home</a>
           <a href='/report'>Report</a>
         </div>
-        <div id="side-design"></div>
       </aside>
       <div className='report-content'>{children}</div>
     </div>

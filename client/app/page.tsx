@@ -1,21 +1,30 @@
 'use client';
 import { useState, FormEvent } from 'react';
+import { useRouter } from 'next/router';
 import axios from 'axios';
 import './page.scss';
 
 const backendUrl = 'http://localhost:7000/api/scrape';
 
 const Home = () => {
+  const router = useRouter();
   const [url, setUrl] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [report, setReport] = useState({});
 
   const urlSubmitHandler = async (e: FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    router.push('/report');
+
     try {
       const res = await axios.post(backendUrl, { url });
       console.log(res.data);
     } catch (error) {
       console.log(error);
     }
+
+    setLoading(false);
   };
 
   return (

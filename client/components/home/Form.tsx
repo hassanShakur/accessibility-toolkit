@@ -13,7 +13,7 @@ const Form = () => {
 
   const urlSubmitHandler = async (e: FormEvent) => {
     e.preventDefault();
-    router.push('/report');
+    router.push(`/report?url=${url}`); // `/report?url=${url}`
     dispatch(getReport(url));
   };
 

@@ -74,3 +74,24 @@ h6 {
 // font-family: 'Salsa', cursive;
 // font-family: 'Signika', sans-serif;
 // font-family: 'Sue Ellen Francisco', cursive;
+
+#main-layout {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  #main-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100vw - 250px);
+    height: 100%;
+    padding: 20px;
+    overflow: auto;
+    z-index: 3;
+  }
+}

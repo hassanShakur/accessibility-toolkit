@@ -1,6 +1,6 @@
 header {
   background-color: var(--nav-back-color);
-  border-bottom: 1px solid var(--text-color);
+  // border-bottom: 1px solid var(--text-color);
   position: fixed;
   top: 0;
   width: 100%;
@@ -12,7 +12,7 @@ header {
     align-items: center;
     // max-width: 1400px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 5rem;
     height: 4rem;
 
     #logo {
@@ -39,52 +39,6 @@ header {
         font-size: 1.2rem;
       }
     }
-  }
-}
-
-#main-layout {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-
-  aside {
-    background-color: var(--nav-back-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-    width: 250px;
-    height: 100%;
-    padding: 20px;
-
-    .aside-links {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      a {
-        margin: 10px 0;
-      }
-    }
-  }
-
-  #main-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: calc(100vw - 250px);
-    height: 100%;
-    padding: 20px;
-    overflow: auto;
-    z-index: 3;
   }
 }
 

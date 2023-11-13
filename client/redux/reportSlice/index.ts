@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 const backendUrl = 'http://localhost:7000/api/scrape';
+import axios from 'axios';
 
 export const getReport = createAsyncThunk(
   'report/getReport',
   async (url: string) => {
-    const response = await fetch(`${backendUrl}?url=${url}`);
-    const data = await response.json();
-    return data;
+    const res = await axios.post(backendUrl, { url });
+    return res.data;
   }
 );
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.scss';
 import Header from '@/components/header';
+import SideNav from '@/components/sideNav';
 
 export const metadata: Metadata = {
   title: 'Accessibility Toolkit',
@@ -16,7 +17,10 @@ export default function RootLayout({
     <html lang='en'>
       <body>
         <Header />
-        <main>{children}</main>
+        <div id='main-layout'>
+          <SideNav />
+          <div id='main-content'>{children}</div>
+        </div>
       </body>
     </html>
   );

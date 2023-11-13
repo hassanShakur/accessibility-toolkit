@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { getReport } from '@/redux/reportSlice';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/redux/store';
+import './form.scss';
 
 const Form = () => {
   const router = useRouter();

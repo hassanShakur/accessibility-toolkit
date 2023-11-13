@@ -25,43 +25,6 @@ main {
   }
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  input {
-    width: 30rem;
-    height: 3rem;
-    outline: 1px solid var(--font-color);
-    background-color: var(--back-color);
-    color: var(--font-color);
-    border-radius: 0.5rem;
-    padding: 0 1rem;
-    margin-bottom: 1rem;
-  }
-
-  input:focus {
-    outline: 1px solid var(--pri-color);
-  }
-
-  button {
-    width: 30rem;
-    height: 3rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: var(--pri-color);
-    color: var(--font-color);
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  button:hover {
-    background-color: var(--sec-color);
-  }
-}
-
 @media (max-width: 768px) {
   .hero {
     h1 {
@@ -70,16 +33,6 @@ form {
 
     p {
       font-size: 1rem;
-    }
-  }
-
-  form {
-    input {
-      width: 20rem;
-    }
-
-    button {
-      width: 20rem;
     }
   }
 }
@@ -92,16 +45,6 @@ form {
 
     p {
       font-size: 1rem;
-    }
-  }
-
-  form {
-    input {
-      width: 15rem;
-    }
-
-    button {
-      width: 15rem;
     }
   }
 }

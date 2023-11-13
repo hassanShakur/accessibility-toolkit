@@ -7,7 +7,7 @@
   --sec-color: #ef1083;
   --link-color: #ff33b8;
   --ter-color: #00b3ff;
-  --font-color: #ffffff;
+  --text-color: #ffffff;
 }
 
 * {
@@ -22,7 +22,7 @@ a,
 a:link,
 a:active,
 a:visited {
-  color: var(--font-color);
+  color: var(--text-color);
   text-decoration: none;
 
   &:hover {
@@ -49,7 +49,7 @@ input {
 
 body {
   background-color: var(--back-color);
-  color: var(--font-color);
+  color: var(--text-color);
 }
 
 h1,
@@ -59,7 +59,7 @@ h4,
 h5,
 h6 {
   font-family: 'Salsa', cursive;
-  color: var(--font-color);
+  color: var(--text-color);
 }
 
 // flex-column-center mixin

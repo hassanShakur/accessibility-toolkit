@@ -22,6 +22,8 @@ const Form = () => {
         type='text'
         onChange={(e) => setUrl(e.target.value)}
         placeholder='Enter site url...'
+        value={url}
+        autoFocus
       />
       <button type='submit'>Submit</button>
     </form>

@@ -97,3 +97,5 @@ Fri Nov 10 08:06:01 2023 https://www.mmu.ac.ke 17.27343
 Fri Nov 10 08:07:43 2023 https://www.mmu.ac.ke 18.38963
 Fri Nov 10 08:09:50 2023 https://www.mmu.ac.ke 19.36388
 Fri Nov 10 08:10:35 2023 https://www.google.com 2.14370
+Sun Nov 12 22:01:08 2023 https://www.google.com 1.72610
+Mon Nov 13 12:18:36 2023 https://www.google.com 1.01368

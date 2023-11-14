@@ -100,4 +100,21 @@ const headingStructAnalyzer = (headingStruct: HeadingStructure) => {
   };
 };
 
+const imageStructAnalyzer = (imageStruct: ImageStructure[]) => {
+  const total = imageStruct.length * 2;
+  let score = 0;
+
+  imageStruct.forEach((image) => {
+    if (image.src) score += 1;
+    if (image.alt) score += 1;
+  });
+
+  score = (score / total) * 100;
+
+  return {
+    score,
+    total,
+  };
+};
+
 export default analyzer;

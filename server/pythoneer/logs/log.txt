@@ -119,3 +119,7 @@ Tue Nov 14 17:18:18 2023 https://www.udemy.com 5.73577
 Tue Nov 14 17:20:49 2023 https://www.coursera.org 4.74227
 Tue Nov 14 17:22:33 2023 http://127.0.0.1:5500/index.html 0.02835
 Tue Nov 14 17:24:06 2023 https://www.youtube.com 5.32101
+Tue Nov 14 17:36:24 2023 https://www.google.com 3.25414
+Tue Nov 14 17:36:55 2023 https://www.google.com 2.60482
+Tue Nov 14 17:38:00 2023 https://www.mmu.ac.ke 20.39320
+Tue Nov 14 17:39:34 2023 https://hassanshakur.vercel.app 3.83528

@@ -1,0 +1,2 @@
+const analyzer = (data: any) => {
+    

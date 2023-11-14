@@ -46,12 +46,10 @@ input {
   font-family: 'Signika', sans-serif;
   width: 15rem;
   height: 2rem;
-  outline: 1px solid var(--text-color);
-  background-color: var(--back-color);
+  background-color: var(--nav-back-color);
   color: var(--text-color);
   border-radius: 0.3rem;
   padding: 0 1rem;
-  // margin-bottom: 1rem;
 }
 
 input:focus {

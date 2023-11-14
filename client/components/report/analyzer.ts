@@ -117,4 +117,21 @@ const imageStructAnalyzer = (imageStruct: ImageStructure[]) => {
   };
 };
 
+const linkStructAnalyzer = (linkStruct: LinkStructure[]) => {
+  const total = linkStruct.length * 2;
+  let score = 0;
+
+  linkStruct.forEach((link) => {
+    if (link.href) score += 1;
+    if (link.text) score += 1;
+  });
+
+  score = (score / total) * 100;
+
+  return {
+    score,
+    total,
+  };
+};
+
 export default analyzer;

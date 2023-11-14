@@ -97,7 +97,7 @@ class Scraper:
 
         for element in block_elements:
             element_instances = body.findChildren(element, recursive=True)
-            element_headings_dict = {}
+            element_headings_arr = []
 
             for i, instance in enumerate(element_instances):
                 headings = instance.findChildren(
@@ -105,7 +105,19 @@ class Scraper:
                 )
                 heading_levels = [int(heading.name[1]) for heading in headings]
 
-                element_headings_dict[f"{element}_{i+1}"] = heading_levels
+                element_headings_arr.append(heading_levels)
+
+            elements_headings_dict[element] = element_headings_arr
+
+        return elements_headings_dict
+
+            # for i, instance in enumerate(element_instances):
+            #     headings = instance.findChildren(
+            #         ["h1", "h2", "h3", "h4", "h5", "h6"], recursive=False
+            #     )
+            #     heading_levels = [int(heading.name[1]) for heading in headings]
+
+            #     element_headings_dict[f"{element}_{i+1}"] = heading_levels
 
                 # if len(heading_levels) > 1:
                 #     for j in range(len(heading_levels) - 1):
@@ -114,9 +126,9 @@ class Scraper:
                 #                 f"Warning: Heading structure in {element}_{i+1} does not follow the recommended structure. Jump from h{heading_levels[j]} to h{heading_levels[j + 1]}."
                 #             )
 
-            elements_headings_dict[element] = element_headings_dict
+            # elements_headings_dict[element] = element_headings_dict
 
-        return elements_headings_dict
+        # return elements_headings_dict
 
     def extract_form_fields(self):
         form_fields = self.soup.find_all("input")

@@ -44,7 +44,7 @@
       "text": "Utafutaji wa kina"
     },
     {
-      "href": "https://www.google.com/setprefs?sig=0_z3EpfBkCaHiJVT9DoyiWvyI3LTo%3D&hl=en&source=homepage&sa=X&ved=0ahUKEwjes62rhsOCAxWVKFkFHQwXBF0Q2ZgBCAU",
+      "href": "https://www.google.com/setprefs?sig=0_p3Jxjm9hipiRy0jPFqP_Go_D5vQ%3D&hl=en&source=homepage&sa=X&ved=0ahUKEwiZkZ3aicOCAxXfGFkFHcnQCoQQ2ZgBCAU",
       "text": "English"
     },
     { "href": "/intl/sw/ads/", "text": "Matangazo " },
@@ -53,7 +53,7 @@
       "text": "Kila Kitu Kuhusu Google"
     },
     {
-      "href": "https://www.google.com/setprefs?sig=0_z3EpfBkCaHiJVT9DoyiWvyI3LTo%3D&hl=en",
+      "href": "https://www.google.com/setprefs?sig=0_p3Jxjm9hipiRy0jPFqP_Go_D5vQ%3D&hl=en",
       "text": "Google.com in English"
     }
   ],
@@ -65,36 +65,21 @@
     { "src": "/textinputassistant/tia.png", "alt": "" }
   ],
   "heading_structure": {
-    "article": {},
-    "aside": {},
-    "div": {
-      "div_1": [],
-      "div_2": [],
-      "div_3": [],
-      "div_4": [],
-      "div_5": [],
-      "div_6": [],
-      "div_7": [],
-      "div_8": [],
-      "div_9": [],
-      "div_10": [],
-      "div_11": [],
-      "div_12": [],
-      "div_13": [],
-      "div_14": []
-    },
-    "footer": {},
-    "form": { "form_1": [] },
-    "header": {},
-    "li": {},
-    "main": {},
-    "nav": {},
-    "ol": {},
-    "p": { "p_1": [] },
-    "pre": {},
-    "section": {},
-    "table": { "table_1": [] },
-    "ul": {}
+    "article": [],
+    "aside": [],
+    "div": [[], [], [], [], [], [], [], [], [], [], [], [], [], []],
+    "footer": [],
+    "form": [[]],
+    "header": [],
+    "li": [],
+    "main": [],
+    "nav": [],
+    "ol": [],
+    "p": [[]],
+    "pre": [],
+    "section": [],
+    "table": [[]],
+    "ul": []
   },
   "form_fields": {
     "ie": "",

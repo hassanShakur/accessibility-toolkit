@@ -1,8 +1,8 @@
-export interface Root {
+export interface Report {
   page_info: PageInfo;
   page_structure: PageStructure;
-  links: Link[];
-  images: Image[];
+  links: LinkStruct[];
+  images: ImageStruct[];
   heading_structure: HeadingStructure;
   form_fields: FormField[];
 }
@@ -21,12 +21,12 @@ export interface PageStructure {
   main: boolean;
 }
 
-export interface Link {
+export interface LinkStruct {
   href: string;
   text: string;
 }
 
-export interface Image {
+export interface ImageStruct {
   src: string;
   alt: string;
 }
@@ -54,3 +54,5 @@ export interface FormField {
   label: string;
   type: string;
 }
+
+export default Report;

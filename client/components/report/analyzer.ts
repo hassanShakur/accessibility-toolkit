@@ -91,6 +91,9 @@ const pageInfoAnalyzer = (pageInfo: PageInfo) => {
 
 const formFieldAnalyzer = (formFields: FormField[]) => {
   const fieldsCount = formFields.length;
+
+  if (fieldsCount === 0) return { score: 100, total: 0, fieldsCount };
+
   const total = fieldsCount * 3;
   let score = 0;
   formFields.forEach((field) => {
@@ -133,7 +136,10 @@ const headingStructAnalyzer = (headingStruct: HeadingStructure) => {
     });
   }
 
-  const score = ((total - emptyBlocks - wrongOrder) / total) * 100;
+  if (total === 0) return { score: 100, total: 0 };
+  total -= emptyBlocks;
+
+  const score = ((total - wrongOrder) / total) * 100;
   return {
     score,
     total,
@@ -144,6 +150,8 @@ const headingStructAnalyzer = (headingStruct: HeadingStructure) => {
 
 const imageStructAnalyzer = (imageStruct: ImageStructure[]) => {
   const total = imageStruct.length * 2;
+  if (total === 0) return { score: 100, total: 0 };
+
   let score = 0;
 
   imageStruct.forEach((image) => {
@@ -160,12 +168,13 @@ const imageStructAnalyzer = (imageStruct: ImageStructure[]) => {
 };
 
 const linkStructAnalyzer = (linkStruct: LinkStructure[]) => {
-  const total = linkStruct.length * 2;
+  const total = linkStruct.length;
+  if (total === 0) return { score: 100, total: 0 };
+
   let score = 0;
 
   linkStruct.forEach((link) => {
     if (link.href) score += 1;
-    if (link.text) score += 1;
   });
 
   score = (score / total) * 100;

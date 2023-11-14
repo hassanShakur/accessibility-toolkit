@@ -123,3 +123,16 @@ Tue Nov 14 17:36:24 2023 https://www.google.com 3.25414
 Tue Nov 14 17:36:55 2023 https://www.google.com 2.60482
 Tue Nov 14 17:38:00 2023 https://www.mmu.ac.ke 20.39320
 Tue Nov 14 17:39:34 2023 https://hassanshakur.vercel.app 3.83528
+Tue Nov 14 19:06:16 2023 https://hassanshakur.vercel.app 1.81415
+Tue Nov 14 19:06:50 2023 https://hassanshakur.vercel.app 1.36111
+Tue Nov 14 19:09:09 2023 https://hassanshakur.vercel.app 1.70315
+Tue Nov 14 19:10:52 2023 https://hassanshakur.vercel.app 1.64418
+Tue Nov 14 19:16:56 2023 https://hassanshakur.vercel.app 1.88327
+Tue Nov 14 19:17:40 2023  0.00803
+Tue Nov 14 19:17:58 2023 https://hassanshakur.vercel.app 1.87741
+Tue Nov 14 19:18:36 2023 https://hassanshakur.vercel.app 1.59917
+Tue Nov 14 19:20:35 2023 https://hassanshakur.vercel.app 1.67885
+Tue Nov 14 20:58:28 2023 https://hassanshakur.vercel.app 2.15300
+Tue Nov 14 21:02:42 2023 https://hassanshakur.vercel.app 3.42087
+Tue Nov 14 21:08:02 2023 https://hassanshakur.vercel.app 2.86654
+Tue Nov 14 21:08:44 2023 https://mmu.ac.ke 20.71719

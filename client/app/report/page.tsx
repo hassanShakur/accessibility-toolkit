@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import Spinner from '@/components/spinner';
 import type { ReportState } from '@/redux/reportSlice';
+import ReportAnalysis from '@/components/report/ReportAnalysis';
 
 const Report = () => {
   const { report, loading, error } = useSelector<
@@ -12,7 +13,11 @@ const Report = () => {
 
   if (loading) return <Spinner />;
 
-  return <div>Report</div>;
+  return (
+    <div>
+      <ReportAnalysis report={report} />
+    </div>
+  );
 };
 
 export default Report;

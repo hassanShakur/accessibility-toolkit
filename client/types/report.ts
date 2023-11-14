@@ -55,4 +55,39 @@ export interface FormField {
   type: string;
 }
 
+export const emptyReport = {
+  page_info: {
+    title: '',
+    description: '',
+    viewport: '',
+    language: '',
+  },
+  page_structure: {
+    header: false,
+    footer: false,
+    nav: false,
+    main: false,
+  },
+  links: [],
+  images: [],
+  heading_structure: {
+    article: [],
+    aside: [],
+    div: [],
+    footer: [],
+    form: [],
+    header: [],
+    li: [],
+    main: [],
+    nav: [],
+    ol: [],
+    p: [],
+    pre: [],
+    section: [],
+    table: [],
+    ul: [],
+  },
+  form_fields: [],
+};
+
 export default Report;

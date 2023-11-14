@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 const backendUrl = 'http://localhost:7000/api/scrape';
 import axios from 'axios';
+import { emptyReport } from '@/types/report';
 
 export const getReport = createAsyncThunk(
   'report/getReport',
@@ -12,7 +13,14 @@ export const getReport = createAsyncThunk(
 );
 
 const initialState = {
-  report: null || {},
+  report: {
+    status: '',
+    // data that can be type null is not included in the report
+    // so it is not included in the interface
+    data: {
+      ...emptyReport,
+    },
+  },
   loading: false,
   error: '',
 };

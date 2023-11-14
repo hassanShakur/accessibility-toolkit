@@ -4,9 +4,9 @@ const Header = () => {
   return (
     <header>
       {/* Search bar */}
-      <div id='search-bar'>
+      {/* <div id='search-bar'> */}
         <input type='text' placeholder='Search...' />
-      </div>
+      {/* </div> */}
       <nav>
         <ul>
           <li>

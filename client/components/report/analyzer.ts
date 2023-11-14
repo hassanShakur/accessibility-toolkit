@@ -8,7 +8,49 @@ import {
   LinkStructure,
 } from '@/types/report';
 
-const analyzer = (report: Report) => {};
+const analyzer = (report: Report) => {
+  const {
+    page_info,
+    page_structure,
+    form_fields,
+    heading_structure,
+    images,
+    links,
+  } = report;
+  const pageInfo = pageInfoAnalyzer(page_info);
+  const pageStruct = pageStructAnalyzer(page_structure);
+  const formField = formFieldAnalyzer(form_fields);
+  const headingStruct = headingStructAnalyzer(heading_structure);
+  const imageStruct = imageStructAnalyzer(images);
+  const linkStruct = linkStructAnalyzer(links);
+
+  const total =
+    pageInfo.total +
+    pageStruct.total +
+    formField.total +
+    headingStruct.total +
+    imageStruct.total +
+    linkStruct.total;
+  const score =
+    (pageInfo.score +
+      pageStruct.score +
+      formField.score +
+      headingStruct.score +
+      imageStruct.score +
+      linkStruct.score) /
+    6;
+
+  return {
+    total,
+    score,
+    pageInfo,
+    pageStruct,
+    formField,
+    headingStruct,
+    imageStruct,
+    linkStruct,
+  };
+};
 
 const pageStructAnalyzer = (pageStructure: PageStructure) => {
   const { header, footer, nav, main } = pageStructure;

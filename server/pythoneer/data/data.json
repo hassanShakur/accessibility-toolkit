@@ -1,96 +1,1130 @@
 {
-  "page_info": { "title": "Google", "language": "sw-KE" },
+  "page_info": {
+    "title": "Multimedia University of Kenya",
+    "description": "Best education WordPress Theme for educational, training center, education center, university, college, kindergarten, courses hub and academy.",
+    "viewport": "width=device-width, initial-scale=1",
+    "language": "en-US"
+  },
   "page_structure": {
-    "header": false,
-    "footer": false,
-    "nav": false,
+    "header": true,
+    "footer": true,
+    "nav": true,
     "main": false
   },
   "links": [
     {
-      "href": "https://www.google.com/imghp?hl=sw&tab=wi",
-      "text": "Picha"
+      "href": "https://iecasimile.com/10-euro-casinos/",
+      "text": "Irish 10 euro deposit casino"
     },
     {
-      "href": "https://maps.google.co.ke/maps?hl=sw&tab=wl",
-      "text": "Ramani"
+      "href": "https://aussiebestcasinos.com/real-money-casino/",
+      "text": "Aussie Best Casinos"
     },
     {
-      "href": "https://play.google.com/?hl=sw&tab=w8",
-      "text": "Play"
+      "href": "https://leafletcasino.com/online-casino/casino-classic/",
+      "text": "LeafletCasino"
     },
-    { "href": "https://www.youtube.com/?tab=w1", "text": "YouTube" },
-    { "href": "https://news.google.com/?tab=wn", "text": "Habari" },
+    { "href": "https://mmu.ac.ke/", "text": "Home" },
+    { "href": "https://mmu.ac.ke/about-us/", "text": "About Us" },
     {
-      "href": "https://mail.google.com/mail/?tab=wm",
-      "text": "Gmail"
-    },
-    { "href": "https://drive.google.com/?tab=wo", "text": "Hifadhi" },
-    {
-      "href": "https://www.google.co.ke/intl/en/about/products?tab=wh",
-      "text": "Mengineyo \u00bb"
+      "href": "https://mmu.ac.ke/history-and-future-of-mmu/",
+      "text": "History and Future of MMU"
     },
     {
-      "href": "http://www.google.co.ke/history/optout?hl=sw",
-      "text": "Historia kwenye Wavuti"
-    },
-    { "href": "/preferences?hl=sw", "text": "Mipangilio" },
-    {
-      "href": "https://accounts.google.com/ServiceLogin?hl=sw&passive=true&continue=https://www.google.com/&ec=GAZAAQ",
-      "text": "Ingia"
+      "href": "https://mmu.ac.ke/vision-and-mission/",
+      "text": "Vision and Mission"
     },
     {
-      "href": "/advanced_search?hl=sw-KE&authuser=0",
-      "text": "Utafutaji wa kina"
+      "href": "https://mmu.ac.ke/message-by-vice-chancellor/",
+      "text": "Message by Vice Chancellor"
     },
     {
-      "href": "https://www.google.com/setprefs?sig=0_p3Jxjm9hipiRy0jPFqP_Go_D5vQ%3D&hl=en&source=homepage&sa=X&ved=0ahUKEwiZkZ3aicOCAxXfGFkFHcnQCoQQ2ZgBCAU",
-      "text": "English"
+      "href": "https://mmu.ac.ke/mmu-is-iso-9001-2015-certified-2/",
+      "text": "MMU IS ISO 9001: 2015 CERTIFIED"
     },
-    { "href": "/intl/sw/ads/", "text": "Matangazo " },
+    { "href": "#", "text": "MMU Portal" },
     {
-      "href": "/intl/sw/about.html",
-      "text": "Kila Kitu Kuhusu Google"
+      "href": "https://studentportal.mmu.ac.ke/",
+      "text": "Student Portal"
     },
     {
-      "href": "https://www.google.com/setprefs?sig=0_p3Jxjm9hipiRy0jPFqP_Go_D5vQ%3D&hl=en",
-      "text": "Google.com in English"
+      "href": "https://staffportal.mmu.ac.ke/",
+      "text": "Staff Portal"
+    },
+    {
+      "href": "https://studentportal.mmu.ac.ke/Parent%20Login.aspx",
+      "text": "Parent Portal"
+    },
+    {
+      "href": "https://mmu.ac.ke/cue-accreditation/",
+      "text": "CUE Accreditation"
+    },
+    { "href": "#", "text": "Administration" },
+    {
+      "href": "https://mmu.ac.ke/council-members/",
+      "text": "Council Members"
+    },
+    {
+      "href": "https://mmu.ac.ke/vice-chancellor-and-dvcs/",
+      "text": "Vice Chancellor and Dvc\u2019s"
+    },
+    { "href": "#", "text": "Faculties & Institutes" },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-business-and-economics/",
+      "text": "Faculty of Business and Economics"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-computing-and-information-technology/",
+      "text": "Faculty of Computing and Information Technology"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-engineering-and-technology/",
+      "text": "Faculty of Engineering and Technology"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-media-and-communication/",
+      "text": "Faculty of Media and Communication"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-science-and-technology/",
+      "text": "Faculty of Science and Technology"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-social-sciences-and-technology/",
+      "text": "Faculty of Social Sciences and Technology"
+    },
+    {
+      "href": "https://mmu.ac.ke/directors-message/",
+      "text": "National Institute for Optics and Lasers"
+    },
+    { "href": "https://mmu.ac.ke/about-us-tvet/", "text": "TVET" },
+    { "href": "#", "text": "Admissions" },
+    {
+      "href": "https://onlineapplication.mmu.ac.ke",
+      "text": "Online Application (KUCCPS/SSP )"
+    },
+    {
+      "href": "https://mmu.ac.ke/students-documents/",
+      "text": "Students Documents"
+    },
+    {
+      "href": "https://mmu.ac.ke/fee-structure/",
+      "text": "Fee Structure & Fee Payment details"
+    },
+    { "href": "https://mmu.ac.ke/library/", "text": "Library" },
+    { "href": "http://opac.mmu.ac.ke", "text": "opac" },
+    {
+      "href": "http://erepository.mmu.ac.ke/",
+      "text": "E-Repository"
+    },
+    {
+      "href": "http://elibrarymmu.remotexs.co/",
+      "text": "E-Resources"
+    },
+    { "href": "http://elearning.mmu.ac.ke/", "text": "Elearning" },
+    { "href": "https://mmu.ac.ke/contact/", "text": "Contact" },
+    {
+      "href": "https://nzcasimile.co.nz/casino/nzd-casinos/",
+      "text": "NZD casino"
+    },
+    {
+      "href": "https://aucasimile.com/best-payout-casinos/",
+      "text": "https://aucasimile.com/best-payout-casinos/"
+    },
+    { "href": "tel:020 7252000", "text": "020 7252000" },
+    { "href": "mailto:info@mmu.ac.ke", "text": "info@mmu.ac.ke" },
+    {
+      "href": "  https://www.mmu.ac.ke/6337-2/",
+      "text": "Complaints and Compliments"
+    },
+    {
+      "href": "https://www.mmu.ac.ke/report-corruption",
+      "text": "Report Corruption"
+    },
+    {
+      "href": "https://www.mmu.ac.ke/access-to-information/",
+      "text": "Access to Information"
+    },
+    { "href": "https://www.mmu.ac.ke/tenders/", "text": "Tenders" },
+    {
+      "href": "https://www.mmu.ac.ke/vacancies/",
+      "text": "Vacancies"
+    },
+    { "href": "https://mmu.ac.ke/", "text": "" },
+    { "href": "https://mmu.ac.ke/", "text": "" },
+    { "href": "https://mmu.ac.ke/", "text": "Home" },
+    { "href": "https://mmu.ac.ke/about-us/", "text": "About Us" },
+    {
+      "href": "https://mmu.ac.ke/history-and-future-of-mmu/",
+      "text": "History and Future of MMU"
+    },
+    {
+      "href": "https://mmu.ac.ke/vision-and-mission/",
+      "text": "Vision and Mission"
+    },
+    {
+      "href": "https://mmu.ac.ke/message-by-vice-chancellor/",
+      "text": "Message by Vice Chancellor"
+    },
+    {
+      "href": "https://mmu.ac.ke/mmu-is-iso-9001-2015-certified-2/",
+      "text": "MMU IS ISO 9001: 2015 CERTIFIED"
+    },
+    { "href": "#", "text": "MMU Portal" },
+    {
+      "href": "https://studentportal.mmu.ac.ke/",
+      "text": "Student Portal"
+    },
+    {
+      "href": "https://staffportal.mmu.ac.ke/",
+      "text": "Staff Portal"
+    },
+    {
+      "href": "https://studentportal.mmu.ac.ke/Parent%20Login.aspx",
+      "text": "Parent Portal"
+    },
+    {
+      "href": "https://mmu.ac.ke/cue-accreditation/",
+      "text": "CUE Accreditation"
+    },
+    { "href": "#", "text": "Administration" },
+    {
+      "href": "https://mmu.ac.ke/council-members/",
+      "text": "Council Members"
+    },
+    {
+      "href": "https://mmu.ac.ke/vice-chancellor-and-dvcs/",
+      "text": "Vice Chancellor and Dvc\u2019s"
+    },
+    { "href": "#", "text": "Faculties & Institutes" },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-business-and-economics/",
+      "text": "Faculty of Business and Economics"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-computing-and-information-technology/",
+      "text": "Faculty of Computing and Information Technology"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-engineering-and-technology/",
+      "text": "Faculty of Engineering and Technology"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-media-and-communication/",
+      "text": "Faculty of Media and Communication"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-science-and-technology/",
+      "text": "Faculty of Science and Technology"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-social-sciences-and-technology/",
+      "text": "Faculty of Social Sciences and Technology"
+    },
+    {
+      "href": "https://mmu.ac.ke/directors-message/",
+      "text": "National Institute for Optics and Lasers"
+    },
+    { "href": "https://mmu.ac.ke/about-us-tvet/", "text": "TVET" },
+    { "href": "#", "text": "Admissions" },
+    {
+      "href": "https://onlineapplication.mmu.ac.ke",
+      "text": "Online Application (KUCCPS/SSP )"
+    },
+    {
+      "href": "https://mmu.ac.ke/students-documents/",
+      "text": "Students Documents"
+    },
+    {
+      "href": "https://mmu.ac.ke/fee-structure/",
+      "text": "Fee Structure & Fee Payment details"
+    },
+    { "href": "https://mmu.ac.ke/library/", "text": "Library" },
+    { "href": "http://opac.mmu.ac.ke", "text": "opac" },
+    {
+      "href": "http://erepository.mmu.ac.ke/",
+      "text": "E-Repository"
+    },
+    {
+      "href": "http://elibrarymmu.remotexs.co/",
+      "text": "E-Resources"
+    },
+    { "href": "http://elearning.mmu.ac.ke/", "text": "Elearning" },
+    { "href": "https://mmu.ac.ke/contact/", "text": "Contact" },
+    {
+      "href": "https://www.mmu.ac.ke/9333-2",
+      "text": "Read more... \n\t\t\t\t\t\t\t"
+    },
+    {
+      "href": "https://www.mmu.ac.ke/master-of-science-in-laser-technology",
+      "text": "Readmore... \n\t\t\t\t\t\t\t"
+    },
+    { "href": "https://www.mmu.ac.ke/tenders/", "text": "" },
+    {
+      "href": "https://www.mmu.ac.ke/tenders/",
+      "text": "November 2023 Tenders"
+    },
+    {
+      "href": "https://mmu.ac.ke/wp-content/uploads/2023/08/FILE.pdf",
+      "text": ""
+    },
+    {
+      "href": "https://mmu.ac.ke/wp-content/uploads/2023/08/FILE.pdf",
+      "text": "PAYMENT REQUIREMENTS FOR 1ST YEAR GOK SPONSORED STUDENTS"
+    },
+    { "href": "https://www.mmu.ac.ke/fee-structure", "text": "" },
+    {
+      "href": "https://www.mmu.ac.ke/fee-structure",
+      "text": "Fee Structure & Fee payment details"
+    },
+    {
+      "href": "https://mmu.ac.ke/wp-content/uploads/2023/09/2023-GRADUATION-ANNOUCEMENT-WEBSITE-copy.pdf",
+      "text": ""
+    },
+    {
+      "href": "https://mmu.ac.ke/wp-content/uploads/2023/09/2023-GRADUATION-ANNOUCEMENT-WEBSITE-copy.pdf",
+      "text": "10TH GRADUATION CEREMONY"
+    },
+    { "href": "https://staffportal.mmu.ac.ke", "text": "" },
+    {
+      "href": "https://staffportal.mmu.ac.ke",
+      "text": "Staff Portal"
+    },
+    { "href": "https://studentportal.mmu.ac.ke", "text": "" },
+    {
+      "href": "https://studentportal.mmu.ac.ke",
+      "text": "Student Portal"
+    },
+    { "href": "https://www.gmail.com", "text": "" },
+    {
+      "href": "https://www.gmail.com",
+      "text": "Staff/Student Email"
+    },
+    { "href": "https://ictsupport.mmu.ac.ke", "text": "" },
+    {
+      "href": "https://ictsupport.mmu.ac.ke",
+      "text": "ICT Support Ticket"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-social-sciences-and-technology/",
+      "text": "\n "
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-social-sciences-and-technology/",
+      "text": "Read More"
+    },
+    {
+      "href": "https://mmu.ac.ke/profile/admin/",
+      "text": "webmaster"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-social-sciences-and-technology/",
+      "text": "Faculty of Social Sciences and Technology"
+    },
+    {
+      "href": "https://mmu.ac.ke/profile/admin/",
+      "text": "webmaster"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-social-sciences-and-technology/",
+      "text": "Read More"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-science-and-technology/",
+      "text": "\n "
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-science-and-technology/",
+      "text": "Read More"
+    },
+    {
+      "href": "https://mmu.ac.ke/profile/admin/",
+      "text": "webmaster"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-science-and-technology/",
+      "text": "Faculty of Science and Technology"
+    },
+    {
+      "href": "https://mmu.ac.ke/profile/admin/",
+      "text": "webmaster"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-science-and-technology/",
+      "text": "Read More"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-media-and-communication/",
+      "text": "\n "
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-media-and-communication/",
+      "text": "Read More"
+    },
+    {
+      "href": "https://mmu.ac.ke/profile/admin/",
+      "text": "webmaster"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-media-and-communication/",
+      "text": "Faculty of Media and Communication"
+    },
+    {
+      "href": "https://mmu.ac.ke/profile/admin/",
+      "text": "webmaster"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-media-and-communication/",
+      "text": "Read More"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-business-and-economics/",
+      "text": "\n "
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-business-and-economics/",
+      "text": "Read More"
+    },
+    {
+      "href": "https://mmu.ac.ke/profile/admin/",
+      "text": "webmaster"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-business-and-economics/",
+      "text": "Faculty of Business and Economics"
+    },
+    {
+      "href": "https://mmu.ac.ke/profile/admin/",
+      "text": "webmaster"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-business-and-economics/",
+      "text": "Read More"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-engineering-technology/",
+      "text": "\n "
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-engineering-technology/",
+      "text": "Read More"
+    },
+    {
+      "href": "https://mmu.ac.ke/profile/admin/",
+      "text": "webmaster"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-engineering-technology/",
+      "text": "Faculty of Engineering & Technology"
+    },
+    {
+      "href": "https://mmu.ac.ke/profile/admin/",
+      "text": "webmaster"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-engineering-technology/",
+      "text": "Read More"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-computing-and-information-technology-cit/",
+      "text": "\n "
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-computing-and-information-technology-cit/",
+      "text": "Read More"
+    },
+    {
+      "href": "https://mmu.ac.ke/profile/admin/",
+      "text": "webmaster"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-computing-and-information-technology-cit/",
+      "text": "Faculty of Computing and Information Technology (CIT)"
+    },
+    {
+      "href": "https://mmu.ac.ke/profile/admin/",
+      "text": "webmaster"
+    },
+    {
+      "href": "https://mmu.ac.ke/courses/faculty-of-computing-and-information-technology-cit/",
+      "text": "Read More"
+    },
+    {
+      "href": "https://mmu.ac.ke/as-you-study-to-the-best-embrace-extracurricular-activities-students-told/",
+      "text": ""
+    },
+    {
+      "href": "https://mmu.ac.ke/as-you-study-to-the-best-embrace-extracurricular-activities-students-told/",
+      "text": "As you study to the best, embrace extracurricular activities, students told"
+    },
+    {
+      "href": "https://mmu.ac.ke/as-you-study-to-the-best-embrace-extracurricular-activities-students-told/",
+      "text": "Read more\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+    },
+    {
+      "href": "https://mmu.ac.ke/stakeholders-meet-to-review-mmu-phd-master-in-electrical-and-electronics-engineering/",
+      "text": ""
+    },
+    {
+      "href": "https://mmu.ac.ke/stakeholders-meet-to-review-mmu-phd-master-in-electrical-and-electronics-engineering/",
+      "text": "Stakeholders meet to review MMU PhD, Master in Electrical and Electronics Engineering programmes"
+    },
+    {
+      "href": "https://mmu.ac.ke/stakeholders-meet-to-review-mmu-phd-master-in-electrical-and-electronics-engineering/",
+      "text": "Read more\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+    },
+    {
+      "href": "https://mmu.ac.ke/vc-lauds-muksa-leaders-for-prioritizing-students-welfare-matters/",
+      "text": ""
+    },
+    {
+      "href": "https://mmu.ac.ke/vc-lauds-muksa-leaders-for-prioritizing-students-welfare-matters/",
+      "text": "VC lauds MUKSA leaders for prioritizing students\u2019 welfare matters"
+    },
+    {
+      "href": "https://mmu.ac.ke/vc-lauds-muksa-leaders-for-prioritizing-students-welfare-matters/",
+      "text": "Read more\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+    },
+    { "href": "#", "text": "\u2039" },
+    { "href": "#", "text": "\u203a" },
+    {
+      "href": "https://mmu.ac.ke/events/vice-chancellors-address/",
+      "text": " Vice Chancellor\u2019s Address"
+    },
+    {
+      "href": "https://mmu.ac.ke/events/innovators-sensitization-workshop/",
+      "text": " Innovator\u2019s Sensitization Workshop"
+    },
+    { "href": "https://mmu.ac.ke/events/", "text": "View All" },
+    { "href": "tel:020 7252000 ", "text": "020 7252000 " },
+    { "href": "mailto:info@mmu.ac.ke", "text": "info@mmu.ac.ke" },
+    { "href": "https://www.facebook.com/MultimediaUni/", "text": "" },
+    {
+      "href": "https://twitter.com/multimedia_uni?lang=en",
+      "text": ""
+    },
+    { "href": "http://www.mmu.ac.ke", "text": "Home" },
+    { "href": "https://mmu.ac.ke/about-us/", "text": "About Us" },
+    { "href": "https://mmu.ac.ke/contact/", "text": "Contact" },
+    { "href": "https://mmu.ac.ke/library/", "text": "Library" },
+    { "href": "http://elearning.mmu.ac.ke", "text": "Elearning" },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-media-and-communication/",
+      "text": "Media and Communication"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-engineering-and-technology/",
+      "text": "Engineering"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-business-and-economics/",
+      "text": "Business and Economics"
+    },
+    {
+      "href": "https://mmu.ac.ke/faculty-of-science-and-technology/",
+      "text": "Science and Technology"
+    },
+    {
+      "href": "http://www.mmu.ac.ke/courses/faculty-of-computing-and-information-technology-cit/",
+      "text": "CIT"
+    },
+    {
+      "href": "http://www.mmu.ac.ke/faculty-of-social-sciences-and-technology/",
+      "text": "Social Science"
+    },
+    {
+      "href": "https://staffportal.mmu.ac.ke/",
+      "text": "Staff Portal"
+    },
+    {
+      "href": "https://studentportal.mmu.ac.ke/",
+      "text": "Student Portal"
+    },
+    { "href": "https://kuccps.mmu.ac.ke:447/", "text": "KUCCPS" },
+    {
+      "href": "https://ictsupport.mmu.ac.ke/login.php",
+      "text": "ICT SUPPORT SYSTEM"
+    },
+    {
+      "href": "https://mail.mmu.ac.ke/gw/webacc",
+      "text": "Staff Email"
+    },
+    { "href": "http://opac.mmu.ac.ke/", "text": "Opac Library" },
+    {
+      "href": "http://elibrarymmu.remotexs.co/",
+      "text": "E-Resouces"
+    },
+    { "href": "#", "text": "Privacy" },
+    { "href": "#", "text": "Terms" },
+    { "href": "#", "text": "Sitemap" },
+    { "href": "#wp-toolbar", "text": "Skip to toolbar" },
+    { "href": "https://wordpress.org/", "text": "WordPress.org" },
+    {
+      "href": "https://wordpress.org/support/",
+      "text": "Documentation"
+    },
+    {
+      "href": "https://wordpress.org/support/forums/",
+      "text": "Support"
+    },
+    {
+      "href": "https://wordpress.org/support/forum/requests-and-feedback",
+      "text": "Feedback"
+    },
+    {
+      "href": "https://mmu.ac.ke/wp-login.php?redirect_to=https%3A%2F%2Fmmu.ac.ke%2F",
+      "text": "Log In"
     }
   ],
   "images": [
+    { "src": "", "alt": "" },
     {
-      "src": "/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png",
-      "alt": "Google"
+      "src": "https://mmu.ac.ke/wp-content/uploads/2023/05/Website-Banner-1-1.png",
+      "alt": "Multimedia University of Kenya"
     },
-    { "src": "/textinputassistant/tia.png", "alt": "" }
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2023/05/Website-Banner-1-1.png",
+      "alt": "Multimedia University of Kenya"
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "//mmu.ac.ke/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "alt": ""
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2019/05/Faculty-Pc5-400x300.jpg",
+      "alt": "Faculty of Social Sciences and Technology"
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2019/05/Faculty-Pc6-400x300.jpg",
+      "alt": "Faculty of Science and Technology"
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2019/05/Faculty-Pics-400x300.jpg",
+      "alt": "Faculty of Media and Communication"
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2019/05/Faculty-pc-6-400x300.jpg",
+      "alt": "Faculty of Business and Economics"
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2019/05/Faculty-Pic-3-400x300.jpg",
+      "alt": "Faculty of Engineering & Technology"
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2019/05/Faculty-Pic2-400x300.jpg",
+      "alt": "Faculty of Computing and Information Technology (CIT)"
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2023/05/1-scaled.jpg",
+      "alt": "As you study to the best, embrace extracurricular activities, students told"
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2023/05/DSC_7159-scaled.jpg",
+      "alt": "Stakeholders meet to review MMU PhD, Master in Electrical and Electronics Engineering programmes"
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2022/09/DSC_6216-scaled.jpg",
+      "alt": "VC lauds MUKSA leaders for prioritizing students\u2019 welfare matters"
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2019/12/slider3-300x138.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2019/12/park-300x200.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2019/12/pool-300x200.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2019/12/hotel-2-300x200.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://mmu.ac.ke/wp-content/uploads/2019/12/ictmuseum-300x200.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.mmu.ac.ke/wp-content/uploads/2020/03/mmuicon-150x150.png",
+      "alt": ""
+    }
   ],
   "heading_structure": {
     "article": [],
-    "aside": [],
-    "div": [[], [], [], [], [], [], [], [], [], [], [], [], [], []],
-    "footer": [],
+    "aside": [[], [], []],
+    "div": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [2],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [2],
+      [2],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [4],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [4],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [4],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [4],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [2],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [2],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [2],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [2],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [2],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [2],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [5],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [5],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [3],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "footer": [[]],
     "form": [[]],
-    "header": [],
-    "li": [],
+    "header": [[]],
+    "li": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [4],
+      [4],
+      [4],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
     "main": [],
-    "nav": [],
+    "nav": [[], []],
     "ol": [],
-    "p": [[]],
+    "p": [[], [], [], [], [], [], [], [], [], [], [], [], [], []],
     "pre": [],
     "section": [],
-    "table": [[]],
-    "ul": []
+    "table": [],
+    "ul": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
   },
-  "form_fields": {
-    "ie": "",
-    "hl": "",
-    "source": "",
-    "biw": "",
-    "bih": "",
-    "q": "",
-    "btnG": "",
-    "btnI": "",
-    "iflsig": "",
-    "gbv": ""
-  }
+  "form_fields": [
+    { "name": "s", "label": "", "type": "text" },
+    { "name": "submit", "label": "Search", "type": "submit" }
+  ]
 }

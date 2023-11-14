@@ -107,18 +107,6 @@ class Scraper:
 
                 element_headings_arr.append(heading_levels)
 
-            elements_headings_dict[element] = element_headings_arr
-
-        return elements_headings_dict
-
-            # for i, instance in enumerate(element_instances):
-            #     headings = instance.findChildren(
-            #         ["h1", "h2", "h3", "h4", "h5", "h6"], recursive=False
-            #     )
-            #     heading_levels = [int(heading.name[1]) for heading in headings]
-
-            #     element_headings_dict[f"{element}_{i+1}"] = heading_levels
-
                 # if len(heading_levels) > 1:
                 #     for j in range(len(heading_levels) - 1):
                 #         if heading_levels[j + 1] - heading_levels[j] > 1:
@@ -126,13 +114,13 @@ class Scraper:
                 #                 f"Warning: Heading structure in {element}_{i+1} does not follow the recommended structure. Jump from h{heading_levels[j]} to h{heading_levels[j + 1]}."
                 #             )
 
-            # elements_headings_dict[element] = element_headings_dict
+            elements_headings_dict[element] = element_headings_arr
 
-        # return elements_headings_dict
+        return elements_headings_dict
 
     def extract_form_fields(self):
         form_fields = self.soup.find_all("input")
-        form_fields_dict = {}
+        form_fields_arr = []
 
         for field in form_fields:
             label = field.find_previous_sibling("label")
@@ -142,13 +130,35 @@ class Scraper:
                 label_text = ""
 
             if field.has_attr("name"):
-                form_fields_dict[field["name"]] = label_text
+                form_fields_arr.append(
+                    {"name": field["name"], "label": label_text, "type": field["type"]}
+                )
             elif field.has_attr("id"):
-                form_fields_dict[field["id"]] = label_text
+                form_fields_arr.append(
+                    {"name": field["id"], "label": label_text, "type": field["type"]}
+                )
             else:
-                form_fields_dict[field["type"]] = label_text
+                form_fields_arr.append(
+                    {"name": field["type"], "label": label_text, "type": field["type"]}
+                )
 
-        return form_fields_dict
+        return form_fields_arr
+
+        # for field in form_fields:
+        #     label = field.find_previous_sibling("label")
+        #     if label:
+        #         label_text = label.text
+        #     else:
+        #         label_text = ""
+
+        #     if field.has_attr("name"):
+        #         form_fields_dict[field["name"]] = label_text
+        #     elif field.has_attr("id"):
+        #         form_fields_dict[field["id"]] = label_text
+        #     else:
+        #         form_fields_dict[field["type"]] = label_text
+
+        # return form_fields_dict
 
     def save_to_json(self, data):
         path = self.build_file_path("data")

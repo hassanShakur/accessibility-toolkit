@@ -110,3 +110,8 @@ Tue Nov 14 11:13:59 2023 https://www.google.com 1.74237
 Tue Nov 14 11:14:35 2023 https://www.google.com 3.59035
 Tue Nov 14 11:15:57 2023 https://www.google.com 2.96592
 Tue Nov 14 11:31:01 2023 https://www.google.com 5.00872
+Tue Nov 14 11:34:22 2023 https://www.google.com 3.01967
+Tue Nov 14 11:35:00 2023 https://hassanshakur.vercel.app 2.15259
+Tue Nov 14 11:35:40 2023 https://www.google.com 1.77976
+Tue Nov 14 11:36:02 2023 https://www.google.com 1.76008
+Tue Nov 14 11:37:18 2023 https://www.mmu.ac.ke 21.56038

@@ -47,4 +47,21 @@ const pageInfoAnalyzer = (pageInfo: PageInfo) => {
   };
 };
 
+const formFieldAnalyzer = (formFields: FormField[]) => {
+  const fieldsCount = formFields.length;
+  const total = fieldsCount * 3;
+  let score = 0;
+  formFields.forEach((field) => {
+    if (field.label) score += 1;
+    if (field.name) score += 1;
+    if (field.type) score += 1;
+  });
+  score = (score / total) * 100;
+  return {
+    score,
+    total,
+    fieldsCount,
+  };
+};
+
 export default analyzer;

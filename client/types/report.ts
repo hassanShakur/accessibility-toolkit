@@ -1,8 +1,8 @@
 export interface Report {
   page_info: PageInfo;
   page_structure: PageStructure;
-  links: LinkStruct[];
-  images: ImageStruct[];
+  links: LinkStructure[];
+  images: ImageStructure[];
   heading_structure: HeadingStructure;
   form_fields: FormField[];
 }
@@ -21,12 +21,12 @@ export interface PageStructure {
   main: boolean;
 }
 
-export interface LinkStruct {
+export interface LinkStructure {
   href: string;
   text: string;
 }
 
-export interface ImageStruct {
+export interface ImageStructure {
   src: string;
   alt: string;
 }

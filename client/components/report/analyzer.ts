@@ -4,8 +4,8 @@ import {
   PageInfo,
   FormField,
   HeadingStructure,
-  ImageStruct,
-  LinkStruct,
+  ImageStructure,
+  LinkStructure,
 } from '@/types/report';
 
 const analyzer = (report: Report) => {};
@@ -61,6 +61,42 @@ const formFieldAnalyzer = (formFields: FormField[]) => {
     score,
     total,
     fieldsCount,
+  };
+};
+
+const headingStructAnalyzer = (headingStruct: HeadingStructure) => {
+  let total = 0;
+  let emptyBlocks = 0;
+  let wrongOrder = 0;
+
+  for (const [key, value] of Object.entries(headingStruct)) {
+    if (value.length === 0) continue;
+
+    total += value.length;
+    value.map((entry: number[]) => {
+      if (entry.length === 0) emptyBlocks += 1;
+
+      let prevNum = entry[0];
+      let entryWrongOrder = false;
+
+      entry.map((num: number) => {
+        if (num < prevNum) {
+          entryWrongOrder = true;
+          return;
+        }
+        prevNum = num;
+      });
+
+      if (entryWrongOrder) wrongOrder += 1;
+    });
+  }
+
+  const score = ((total - emptyBlocks - wrongOrder) / total) * 100;
+  return {
+    score,
+    total,
+    emptyBlocks,
+    wrongOrder,
   };
 };
 

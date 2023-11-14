@@ -1,12 +1,15 @@
-import type { Metadata } from 'next';
+'use client'
+// import type { Metadata } from 'next';
 import './globals.scss';
 import Header from '@/components/header';
 import SideNav from '@/components/sideNav';
+import { Provider } from 'react-redux';
+import store from '@/redux/store';
 
-export const metadata: Metadata = {
-  title: 'Accessibility Toolkit',
-  description: 'A toolkit for making your site more accessible.',
-};
+// export const metadata: Metadata = {
+//   title: 'Accessibility Toolkit',
+//   description: 'A toolkit for making your site more accessible.',
+// };
 
 export default function RootLayout({
   children,
@@ -14,14 +17,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body>
-        <Header />
-        <div id='main-layout'>
-          <SideNav />
-          <div id='main-content'>{children}</div>
-        </div>
-      </body>
-    </html>
+    <Provider store={store}>
+      <html lang='en'>
+        <body>
+          <Header />
+          <div id='main-layout'>
+            <SideNav />
+            <div id='main-content'>{children}</div>
+          </div>
+        </body>
+      </html>
+    </Provider>
   );
 }

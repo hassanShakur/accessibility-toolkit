@@ -37,5 +37,6 @@ const reportSlice = createSlice({
 });
 
 export const reportActions = reportSlice.actions;
+export type ReportState = ReturnType<typeof reportSlice.reducer>;
 
 export default reportSlice.reducer;

@@ -144,22 +144,6 @@ class Scraper:
 
         return form_fields_arr
 
-        # for field in form_fields:
-        #     label = field.find_previous_sibling("label")
-        #     if label:
-        #         label_text = label.text
-        #     else:
-        #         label_text = ""
-
-        #     if field.has_attr("name"):
-        #         form_fields_dict[field["name"]] = label_text
-        #     elif field.has_attr("id"):
-        #         form_fields_dict[field["id"]] = label_text
-        #     else:
-        #         form_fields_dict[field["type"]] = label_text
-
-        # return form_fields_dict
-
     def save_to_json(self, data):
         path = self.build_file_path("data")
         with open(f"{path}/data.json", "w") as json_file:
@@ -183,4 +167,3 @@ if __name__ == "__main__":
     scraper = Scraper(url)
     print(f"Scraped {url} in {time.time() - start_time:.5f} seconds.")
     scraper.log_details(url)
-# scraper = Scraper("https://www.google.com")

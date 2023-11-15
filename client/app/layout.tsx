@@ -1,15 +1,11 @@
 'use client'
-// import type { Metadata } from 'next';
 import './globals.scss';
 import Header from '@/components/header';
 import SideNav from '@/components/sideNav';
 import { Provider } from 'react-redux';
 import store from '@/redux/store';
 
-// export const metadata: Metadata = {
-//   title: 'Accessibility Toolkit',
-//   description: 'A toolkit for making your site more accessible.',
-// };
+
 
 export default function RootLayout({
   children,

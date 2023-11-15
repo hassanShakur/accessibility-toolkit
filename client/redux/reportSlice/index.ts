@@ -15,8 +15,6 @@ export const getReport = createAsyncThunk(
 const initialState = {
   report: {
     status: '',
-    // data that can be type null is not included in the report
-    // so it is not included in the interface
     data: {
       ...emptyReport,
     },

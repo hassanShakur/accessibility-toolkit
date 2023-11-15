@@ -8,7 +8,6 @@ setupApp(app);
 
 app.post('/api/scrape', async (req, res) => {
   const { url } = req.body;
-  console.log(url);
 
   try {
     const scrapeStatus = await siteScraper(url);

@@ -27,7 +27,6 @@ class Scraper:
                 "heading_structure": self.heading_structure,
                 "form_fields": self.form_fields,
             }
-            print(self.data)
             self.save_to_json(self.data)
         except Exception as e:
             print(f"Error: {e}")
@@ -107,13 +106,6 @@ class Scraper:
 
                 element_headings_arr.append(heading_levels)
 
-                # if len(heading_levels) > 1:
-                #     for j in range(len(heading_levels) - 1):
-                #         if heading_levels[j + 1] - heading_levels[j] > 1:
-                #             print(
-                #                 f"Warning: Heading structure in {element}_{i+1} does not follow the recommended structure. Jump from h{heading_levels[j]} to h{heading_levels[j + 1]}."
-                #             )
-
             elements_headings_dict[element] = element_headings_arr
 
         return elements_headings_dict
@@ -131,15 +123,15 @@ class Scraper:
 
             if field.has_attr("name"):
                 form_fields_arr.append(
-                    {"name": field["name"], "label": label_text, "type": field["type"]}
+                    {"name": field["name"], "label": label_text, "type": field["type"] if field.has_attr("type") else ""}
                 )
             elif field.has_attr("id"):
                 form_fields_arr.append(
-                    {"name": field["id"], "label": label_text, "type": field["type"]}
+                    {"name": field["id"], "label": label_text, "type": field["type"] if field.has_attr("type") else ""}
                 )
             else:
                 form_fields_arr.append(
-                    {"name": field["type"], "label": label_text, "type": field["type"]}
+                    {"name": field["type"], "label": label_text, "type": field["type"] if field.has_attr("type") else ""}
                 )
 
         return form_fields_arr

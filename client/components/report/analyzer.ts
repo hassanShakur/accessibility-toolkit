@@ -136,8 +136,8 @@ const headingStructAnalyzer = (headingStruct: HeadingStructure) => {
     });
   }
 
-  if (total === 0) return { score: 100, total: 0 };
   total -= emptyBlocks;
+  if (total === 0) return { score: 100, total: 0 };
 
   const score = ((total - wrongOrder) / total) * 100;
   return {

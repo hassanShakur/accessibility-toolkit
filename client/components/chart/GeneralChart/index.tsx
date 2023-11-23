@@ -1,6 +1,6 @@
 import AnalyzedData from '@/types/analyzedData';
-import AccessDough from './GeneralChart/AccessDough';
-import ElementsCount from './GeneralChart/ElementsCount';
+import AccessDough from './AccessDough';
+import ElementsCount from './ElementsCount';
 
 interface propsType {
   siteData: AnalyzedData;

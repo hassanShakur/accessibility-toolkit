@@ -42,13 +42,15 @@ const ElementsCount = (props: propsType) => {
         data: Object.values(structElementsCount),
         backgroundColor: '#ffaa01',
         borderColor: '#ffaa01',
+        borderWidth: 0,
+        borderRadius: 5,
       },
     ],
   };
 
   const options = {
     plugins: {
-      indexAxis: 'x',
+      indexAxis: 'y',
       legend: {
         display: false,
       },

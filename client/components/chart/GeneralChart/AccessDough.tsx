@@ -23,6 +23,7 @@ const AccessDough = (props: propsType) => {
         label: 'Total',
         data: [totalScore - accessibilityScore, accessibilityScore],
         backgroundColor: ['#004948', '#0be982'],
+        borderWidth: 0,
       },
     ],
   };

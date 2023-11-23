@@ -1,6 +1,7 @@
 interface PageInfo {
   score: number;
   total: number;
+  itemsCount: number;
   titleCount: number;
   descriptionCount: number;
   viewportCount: number;
@@ -10,6 +11,7 @@ interface PageInfo {
 interface PageStruct {
   score: number;
   total: number;
+  itemsCount: number;
   headerCount: number;
   footerCount: number;
   navCount: number;
@@ -20,26 +22,31 @@ interface FormField {
   score: number;
   total: number;
   fieldsCount: number;
+  itemsCount: number;
 }
 
 interface HeadingStruct {
   score: number;
   total: number;
+  itemsCount: number;
 }
 
 interface ImageStruct {
   score: number;
   total: number;
+  itemsCount: number;
 }
 
 interface LinkStruct {
   score: number;
   total: number;
+  itemsCount: number;
 }
 
 interface AnalyzedData {
   total: number;
   score: number;
+  itemsCount: number;
   pageInfo: PageInfo;
   pageStruct: PageStruct;
   formField: FormField;
@@ -51,6 +58,7 @@ interface AnalyzedData {
 export const emptyAnalyzedData = {
   total: 0,
   score: 0,
+  itemsCount: 0,
   pageInfo: {
     score: 0,
     total: 0,

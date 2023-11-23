@@ -40,6 +40,15 @@ const analyzer = (report: Report) => {
       linkStruct.score) /
     6;
 
+  const itemsCount =
+    pageInfo.itemsCount +
+    pageStruct.itemsCount +
+    formField.itemsCount +
+    formField.itemsCount +
+    headingStruct.itemsCount +
+    imageStruct.itemsCount +
+    linkStruct.itemsCount;
+
   return {
     total,
     score,
@@ -49,11 +58,13 @@ const analyzer = (report: Report) => {
     headingStruct,
     imageStruct,
     linkStruct,
+    itemsCount,
   };
 };
 
 const pageStructAnalyzer = (pageStructure: PageStructure) => {
   const { header, footer, nav, main } = pageStructure;
+  const itemsCount = Object.keys(pageStructure).length;
   const headerCount = header ? 1 : 0;
   const footerCount = footer ? 1 : 0;
   const navCount = nav ? 1 : 0;
@@ -67,11 +78,13 @@ const pageStructAnalyzer = (pageStructure: PageStructure) => {
     footerCount,
     navCount,
     mainCount,
+    itemsCount,
   };
 };
 
 const pageInfoAnalyzer = (pageInfo: PageInfo) => {
   const { title, description, viewport, language } = pageInfo;
+  const itemsCount = Object.keys(pageInfo).length;
   const titleCount = title ? 1 : 0;
   const descriptionCount = description ? 1 : 0;
   const viewportCount = viewport ? 1 : 0;
@@ -86,13 +99,15 @@ const pageInfoAnalyzer = (pageInfo: PageInfo) => {
     descriptionCount,
     viewportCount,
     languageCount,
+    itemsCount,
   };
 };
 
 const formFieldAnalyzer = (formFields: FormField[]) => {
   const fieldsCount = formFields.length;
+  const itemsCount = fieldsCount;
 
-  if (fieldsCount === 0) return { score: 100, total: 0, fieldsCount };
+  if (fieldsCount === 0) return { score: 100, total: 0, fieldsCount, itemsCount };
 
   const total = fieldsCount * 3;
   let score = 0;
@@ -106,6 +121,7 @@ const formFieldAnalyzer = (formFields: FormField[]) => {
     score,
     total,
     fieldsCount,
+    itemsCount,
   };
 };
 
@@ -136,8 +152,9 @@ const headingStructAnalyzer = (headingStruct: HeadingStructure) => {
     });
   }
 
+  const itemsCount = total;
   total -= emptyBlocks;
-  if (total === 0) return { score: 100, total: 0 };
+  if (total === 0) return { score: 100, total: 0, emptyBlocks, wrongOrder, itemsCount };
 
   const score = ((total - wrongOrder) / total) * 100;
   return {
@@ -145,12 +162,14 @@ const headingStructAnalyzer = (headingStruct: HeadingStructure) => {
     total,
     emptyBlocks,
     wrongOrder,
+    itemsCount,
   };
 };
 
 const imageStructAnalyzer = (imageStruct: ImageStructure[]) => {
   const total = imageStruct.length * 2;
-  if (total === 0) return { score: 100, total: 0 };
+  const itemsCount = imageStruct.length;
+  if (total === 0) return { score: 100, total: 0, itemsCount };
 
   let score = 0;
 
@@ -164,12 +183,13 @@ const imageStructAnalyzer = (imageStruct: ImageStructure[]) => {
   return {
     score,
     total,
+    itemsCount,
   };
 };
 
 const linkStructAnalyzer = (linkStruct: LinkStructure[]) => {
   const total = linkStruct.length;
-  if (total === 0) return { score: 100, total: 0 };
+  if (total === 0) return { score: 100, total: 0, itemsCount: 0 };
 
   let score = 0;
 
@@ -182,6 +202,7 @@ const linkStructAnalyzer = (linkStruct: LinkStructure[]) => {
   return {
     score,
     total,
+    itemsCount: total,
   };
 };
 

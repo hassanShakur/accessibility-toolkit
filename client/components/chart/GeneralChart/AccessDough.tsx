@@ -17,7 +17,7 @@ const AccessDough = (props: propsType) => {
   const totalScore = 100;
 
   const data = {
-    labels: ['Accessibility', 'Issues'],
+    labels: ['Issues', 'Accessibility'],
     datasets: [
       {
         label: 'Total',

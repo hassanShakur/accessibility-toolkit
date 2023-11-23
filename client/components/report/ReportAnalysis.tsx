@@ -1,3 +1,4 @@
+import GeneralChart from '../chart/GeneralChart';
 import analyzer from './analyzer';
 import type Report from '@/types/report';
 
@@ -13,7 +14,13 @@ const ReportAnalysis = (props: PropType) => {
   const analyzedData = report ? analyzer(report) : null;
   console.log(analyzedData);
 
-  return <div>ReportAnalysis</div>;
+  return (
+    <div>
+      <h1>Report Analysis</h1>
+
+      {analyzedData && <GeneralChart siteData={analyzedData} />}
+    </div>
+  );
 };
 
 export default ReportAnalysis;

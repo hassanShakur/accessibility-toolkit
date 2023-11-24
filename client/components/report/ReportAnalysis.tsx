@@ -2,6 +2,7 @@ import GeneralChart from '../chart/GeneralChart';
 import PageInfo from '../chart/PageInfo';
 import analyzer from './analyzer';
 import type Report from '@/types/report';
+import './reportAnalysis.scss'
 
 interface PropType {
   report: {
@@ -13,7 +14,6 @@ interface PropType {
 const ReportAnalysis = (props: PropType) => {
   const report = props.report.data;
   const analyzedData = report ? analyzer(report) : null;
-  console.log(analyzedData);
 
   return (
     <div>

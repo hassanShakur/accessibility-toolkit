@@ -3,6 +3,7 @@ import infoImg from '@/public/images/info.png';
 import removeImg from '@/public/images/remove.png';
 import checkImg from '@/public/images/verification.png';
 import Image from 'next/image';
+import './pageInfo.scss'
 
 interface PropType {
   data: PageInfo;

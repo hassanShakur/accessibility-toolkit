@@ -54,7 +54,7 @@ const sampleData = {
 };
 
 const GeneralChart = (props: propsType) => {
-  console.log(props.siteData);
+  // console.log(props.siteData);
 
   return (
     <div id='visual'>

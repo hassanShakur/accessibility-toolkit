@@ -13,11 +13,9 @@ const Report = () => {
 
   if (loading) return <Spinner />;
 
-  return (
-    <div>
-      <ReportAnalysis report={report} />
-    </div>
-  );
+  if (error) return <p>Error occured: {error}</p>;
+
+  return <ReportAnalysis report={report} />;
 };
 
 export default Report;

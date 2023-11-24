@@ -16,13 +16,13 @@ const ReportAnalysis = (props: PropType) => {
   const analyzedData = report ? analyzer(report) : null;
 
   return (
-    <div>
+    <div id='analysis-page'>
       <h1>Report Analysis</h1>
 
       {analyzedData && (
         <section id='charts'>
           <GeneralChart siteData={analyzedData} />
-          <PageInfo data={analyzedData.pageInfo} />
+          {/* <PageInfo data={analyzedData.pageInfo} /> */}
         </section>
       )}
     </div>

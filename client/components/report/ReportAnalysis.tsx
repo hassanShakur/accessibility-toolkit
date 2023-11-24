@@ -1,4 +1,5 @@
 import GeneralChart from '../chart/GeneralChart';
+import PageInfo from '../chart/PageInfo';
 import analyzer from './analyzer';
 import type Report from '@/types/report';
 
@@ -18,7 +19,12 @@ const ReportAnalysis = (props: PropType) => {
     <div>
       <h1>Report Analysis</h1>
 
-      {analyzedData && <GeneralChart siteData={analyzedData} />}
+      {analyzedData && (
+        <section id='charts'>
+          <GeneralChart siteData={analyzedData} />
+          <PageInfo data={analyzedData.pageInfo} />
+        </section>
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-interface PageInfo {
+export interface PageInfo {
   score: number;
   total: number;
   itemsCount: number;
@@ -8,7 +8,7 @@ interface PageInfo {
   languageCount: number;
 }
 
-interface PageStruct {
+export interface PageStruct {
   score: number;
   total: number;
   itemsCount: number;
@@ -18,32 +18,32 @@ interface PageStruct {
   mainCount: number;
 }
 
-interface FormField {
+export interface FormField {
   score: number;
   total: number;
   fieldsCount: number;
   itemsCount: number;
 }
 
-interface HeadingStruct {
+export interface HeadingStruct {
   score: number;
   total: number;
   itemsCount: number;
 }
 
-interface ImageStruct {
+export interface ImageStruct {
   score: number;
   total: number;
   itemsCount: number;
 }
 
-interface LinkStruct {
+export interface LinkStruct {
   score: number;
   total: number;
   itemsCount: number;
 }
 
-interface AnalyzedData {
+export interface AnalyzedData {
   total: number;
   score: number;
   itemsCount: number;

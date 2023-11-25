@@ -7,7 +7,7 @@ import './pageStruct.scss';
 
 import { Chart, ArcElement, Legend, Tooltip } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import ColoredScore from './ColoredScore';
+import ColoredScore from '../ColoredScore';
 
 Chart.register(ArcElement, Legend, Tooltip);
 

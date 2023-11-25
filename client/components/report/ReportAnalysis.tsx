@@ -1,10 +1,10 @@
 import GeneralChart from '../chart/GeneralChart';
 import PageInfo from '../chart/PageInfo';
+import PageStruct from '../chart/PageStruct';
 import analyzer from './analyzer';
 import type Report from '@/types/report';
 import './reportAnalysis.scss'
 import './reportCard.scss'
-import PageStruct from '../chart/PageStruct';
 
 interface PropType {
   report: {

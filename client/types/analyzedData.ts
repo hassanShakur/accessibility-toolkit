@@ -23,6 +23,9 @@ export interface FormField {
   total: number;
   fieldsCount: number;
   itemsCount: number;
+  missingLabel: number;
+  missingName: number;
+  missingType: number;
 }
 
 export interface HeadingStruct {

@@ -1,5 +1,5 @@
 export const calcScoreColor = (score: number) => {
-  if (score >= 90) {
+  if (score >= 85) {
     return '#00ff00';
   } else if (score >= 50) {
     return '#ffa500';

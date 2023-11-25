@@ -8,6 +8,9 @@ import {
   LinkStructure,
 } from '@/types/report';
 
+const roundNum = (num: number) =>
+  Math.round((num + Number.EPSILON) * 100) / 100;
+
 const analyzer = (report: Report) => {
   const {
     page_info,
@@ -51,7 +54,7 @@ const analyzer = (report: Report) => {
 
   return {
     total,
-    score,
+    score: roundNum(score),
     pageInfo,
     pageStruct,
     formField,
@@ -105,23 +108,39 @@ const pageInfoAnalyzer = (pageInfo: PageInfo) => {
 
 const formFieldAnalyzer = (formFields: FormField[]) => {
   const fieldsCount = formFields.length;
-  const itemsCount = fieldsCount;
+  let itemsCount = fieldsCount * 3;
+  let missingLabel = 0;
+  let missingName = 0;
+  let missingType = 0;
 
-  if (fieldsCount === 0) return { score: 100, total: 0, fieldsCount, itemsCount };
+  if (fieldsCount === 0)
+    return {
+      score: 100,
+      total: 0,
+      fieldsCount,
+      itemsCount,
+      missingLabel,
+      missingName,
+      missingType,
+    };
 
   const total = fieldsCount * 3;
+
   let score = 0;
   formFields.forEach((field) => {
-    if (field.label) score += 1;
-    if (field.name) score += 1;
-    if (field.type) score += 1;
+    field.label ? (score += 1) : (missingLabel = 1);
+    field.name ? (score += 1) : (missingName = 1);
+    field.type ? (score += 1) : (missingType = 1);
   });
   score = (score / total) * 100;
   return {
-    score,
+    score: roundNum(score),
     total,
     fieldsCount,
     itemsCount,
+    missingLabel,
+    missingName,
+    missingType,
   };
 };
 
@@ -154,11 +173,18 @@ const headingStructAnalyzer = (headingStruct: HeadingStructure) => {
 
   const itemsCount = total;
   total -= emptyBlocks;
-  if (total === 0) return { score: 100, total: 0, emptyBlocks, wrongOrder, itemsCount };
+  if (total === 0)
+    return {
+      score: 100,
+      total: 0,
+      emptyBlocks,
+      wrongOrder,
+      itemsCount,
+    };
 
   const score = ((total - wrongOrder) / total) * 100;
   return {
-    score,
+    score: roundNum(score),
     total,
     emptyBlocks,
     wrongOrder,
@@ -181,7 +207,7 @@ const imageStructAnalyzer = (imageStruct: ImageStructure[]) => {
   score = (score / total) * 100;
 
   return {
-    score,
+    score: roundNum(score),
     total,
     itemsCount,
   };
@@ -200,7 +226,7 @@ const linkStructAnalyzer = (linkStruct: LinkStructure[]) => {
   score = (score / total) * 100;
 
   return {
-    score,
+    score: roundNum(score),
     total,
     itemsCount: total,
   };

@@ -22,6 +22,7 @@ app.post('/api/scrape', async (req, res) => {
 
     res.status(200).json({
       status: 'success',
+      url,
       data: siteData,
     });
   } catch (err) {

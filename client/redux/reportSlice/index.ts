@@ -15,6 +15,7 @@ export const getReport = createAsyncThunk(
 const initialState = {
   report: {
     status: '',
+    url: '',
     data: {
       ...emptyReport,
     },
@@ -26,7 +27,25 @@ const initialState = {
 const reportSlice = createSlice({
   name: 'report',
   initialState,
-  reducers: {},
+  reducers: {
+    resetReport(state) {
+      state.report = {
+        status: '',
+        url: '',
+        data: {
+          ...emptyReport,
+        },
+      };
+    },
+
+    resetError(state) {
+      state.error = '';
+    },
+
+    setReport(state, action) {
+      state.report = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getReport.pending, (state, action) => {
       state.loading = true;

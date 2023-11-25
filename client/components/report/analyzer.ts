@@ -53,6 +53,8 @@ const analyzer = (report: Report) => {
     imageStruct.itemsCount +
     linkStruct.itemsCount;
 
+    const siteDetails = getSiteDetails(page_info);
+
   return {
     total,
     score: roundNum(score),
@@ -63,6 +65,7 @@ const analyzer = (report: Report) => {
     imageStruct,
     linkStruct,
     itemsCount,
+    siteDetails,
   };
 };
 
@@ -229,7 +232,14 @@ const linkStructAnalyzer = (linkStruct: LinkStructure[]) => {
   const total = linkStruct.length;
   let missingHref = 0;
   let hashHref = 0;
-  if (total === 0) return { score: 100, total: 0, itemsCount: 0, missingHref, hashHref };
+  if (total === 0)
+    return {
+      score: 100,
+      total: 0,
+      itemsCount: 0,
+      missingHref,
+      hashHref,
+    };
 
   let score = 0;
 
@@ -254,6 +264,16 @@ const linkStructAnalyzer = (linkStruct: LinkStructure[]) => {
     itemsCount: total,
     missingHref,
     hashHref,
+  };
+};
+
+const getSiteDetails = (
+  pageInfo: PageInfo
+): { title: string; description: string } => {
+  const { title, description } = pageInfo;
+  return {
+    title,
+    description,
   };
 };
 

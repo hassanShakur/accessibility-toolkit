@@ -50,6 +50,11 @@ export interface LinkStruct {
   hashHref: number;
 }
 
+export interface SiteDetails {
+  title: string;
+  description: string;
+}
+
 export interface AnalyzedData {
   total: number;
   score: number;
@@ -66,6 +71,10 @@ export const emptyAnalyzedData = {
   total: 0,
   score: 0,
   itemsCount: 0,
+  siteDetails: {
+    title: '',
+    description: '',
+  },
   pageInfo: {
     score: 0,
     total: 0,

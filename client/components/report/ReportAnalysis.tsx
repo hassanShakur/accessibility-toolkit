@@ -9,21 +9,25 @@ import FormField from '../chart/FormField';
 import HeadingStruct from '../chart/HeadingStruct';
 import ImageStruct from '../chart/ImageStruct';
 import LinkStruct from '../chart/LinkStruct';
+import SiteDetails from './SiteDetails';
 
 interface PropType {
   report: {
     status: string;
+    url: string;
     data: Report;
   };
 }
 
 const ReportAnalysis = (props: PropType) => {
   const report = props.report.data;
+  const url = props.report.url;
   const analyzedData = report ? analyzer(report) : null;
 
   return (
     <div id='analysis-page'>
-      {/* <h1>Report Analysis</h1> */}
+      <h1>Report Analysis</h1>
+      <SiteDetails data={analyzedData?.siteDetails} url={url} />
 
       {analyzedData && (
         <section id='charts'>

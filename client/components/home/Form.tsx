@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { getReport } from '@/redux/reportSlice';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/redux/store';
+import { reportActions } from '@/redux/reportSlice';
 import './form.scss';
 
 const Form = () => {
@@ -13,6 +14,11 @@ const Form = () => {
 
   const urlSubmitHandler = async (e: FormEvent) => {
     e.preventDefault();
+    if (!url) return;
+
+    dispatch(reportActions.resetReport());
+    dispatch(reportActions.resetError());
+    
     router.push(`/report#${url}`);
     dispatch(getReport(url));
   };

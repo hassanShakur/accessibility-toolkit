@@ -1,5 +1,11 @@
 header {
-  background-color: transparent;
+  background-color: linear-gradient(
+    to bottom right,
+    hsla(229, 8%, 60%, 0.1),
+    transparent
+  );
+  backdrop-filter: blur(10px);
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   right: 0;

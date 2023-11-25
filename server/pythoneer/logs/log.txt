@@ -179,3 +179,5 @@ Sat Nov 25 11:07:53 2023 https://hassanshakur.vercel.app 2.66513
 Sat Nov 25 13:54:05 2023 https://hassanshakur.vercel.app 2.84644
 Sat Nov 25 13:54:45 2023 https://hassanshakur.vercel.app 2.48097
 Sat Nov 25 14:13:21 2023 https://hassanshakur.vercel.app 2.80830
+Sat Nov 25 14:38:33 2023 https://google.com 4.47579
+Sat Nov 25 14:39:17 2023 https://facebook.com 10.20469

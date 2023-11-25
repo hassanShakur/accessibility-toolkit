@@ -38,6 +38,8 @@ export interface ImageStruct {
   score: number;
   total: number;
   itemsCount: number;
+  missingSrc: number;
+  missingAlt: number;
 }
 
 export interface LinkStruct {

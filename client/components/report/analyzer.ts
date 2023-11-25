@@ -8,8 +8,9 @@ import {
   LinkStructure,
 } from '@/types/report';
 
-const roundNum = (num: number) =>
-  Math.round((num + Number.EPSILON) * 100) / 100;
+// const roundNum = (num: number) =>
+//   Math.round((num + Number.EPSILON) * 100) / 100;
+const roundNum = (num: number) => Math.ceil(num);
 
 const analyzer = (report: Report) => {
   const {
@@ -195,13 +196,22 @@ const headingStructAnalyzer = (headingStruct: HeadingStructure) => {
 const imageStructAnalyzer = (imageStruct: ImageStructure[]) => {
   const total = imageStruct.length * 2;
   const itemsCount = imageStruct.length;
-  if (total === 0) return { score: 100, total: 0, itemsCount };
+  let missingSrc = 0;
+  let missingAlt = 0;
+  if (total === 0)
+    return {
+      score: 100,
+      total: 0,
+      itemsCount,
+      missingSrc,
+      missingAlt,
+    };
 
   let score = 0;
 
   imageStruct.forEach((image) => {
-    if (image.src) score += 1;
-    if (image.alt) score += 1;
+    image.src ? (score += 1) : (missingSrc += 1);
+    image.alt ? (score += 1) : (missingAlt += 1);
   });
 
   score = (score / total) * 100;
@@ -210,6 +220,8 @@ const imageStructAnalyzer = (imageStruct: ImageStructure[]) => {
     score: roundNum(score),
     total,
     itemsCount,
+    missingSrc,
+    missingAlt,
   };
 };
 

@@ -28,7 +28,7 @@ const HeadingStruct = (props: PropType) => {
       {
         label: 'Heading Structure',
         data: [headingData.score, 100 - headingData.score],
-        backgroundColor: ['#dd0b78', '#464a50'],
+        backgroundColor: ['#ffa500', '#464a50'],
       },
     ],
   };

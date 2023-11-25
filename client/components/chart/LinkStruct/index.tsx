@@ -19,6 +19,7 @@ const LinkStruct = (props: PropType) => {
   const linkData = props.data;
   const infoItems = {
     missingHref: 'Href tags present',
+    hashHref: 'Hrefs pointing to #',
   };
 
   const data = {
@@ -27,7 +28,7 @@ const LinkStruct = (props: PropType) => {
       {
         label: 'Link Structure',
         data: [linkData.score, 100 - linkData.score],
-        backgroundColor: ['#dd0b78', '#464a50'],
+        backgroundColor: ['#2ec9ff', '#464a50'],
       },
     ],
   };

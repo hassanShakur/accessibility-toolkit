@@ -30,9 +30,9 @@ const ReportAnalysis = (props: PropType) => {
           <GeneralChart siteData={analyzedData} />
           <PageInfo data={analyzedData.pageInfo} />
           <PageStruct data={analyzedData.pageStruct} />
-          <FormField data={analyzedData.formField} />
           <HeadingStruct data={analyzedData.headingStruct} />
           <ImageStruct data={analyzedData.imageStruct} />
+          <FormField data={analyzedData.formField} />
           <LinkStruct data={analyzedData.linkStruct} />
         </section>
       )}

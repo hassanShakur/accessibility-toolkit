@@ -28,7 +28,7 @@ const ImageStruct = (props: PropType) => {
       {
         label: 'Image Structure',
         data: [imgData.score, 100 - imgData.score],
-        backgroundColor: ['#dd0b78', '#464a50'],
+        backgroundColor: ['#ed6560', '#464a50'],
       },
     ],
   };

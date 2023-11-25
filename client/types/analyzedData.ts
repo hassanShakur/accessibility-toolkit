@@ -47,6 +47,7 @@ export interface LinkStruct {
   total: number;
   itemsCount: number;
   missingHref: number;
+  hashHref: number;
 }
 
 export interface AnalyzedData {

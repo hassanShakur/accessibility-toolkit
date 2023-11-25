@@ -198,3 +198,8 @@ Sat Nov 25 17:44:15 2023 http://127.0.0.1:5500/index.html 2.02373
 Sat Nov 25 17:44:49 2023 http://127.0.0.1:5500/index.html 0.06564
 Sat Nov 25 17:45:05 2023  0.00969
 Sat Nov 25 17:45:11 2023 http://127.0.0.1:5500/index.html 0.02645
+Sat Nov 25 17:50:31 2023 http://127.0.0.1:5500/index.html 0.03504
+Sat Nov 25 17:55:55 2023 http://127.0.0.1:5500/index.html 0.01556
+Sat Nov 25 17:55:59 2023 http://127.0.0.1:5500/index.html 0.04253
+Sat Nov 25 18:00:19 2023 http://127.0.0.1:5500/index.html 0.04509
+Sat Nov 25 18:04:35 2023 https://hassanshakur.vercel.app 2.82759

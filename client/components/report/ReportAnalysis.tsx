@@ -3,6 +3,8 @@ import PageInfo from '../chart/PageInfo';
 import analyzer from './analyzer';
 import type Report from '@/types/report';
 import './reportAnalysis.scss'
+import './reportCard.scss'
+import PageStruct from '../chart/PageStruct';
 
 interface PropType {
   report: {
@@ -23,6 +25,7 @@ const ReportAnalysis = (props: PropType) => {
         <section id='charts'>
           <GeneralChart siteData={analyzedData} />
           <PageInfo data={analyzedData.pageInfo} />
+          <PageStruct data={analyzedData.pageStruct} />
         </section>
       )}
     </div>

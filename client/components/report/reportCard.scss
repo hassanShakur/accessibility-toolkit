@@ -1,0 +1,101 @@
+.card {
+  width: 100%;
+  height: auto;
+  background-color: var(
+    --nav-back-color
+  ); // --nav-back-color: #101317;
+  color: var(--text-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card .card-header {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .card-header img {
+  width: 50px;
+  height: 50px;
+}
+
+.card .card-header h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.card .card-header h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.card .card-body {
+  width: 85%;
+  height: 80%;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .card-body canvas {
+  width: 10rem;
+  height: 10rem;
+}
+
+.card .card-body .card-pointers {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.card .card-body .card-pointers p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.card .card-body .card-pointers ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.card .card-body .card-pointers ul li {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card .card-body .card-pointers ul li img {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+}
+
+.card .card-body .card-pointers ul li p {
+  font-size: 1rem;
+  font-weight: 500;
+}

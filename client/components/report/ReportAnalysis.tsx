@@ -8,6 +8,7 @@ import './reportCard.scss'
 import FormField from '../chart/FormField';
 import HeadingStruct from '../chart/HeadingStruct';
 import ImageStruct from '../chart/ImageStruct';
+import LinkStruct from '../chart/LinkStruct';
 
 interface PropType {
   report: {
@@ -32,6 +33,7 @@ const ReportAnalysis = (props: PropType) => {
           <FormField data={analyzedData.formField} />
           <HeadingStruct data={analyzedData.headingStruct} />
           <ImageStruct data={analyzedData.imageStruct} />
+          <LinkStruct data={analyzedData.linkStruct} />
         </section>
       )}
     </div>

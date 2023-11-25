@@ -227,12 +227,13 @@ const imageStructAnalyzer = (imageStruct: ImageStructure[]) => {
 
 const linkStructAnalyzer = (linkStruct: LinkStructure[]) => {
   const total = linkStruct.length;
-  if (total === 0) return { score: 100, total: 0, itemsCount: 0 };
+  let missingHref = 0;
+  if (total === 0) return { score: 100, total: 0, itemsCount: 0, missingHref };
 
   let score = 0;
 
   linkStruct.forEach((link) => {
-    if (link.href) score += 1;
+    (link.href) ? score += 1 : missingHref += 1;
   });
 
   score = (score / total) * 100;
@@ -241,6 +242,7 @@ const linkStructAnalyzer = (linkStruct: LinkStructure[]) => {
     score: roundNum(score),
     total,
     itemsCount: total,
+    missingHref,
   };
 };
 

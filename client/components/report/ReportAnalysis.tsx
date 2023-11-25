@@ -6,6 +6,7 @@ import type Report from '@/types/report';
 import './reportAnalysis.scss'
 import './reportCard.scss'
 import FormField from '../chart/FormField';
+import HeadingStruct from '../chart/HeadingStruct';
 
 interface PropType {
   report: {
@@ -28,6 +29,7 @@ const ReportAnalysis = (props: PropType) => {
           <PageInfo data={analyzedData.pageInfo} />
           <PageStruct data={analyzedData.pageStruct} />
           <FormField data={analyzedData.formField} />
+          <HeadingStruct data={analyzedData.headingStruct} />
         </section>
       )}
     </div>

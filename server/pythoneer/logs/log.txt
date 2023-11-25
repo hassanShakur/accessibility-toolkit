@@ -167,3 +167,11 @@ Thu Nov 23 10:29:19 2023 https://google.com 3.88290
 Thu Nov 23 14:35:21 2023 https://google.com 3.73421
 Thu Nov 23 15:16:58 2023 https://google.com 3.83497
 Thu Nov 23 16:40:21 2023 https://google.com 3.51532
+Fri Nov 24 17:06:46 2023 https://hassanshakur.vercel.app 7.78320
+Fri Nov 24 17:33:24 2023 https://hassanshakur.vercel.app 2.57753
+Fri Nov 24 17:34:01 2023 https://hassanshakur.vercel.app 1.55730
+Fri Nov 24 17:35:07 2023 https://hassanshakur.vercel.app 1.26646
+Fri Nov 24 17:35:13 2023 https://hassanshakur.vercel.app 1.67489
+Fri Nov 24 17:44:20 2023 https://google.com 5.79170
+Fri Nov 24 17:46:00 2023 https://google.com 4.10351
+Fri Nov 24 18:11:15 2023 https://hassanshakur.vercel.app 2.62890

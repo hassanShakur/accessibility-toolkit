@@ -1,6 +1,7 @@
 import AnalyzedData from '@/types/analyzedData';
 import AccessDough from './AccessDough';
 import ElementsCount from './ElementsCount';
+import './generalChart.scss'
 
 interface propsType {
   siteData: AnalyzedData;
@@ -55,11 +56,12 @@ const sampleData = {
 
 const GeneralChart = (props: propsType) => {
   // console.log(props.siteData);
+  const data = props.siteData;
 
   return (
-    <div id='visual'>
-      <AccessDough accessibilityScore={sampleData.score} />
-      <ElementsCount data={sampleData} />
+    <div id='summary'>
+      <AccessDough accessibilityScore={data.score} />
+      <ElementsCount data={data} />
     </div>
   );
 };

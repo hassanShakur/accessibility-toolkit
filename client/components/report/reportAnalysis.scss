@@ -3,6 +3,10 @@
   min-height: 100%;
   padding: 2rem;
   margin: 0;
+}
+
+#charts {
   display: grid;
-  gap: 2rem;
+  align-items: start;
+  gap: 1rem;
 }

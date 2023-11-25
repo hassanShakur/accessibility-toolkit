@@ -9,5 +9,17 @@
   display: grid;
   align-items: start;
   gap: 3rem;
-  margin-top: 3rem;
+  margin: 3rem 0;
+
+  .card:nth-child(odd) {
+    .card-header {
+      flex-direction: row-reverse;
+    }
+
+    .card-body {
+      flex-direction: row-reverse;
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
 }

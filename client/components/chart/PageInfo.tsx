@@ -7,6 +7,7 @@ import './pageInfo.scss';
 
 import { Chart, ArcElement, Legend, Tooltip } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import ColoredScore from './ColoredScore';
 
 Chart.register(ArcElement, Legend, Tooltip);
 
@@ -29,33 +30,17 @@ const PageInfo = (props: PropType) => {
       {
         label: 'Page Information',
         data: [pageData.score, 100 - pageData.score],
-        backgroundColor: ['#3e95cd', '#8e5ea2'],
+        backgroundColor: ['#2ec9ff', '#464a50'],
       },
     ],
-  };
-
-  const calcScoreColor = (score: number) => {
-    if (score >= 90) {
-      return 'green';
-    } else if (score >= 50) {
-      return 'orange';
-    } else {
-      return 'red';
-    }
   };
 
   return (
     <div id='page-info' className='card'>
       <div className='card-header'>
         <Image src={infoImg} alt='info' />
-        <h3>Page Information</h3>
-        <h1
-          style={{
-            color: calcScoreColor(pageData.score),
-          }}
-        >
-          {pageData.score}%
-        </h1>
+        <h2>Page Information</h2>
+        <ColoredScore score={pageData.score} />
       </div>
 
       <div className='card-body'>
@@ -71,9 +56,9 @@ const PageInfo = (props: PropType) => {
               return key in infoItems ? (
                 <li key={key}>
                   {value === 0 ? (
-                    <Image src={checkImg} alt='verification icon' />
-                  ) : (
                     <Image src={removeImg} alt='Remove icon' />
+                  ) : (
+                    <Image src={checkImg} alt='verification icon' />
                   )}
                   <p>{infoItems[key]}</p>
                 </li>

@@ -12,7 +12,7 @@ const SiteDetails = (props: PropType) => {
   const { description, title } = props.data;
   const url = props.url;
 
-  console.log(props.url);
+  // console.log(props.url);
 
   return (
     <div id='site-details'>

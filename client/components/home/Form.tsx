@@ -7,6 +7,7 @@ import type { AppDispatch } from '@/redux/store';
 import { reportActions } from '@/redux/reportSlice';
 import './form.scss';
 
+
 const Form = () => {
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
@@ -19,7 +20,7 @@ const Form = () => {
     dispatch(reportActions.resetReport());
     dispatch(reportActions.resetError());
     
-    router.push(`/report#${url}`);
+    router.push(`/report/${url.slice(8)}`);
     dispatch(getReport(url));
   };
 

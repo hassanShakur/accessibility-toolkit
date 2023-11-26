@@ -13,13 +13,14 @@ export const getReport = createAsyncThunk(
 );
 
 const initialState = {
-  report: {
-    status: '',
-    url: '',
-    data: {
-      ...emptyReport,
-    },
-  },
+  // report: {
+  //   status: '',
+  //   url: '',
+  //   data: {
+  //     ...emptyReport,
+  //   },
+  // },
+  report: null,
   loading: false,
   error: '',
 };
@@ -29,13 +30,14 @@ const reportSlice = createSlice({
   initialState,
   reducers: {
     resetReport(state) {
-      state.report = {
-        status: '',
-        url: '',
-        data: {
-          ...emptyReport,
-        },
-      };
+      // state.report = {
+      //   status: '',
+      //   url: '',
+      //   data: {
+      //     ...emptyReport,
+      //   },
+      // };
+      state.report = null;
     },
 
     resetError(state) {

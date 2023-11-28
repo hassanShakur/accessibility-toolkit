@@ -751,3 +751,6 @@ Tue Nov 28 17:29:49 2023 https://youtube.com 4.74526
 Tue Nov 28 17:30:06 2023 https://hassanshakur.vercel.app 1.42406
 Tue Nov 28 17:30:06 2023 https://hassanshakur.vercel.app 1.46948
 Tue Nov 28 17:30:06 2023 https://hassanshakur.vercel.app 1.47614
+Tue Nov 28 17:39:05 2023 https://facebook.com 4.00298
+Tue Nov 28 17:39:05 2023 https://facebook.com 4.02458
+Tue Nov 28 17:39:22 2023 https://hassanshakur.vercel.app 2.71920

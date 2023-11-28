@@ -1,4 +1,3 @@
-const fs = require('fs');
 const express = require('express');
 const setupApp = require('./appSetup');
 const siteScraper = require('./helpers/scraper');
@@ -10,15 +9,7 @@ app.post('/api/scrape', async (req, res) => {
   const { url } = req.body;
 
   try {
-    const scrapeStatus = await siteScraper(url);
-    console.log(scrapeStatus);
-
-    const data = fs.readFileSync('./pythoneer/data/data.json');
-    let siteData = {};
-
-    if (data) {
-      siteData = JSON.parse(data);
-    }
+    const siteData = await siteScraper(url);
 
     res.status(200).json({
       status: 'success',

@@ -16,8 +16,6 @@ const Report = () => {
     ReportState
   >((state) => state.report);
   const dispatch = useDispatch();
-  console.log('report', report);
-
 
   useEffect(() => {
     dispatch(reportActions.resetError());

@@ -22,7 +22,6 @@ interface PropType {
 const ReportAnalysis = (props: PropType) => {
   const report = props.report.data;
   const url = props.report.url;
-  console.log('props', props.report);
   const analyzedData = report ? analyzer(report) : null;
 
 

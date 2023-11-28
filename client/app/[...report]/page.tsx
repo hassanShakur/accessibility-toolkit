@@ -16,24 +16,24 @@ const Report = () => {
     ReportState
   >((state) => state.report);
   const dispatch = useDispatch();
-  const pathname = usePathname();
-  const pathParts = pathname.split('/').filter((part) => part !== '');
+  console.log('report', report);
 
-  const url = pathParts[1];
 
   useEffect(() => {
     dispatch(reportActions.resetError());
     dispatch(reportActions.resetReport());
-    dispatch(getReport(`https://${url}`) as any); // Explicitly type dispatch as any
-  }, [url, dispatch]);
+
+    const hashUrl = window && window.location.hash.slice(1);
+    if (!hashUrl) return;
+
+    dispatch(getReport(hashUrl) as any); // Explicitly type dispatch as any
+  }, [dispatch]);
 
   if (loading) return <Spinner />;
 
   if (error) return <p>Error occured: {error}</p>;
 
-  if (pathParts.length === 1) return <p>Invalid or null url!</p>;
-
-  if (!report) return <p>No report found!</p>;
+  if (!report.data) return <p>No report found!</p>;
 
   return <ReportAnalysis report={report} />;
 };

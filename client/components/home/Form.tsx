@@ -5,8 +5,8 @@ import { getReport } from '@/redux/reportSlice';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/redux/store';
 import { reportActions } from '@/redux/reportSlice';
+import { fixUrl } from '@/helpers';
 import './form.scss';
-
 
 const Form = () => {
   const router = useRouter();
@@ -19,9 +19,10 @@ const Form = () => {
 
     dispatch(reportActions.resetReport());
     dispatch(reportActions.resetError());
-    
-    router.push(`/report/${url.slice(8)}`);
-    dispatch(getReport(url));
+
+    const fixedUrl = fixUrl(url);
+    router.push(`/report#${fixedUrl}`);
+    // dispatch(getReport(fixedUrl));
   };
 
   return (

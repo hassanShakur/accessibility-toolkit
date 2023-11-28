@@ -15,14 +15,16 @@ interface PropType {
   report: {
     status: string;
     url: string;
-    data: Report;
+    data: Report | null;
   };
 }
 
 const ReportAnalysis = (props: PropType) => {
   const report = props.report.data;
   const url = props.report.url;
+  console.log('props', props.report);
   const analyzedData = report ? analyzer(report) : null;
+
 
   return (
     <div id='analysis-page'>

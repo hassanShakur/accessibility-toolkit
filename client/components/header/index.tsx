@@ -1,12 +1,10 @@
+import SearchBar from './SearchBar';
 import './header.scss';
 
 const Header = () => {
   return (
     <header>
-      {/* Search bar */}
-      {/* <div id='search-bar'> */}
-        <input type='text' placeholder='Search...' />
-      {/* </div> */}
+      <SearchBar />
       <nav>
         <ul>
           <li>

@@ -31,7 +31,7 @@ const Report = () => {
 
   if (error) return <p>Error occured: {error}</p>;
 
-  if (!report.data) return <p>No report found!</p>;
+  if (!report || !report.data) return <p>No report found!</p>;
 
   return <ReportAnalysis report={report} />;
 };

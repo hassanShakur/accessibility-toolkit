@@ -17,9 +17,11 @@ app.post('/api/scrape', async (req, res) => {
       data: siteData,
     });
   } catch (err) {
+    console.log({err});
     res.status(500).json({
       status: 'error',
-      message: err,
+      type: err.type || 'unknown',
+      message: err.message || 'Unknown error',
     });
   }
 });

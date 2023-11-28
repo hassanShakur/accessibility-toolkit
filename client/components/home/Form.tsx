@@ -15,14 +15,11 @@ const Form = () => {
 
   const urlSubmitHandler = async (e: FormEvent) => {
     e.preventDefault();
+    
     if (!url) return;
-
-    dispatch(reportActions.resetReport());
-    dispatch(reportActions.resetError());
 
     const fixedUrl = fixUrl(url);
     router.push(`/report#${fixedUrl}`);
-    // dispatch(getReport(fixedUrl));
   };
 
   return (

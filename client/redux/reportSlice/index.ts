@@ -7,8 +7,15 @@ import { emptyReport } from '@/types/report';
 export const getReport = createAsyncThunk(
   'report/getReport',
   async (url: string) => {
-    const res = await axios.post(backendUrl, { url });
-    return res.data;
+    try {
+      const res = await axios.post(backendUrl, { url });
+      return res.data;
+    } catch (error: any) {
+      // return error.response.data.type;
+      throw Error(error.response.data.type);
+      // return error.response.data;
+      // console.log(error.response.data);
+    }
   }
 );
 
@@ -60,6 +67,10 @@ const reportSlice = createSlice({
     });
     builder.addCase(getReport.rejected, (state, action) => {
       state.loading = false;
+      if (action.error.message === 'ConnectionError') {
+        state.error = 'Failed to resolve the URL! Please check it and try again.';
+        return;
+      }
       state.error = action.error.message || 'An error occurred';
     });
   },

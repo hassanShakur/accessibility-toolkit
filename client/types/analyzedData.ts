@@ -32,6 +32,8 @@ export interface HeadingStruct {
   score: number;
   total: number;
   itemsCount: number;
+  emptyBlocks: number;
+  wrongOrder: number;
 }
 
 export interface ImageStruct {

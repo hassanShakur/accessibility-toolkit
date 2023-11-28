@@ -18,8 +18,8 @@ interface PropType {
 const HeadingStruct = (props: PropType) => {
   const headingData = props.data;
   const infoItems = {
-    emptyBlocks: 'Empty Blocks',
-    wrongOrder: 'Wrong Order',
+    emptyBlocks: 'Neutral headings',
+    wrongOrder: 'All headings are in correct order',
   };
 
   const data = {
@@ -49,7 +49,15 @@ const HeadingStruct = (props: PropType) => {
             items.
           </p>
           <ul>
-            {Object.entries(headingData).map(([key, value]) => {
+            <li>
+              {headingData.wrongOrder === 0 ? (
+                <Image src={checkImg} alt='Check icon' />
+              ) : (
+                <Image src={removeImg} alt='Remove icon' />
+              )}
+              All headings are in correct order
+            </li>
+            {/* {Object.entries(headingData).map(([key, value]) => {
               return key in infoItems ? (
                 <li key={key}>
                   {value === 0 ? (
@@ -60,7 +68,7 @@ const HeadingStruct = (props: PropType) => {
                   <span>{infoItems[key]}</span>
                 </li>
               ) : null;
-            })}
+            })} */}
           </ul>
         </div>
         <div className='card-chart'>

@@ -27,7 +27,7 @@ const siteScraper = (url) => {
         const parsedData = JSON.parse(responseData);
         console.log('Scraping success');
         if (parsedData.error) {
-          console.error(`Error scraping: ${parsedData.error}`);
+          console.error(`Error scraping: ${parsedData.error.message}`);
           return reject(parsedData.error);
         }
         resolve(parsedData.data);

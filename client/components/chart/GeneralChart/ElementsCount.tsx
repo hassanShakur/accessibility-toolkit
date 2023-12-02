@@ -26,10 +26,10 @@ const ElementsCount = (props: propsType) => {
   let structElementsCount = {
     'Links': siteData.linkStruct.itemsCount,
     'Images': siteData.imageStruct.itemsCount,
-    'Block Elements': siteData.headingStruct.itemsCount,
+    // 'Block Elements': siteData.headingStruct.itemsCount,
     'Form Fields': siteData.formField.itemsCount,
-    'Page Info': siteData.pageInfo.itemsCount,
-    'Page Structure': siteData.pageStruct.itemsCount,
+    // 'Page Info': siteData.pageInfo.itemsCount,
+    // 'Page Structure': siteData.pageStruct.itemsCount,
   };
 
   // sort the object by value

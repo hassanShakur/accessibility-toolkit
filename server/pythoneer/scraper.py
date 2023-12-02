@@ -31,7 +31,6 @@ class WebScraper:
 
         except Exception as e:
             # Handle exceptions and provide details for debugging
-            # print(f"Error: {e}")
             # traceback.print_exc()
             self.error = {"type": type(e).__name__, "message": str(e)}
             print(json.dumps({"error": self.error}))

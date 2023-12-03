@@ -3,7 +3,6 @@ import linkImg from '@/public/images/http.png';
 import removeImg from '@/public/images/remove.png';
 import checkImg from '@/public/images/verification.png';
 import Image from 'next/image';
-import './linkStruct.scss';
 
 import { Chart, ArcElement, Legend, Tooltip } from 'chart.js';
 import { Pie } from 'react-chartjs-2';

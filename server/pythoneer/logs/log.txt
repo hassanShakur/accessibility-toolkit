@@ -788,3 +788,5 @@ Wed Nov 29 11:44:27 2023 https://burger-ing.netlify.app 2.71079
 Wed Nov 29 11:53:58 2023 https://hassanshakur.vercel.app 1.62772
 Wed Nov 29 13:11:02 2023 https://tradingview.com 2.73494
 Wed Nov 29 13:11:02 2023 https://tradingview.com 2.75145
+Sun Dec  3 22:34:48 2023 http://127.0.0.1:5500/index.html 0.05475
+Sun Dec  3 22:34:48 2023 http://127.0.0.1:5500/index.html 0.05729

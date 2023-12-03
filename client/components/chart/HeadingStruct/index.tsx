@@ -3,7 +3,6 @@ import headStructImg from '@/public/images/hierarchical-structure.png';
 import removeImg from '@/public/images/remove.png';
 import checkImg from '@/public/images/verification.png';
 import Image from 'next/image';
-import './headingStruct.scss';
 
 import { Chart, ArcElement, Legend, Tooltip } from 'chart.js';
 import { Pie } from 'react-chartjs-2';

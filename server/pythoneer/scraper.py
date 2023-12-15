@@ -171,7 +171,6 @@ class WebScraper:
             log.write(f"{time.ctime()} {url} {time.time() - start_time:.5f}\n")
 
     def build_file_path(self, directory):
-        # Build a file path for data and logs
         path = os.path.join(os.getcwd(), "pythoneer", directory)
         os.makedirs(path, exist_ok=True)
         return path
@@ -185,7 +184,5 @@ if __name__ == "__main__":
 
     start_time = time.time()
     url = sys.argv[1]
-    # Initialize the WebScraper and perform data extraction
     scraper = WebScraper(url)
-    # Log details including URL and execution time
     scraper.log_details(url, start_time)

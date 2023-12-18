@@ -67,3 +67,8 @@ npm run dev
 ### Sample accessibility report
 
 ![Sample accessibility report](screenshots/sample-report.png)
+
+<br>
+<br>
+
+![Report chart](screenshots/report-chart.png)

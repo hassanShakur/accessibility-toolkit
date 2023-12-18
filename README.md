@@ -16,6 +16,8 @@ cd accessibility-toolkit
 
 Change directory into the `server` folder and install the dependencies:
 
+**Terminal 1**
+
 ```sh
 cd server
 
@@ -28,7 +30,9 @@ Also install python dependencies in the same folder:
 pip install -r requirements.txt
 ```
 
-Change directory into the `client` folder and install the dependencies:
+In a separate terminal, change directory into the `client` folder and install the dependencies:
+
+**Terminal 2**
 
 ```sh
 cd client
@@ -38,19 +42,15 @@ npm install
 
 ## Running the code
 
-To run the code, you need to start the server and the client. To start the server, run:
+To run the code, you need to start the server and the client. To start the server, run this in **Terminal 1**:
 
 ```sh
-cd server
-
 npm run dev
 ```
 
-To start the client, run:
+To start the client, run this in **Terminal 2**:
 
 ```sh
-cd client
-
 npm run dev
 ```
 

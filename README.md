@@ -1,6 +1,6 @@
 # Accessibility Toolkit
 
-This is a (soon to be) AI owered accessibility toolkit for websites. Be able to determine how accessible your website is and receive recommendations on how to imrove it for better equality and accessibility.
+This is a (soon to be) AI powered accessibility toolkit for websites. Be able to determine how accessible your website is and receive recommendations on how to imrove it for better equality and accessibility.
 
 ## Getting started
 

@@ -54,6 +54,8 @@ To start the client, run this in **Terminal 2**:
 npm run dev
 ```
 
+If all goes well, the app should be running at `localhost:3000` ✨.
+
 ## Sample UI View
 
 ### Home Page

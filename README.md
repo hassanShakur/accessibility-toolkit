@@ -66,3 +66,5 @@ npm run dev
 ### Sample accessibility report
 
 ![Sample accessibility report](screenshots/sample-report.png)
+
+**Note:** This is a work in progress. More features will be added soon, including a better UI and more accessibility checks.

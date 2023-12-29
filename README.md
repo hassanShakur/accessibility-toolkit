@@ -1,6 +1,6 @@
 # Accessibility Toolkit
 
-This is a (soon to be) AI powered accessibility toolkit for websites. Be able to determine how accessible your website is and receive recommendations on how to imrove it for better equality and accessibility.
+This is a (soon to be) AI-powered accessibility toolkit for websites. Be able to determine how accessible your website is and receive recommendations on improving it for better equality and accessibility.
 
 ## Getting started
 
@@ -14,7 +14,7 @@ git clone https://github.com/hassanShakur/accessibility-toolkit.git
 cd accessibility-toolkit
 ```
 
-Change directory into the `server` folder and install the dependencies:
+Change the directory into the `server` folder and install the dependencies:
 
 **Terminal 1**
 
@@ -24,13 +24,13 @@ cd server
 npm install
 ```
 
-Also install python dependencies in the same folder:
+Also, install python dependencies in the same folder:
 
 ```sh
 pip install -r requirements.txt
 ```
 
-In a separate terminal, change directory into the `client` folder and install the dependencies:
+In a separate terminal, change the directory into the `client` folder and install the dependencies:
 
 **Terminal 2**
 

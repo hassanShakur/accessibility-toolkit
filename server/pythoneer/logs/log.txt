@@ -2,7 +2,6 @@ Sun Oct 29 17:02:01 2023 http://127.0.0.1:5500/index.html 0.01797
 Sun Oct 29 17:02:26 2023 http://127.0.0.1:5500/index.html 0.02513
 Mon Oct 30 11:36:01 2023 http://127.0.0.1:5500/index.html 0.00694
 Mon Oct 30 11:36:37 2023 http://127.0.0.1:5500/index.html 0.00693
-Mon Oct 30 11:37:10 2023 http://127.0.0.1:5500/index.html 0.00694
 Mon Oct 30 11:37:25 2023 http://127.0.0.1:5500/index.html 0.00906
 Mon Oct 30 11:38:00 2023 http://127.0.0.1:5500/index.html 0.00857
 Mon Oct 30 11:38:14 2023 http://127.0.0.1:5500/index.html 0.00699
@@ -20,7 +19,6 @@ Mon Nov  6 09:33:39 2023 https://www.mmu.ac.ke/ 16.53761
 Mon Nov  6 10:00:04 2023 https://www.mmu.ac.ke/ 15.98006
 Mon Nov  6 10:37:43 2023  0.00499
 Mon Nov  6 10:39:03 2023  0.00504
-Mon Nov  6 10:39:21 2023  0.00299
 Mon Nov  6 10:39:23 2023  0.00299
 Mon Nov  6 10:40:14 2023  0.00301
 Mon Nov  6 10:40:30 2023  0.00400
@@ -37,8 +35,6 @@ Mon Nov  6 11:18:53 2023 https://mmu.ac.ke/ 7.91289
 Mon Nov  6 11:19:32 2023 https://mmu.ac.ke/ 7.63079
 Mon Nov  6 11:20:11 2023 http://127.0.0.1:5500/index.html 0.00847
 Mon Nov  6 11:21:34 2023 http://127.0.0.1:5500/index.html 0.00898
-Mon Nov  6 11:22:20 2023 http://127.0.0.1:5500/index.html 0.00903
-Mon Nov  6 11:24:11 2023 http://127.0.0.1:5500/index.html 0.00803
 Mon Nov  6 11:24:49 2023 http://127.0.0.1:5500/index.html 0.00841
 Mon Nov  6 11:25:49 2023 https://www.mmu.ac.ke/ 15.39386
 Mon Nov  6 11:27:39 2023 https://www.mmu.ac.ke/ 15.42751
@@ -69,9 +65,6 @@ Thu Nov  9 21:54:17 2023 https://www.google.com 1.45949
 Thu Nov  9 21:54:49 2023 https://www.google.com 1.63452
 Thu Nov  9 21:56:21 2023 https://www.google.com 1.90284
 Thu Nov  9 21:56:35 2023 https://www.google.com 1.49824
-Thu Nov  9 21:56:59 2023 https://www.google.com 1.76566
-Thu Nov  9 21:57:24 2023 https://www.google.com 1.52359
-Thu Nov  9 21:57:42 2023 https://www.google.com 1.42294
 Thu Nov  9 21:57:57 2023 https://www.google.com 1.52857
 Thu Nov  9 21:58:13 2023 https://www.google.com 1.51551
 Thu Nov  9 21:59:07 2023 https://www.google.com 2.91590

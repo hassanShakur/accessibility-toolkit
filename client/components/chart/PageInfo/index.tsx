@@ -1,11 +1,12 @@
-import { PageInfo } from '@/types/analyzedData';
-import infoImg from '@/public/images/info.png';
-import removeImg from '@/public/images/remove.png';
-import checkImg from '@/public/images/verification.png';
 import Image from 'next/image';
 
 import { Chart, ArcElement, Legend, Tooltip } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+
+import { PageInfo } from '@/types/analyzedData';
+import infoImg from '@/public/images/info.png';
+import removeImg from '@/public/images/remove.png';
+import checkImg from '@/public/images/verification.png';
 import ColoredScore from '../ColoredScore';
 
 Chart.register(ArcElement, Legend, Tooltip);
@@ -59,7 +60,7 @@ const PageInfo = (props: PropType) => {
                   ) : (
                     <Image src={checkImg} alt='verification icon' />
                   )}
-                  <p>{infoItems[key]}</p>
+                  <p>{infoItems[key as keyof typeof infoItems]}</p>
                 </li>
               ) : (
                 ''

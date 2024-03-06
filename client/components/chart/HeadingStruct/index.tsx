@@ -1,11 +1,12 @@
-import { HeadingStruct } from '@/types/analyzedData';
-import headStructImg from '@/public/images/hierarchical-structure.png';
-import removeImg from '@/public/images/remove.png';
-import checkImg from '@/public/images/verification.png';
 import Image from 'next/image';
 
 import { Chart, ArcElement, Legend, Tooltip } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+
+import { HeadingStruct } from '@/types/analyzedData';
+import headStructImg from '@/public/images/hierarchical-structure.png';
+import removeImg from '@/public/images/remove.png';
+import checkImg from '@/public/images/verification.png';
 import ColoredScore from '../ColoredScore';
 
 Chart.register(ArcElement, Legend, Tooltip);

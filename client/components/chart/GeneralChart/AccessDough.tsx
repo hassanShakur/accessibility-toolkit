@@ -5,6 +5,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+
 import { calcScoreColor } from '../ColoredScore';
 
 ChartJS.register(ArcElement, Tooltip, Legend);

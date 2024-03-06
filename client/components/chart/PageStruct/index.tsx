@@ -1,11 +1,12 @@
-import { PageStruct } from '@/types/analyzedData';
-import algoImg from '@/public/images/algorithm.png';
-import removeImg from '@/public/images/remove.png';
-import checkImg from '@/public/images/verification.png';
 import Image from 'next/image';
 
 import { Chart, ArcElement, Legend, Tooltip } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+
+import { PageStruct } from '@/types/analyzedData';
+import algoImg from '@/public/images/algorithm.png';
+import removeImg from '@/public/images/remove.png';
+import checkImg from '@/public/images/verification.png';
 import ColoredScore from '../ColoredScore';
 
 Chart.register(ArcElement, Legend, Tooltip);

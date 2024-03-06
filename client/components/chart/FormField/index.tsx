@@ -1,11 +1,13 @@
-import { FormField } from "@/types/analyzedData";
-import formImg from "@/public/images/form.png";
-import removeImg from "@/public/images/remove.png";
-import checkImg from "@/public/images/verification.png";
 import Image from "next/image";
 
 import { Chart, ArcElement, Legend, Tooltip } from "chart.js";
 import { Pie } from "react-chartjs-2";
+
+import { FormField } from "@/types/analyzedData";
+import formImg from "@/public/images/form.png";
+import removeImg from "@/public/images/remove.png";
+import checkImg from "@/public/images/verification.png";
+
 import ColoredScore from "../ColoredScore";
 
 Chart.register(ArcElement, Legend, Tooltip);
@@ -56,7 +58,7 @@ const FormField = (props: PropType) => {
                   ) : (
                     <Image src={checkImg} alt="Check icon" />
                   )}
-                  <span>{infoItems[key]}</span>
+                  <span>{infoItems[key as keyof typeof infoItems]}</span>
                 </li>
               ) : null;
             })}

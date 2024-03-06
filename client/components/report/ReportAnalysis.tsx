@@ -3,13 +3,13 @@ import PageInfo from '../chart/PageInfo';
 import PageStruct from '../chart/PageStruct';
 import analyzer from './analyzer';
 import type Report from '@/types/report';
-import './reportAnalysis.scss'
-import './reportCard.scss'
 import FormField from '../chart/FormField';
 import HeadingStruct from '../chart/HeadingStruct';
 import ImageStruct from '../chart/ImageStruct';
 import LinkStruct from '../chart/LinkStruct';
 import SiteDetails from './SiteDetails';
+import './reportAnalysis.scss'
+import './reportCard.scss'
 
 interface PropType {
   report: {

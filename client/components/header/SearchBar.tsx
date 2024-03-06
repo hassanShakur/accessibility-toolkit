@@ -1,7 +1,8 @@
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
-import { getReport } from '@/redux/reportSlice';
 import { useDispatch } from 'react-redux';
+
+import { getReport } from '@/redux/reportSlice';
 import type { AppDispatch } from '@/redux/store';
 import { reportActions } from '@/redux/reportSlice';
 import { fixUrl } from '@/helpers';

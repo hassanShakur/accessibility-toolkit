@@ -1,7 +1,9 @@
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
 const fs = require('fs');
+
+const jsdom = require('jsdom');
 const axios = require('axios');
+
+const { JSDOM } = jsdom;
 
 class WebScraper {
   constructor(url) {

@@ -1,74 +1,31 @@
 {
-  "page_info": { "title": "Google", "language": "sw-KE" },
+  "page_info": {
+    "title": "Document",
+    "language": "en",
+    "description": "Some base website template",
+    "viewport": "width=device-width, initial-scale=1.0"
+  },
   "page_structure": {
     "header": false,
-    "footer": false,
+    "footer": true,
     "nav": false,
     "main": false
   },
   "links": [
-    {
-      "href": "https://www.google.com/imghp?hl=sw&tab=wi",
-      "text": "Picha"
-    },
-    {
-      "href": "https://maps.google.co.ke/maps?hl=sw&tab=wl",
-      "text": "Ramani"
-    },
-    {
-      "href": "https://play.google.com/?hl=sw&tab=w8",
-      "text": "Play"
-    },
-    { "href": "https://www.youtube.com/?tab=w1", "text": "YouTube" },
-    { "href": "https://news.google.com/?tab=wn", "text": "Habari" },
-    {
-      "href": "https://mail.google.com/mail/?tab=wm",
-      "text": "Gmail"
-    },
-    { "href": "https://drive.google.com/?tab=wo", "text": "Hifadhi" },
-    {
-      "href": "https://www.google.co.ke/intl/en/about/products?tab=wh",
-      "text": "Mengineyo \u00bb"
-    },
-    {
-      "href": "http://www.google.co.ke/history/optout?hl=sw",
-      "text": "Historia kwenye Wavuti"
-    },
-    { "href": "/preferences?hl=sw", "text": "Mipangilio" },
-    {
-      "href": "https://accounts.google.com/ServiceLogin?hl=sw&passive=true&continue=https://www.google.com/&ec=GAZAAQ",
-      "text": "Ingia"
-    },
-    {
-      "href": "/advanced_search?hl=sw-KE&authuser=0",
-      "text": "Utafutaji wa kina"
-    },
-    {
-      "href": "https://www.google.com/setprefs?sig=0_r7SSNhTyI0sX7xnTGds5OWLtlc8%3D&hl=en&source=homepage&sa=X&ved=0ahUKEwjUh5fLh9-EAxVYkIkEHWTzAnEQ2ZgBCAU",
-      "text": "English"
-    },
-    { "href": "/intl/sw/ads/", "text": "Matangazo" },
-    {
-      "href": "/intl/sw/about.html",
-      "text": "Kila Kitu Kuhusu Google"
-    },
-    {
-      "href": "https://www.google.com/setprefs?sig=0_r7SSNhTyI0sX7xnTGds5OWLtlc8%3D&hl=en",
-      "text": "Google.com in English"
-    }
+    { "href": "#", "text": "Link 1" },
+    { "href": "f", "text": "Link 2" },
+    { "href": "djjjdjd", "text": "Link 3" }
   ],
   "images": [
-    {
-      "src": "/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png",
-      "alt": "Google"
-    },
-    { "src": "/textinputassistant/tia.png", "alt": "" }
+    { "src": "https://unsplash.it/200/300/", "alt": "" },
+    { "src": "https://unsplash.it/200/300/", "alt": "Rand img 2" },
+    { "src": "https://unsplash.it/200/300/", "alt": "Rand 3" }
   ],
   "heading_structure": {
-    "article": [],
+    "article": [[1, 2, 3]],
     "aside": [],
-    "div": [[], [], [], [], [], [], [], [], [], [], [], [], [], []],
-    "footer": [],
+    "div": [[1], [2, 3], [3], [4], [4, 5, 6]],
+    "footer": [[]],
     "form": [[]],
     "header": [],
     "li": [],
@@ -78,19 +35,11 @@
     "p": [[]],
     "pre": [],
     "section": [],
-    "table": [[]],
+    "table": [],
     "ul": []
   },
   "form_fields": [
-    { "name": "ie", "label": "", "type": "hidden" },
-    { "name": "hl", "label": "", "type": "hidden" },
-    { "name": "source", "label": "", "type": "hidden" },
-    { "name": "biw", "label": "", "type": "hidden" },
-    { "name": "bih", "label": "", "type": "hidden" },
-    { "name": "q", "label": "", "type": "" },
-    { "name": "btnG", "label": "", "type": "submit" },
-    { "name": "btnI", "label": "", "type": "submit" },
-    { "name": "iflsig", "label": "", "type": "hidden" },
-    { "name": "gbv", "label": "", "type": "hidden" }
+    { "name": "name", "label": "Name", "type": "text" },
+    { "name": "email", "label": "Email", "type": "email" }
   ]
 }

@@ -21,7 +21,6 @@ const SearchBar = () => {
     dispatch(reportActions.resetReport());
 
     const fixedUrl = fixUrl(url);
-    console.log({fixUrl});
     
     router.push(`/report#${fixedUrl}`);
     dispatch(getReport(fixedUrl));

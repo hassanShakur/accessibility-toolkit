@@ -29,7 +29,7 @@ class WebScraper {
       this.data.heading_structure = this.extractHeadingStructure();
       this.data.form_fields = this.extractFormFields();
 
-      this.saveToJson(this.data);
+      // this.saveToJson(this.data);
 
       return { data: this.data, error: null };
     } catch (error: any) {

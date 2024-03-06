@@ -1,19 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-const backendUrl = 'http://localhost:7000/api/scrape';
-import axios from 'axios';
-import { emptyReport } from '@/types/report';
+import scrapeSite from '@/app/actions/scrape';
 
 export const getReport = createAsyncThunk(
   'report/getReport',
   async (url: string) => {
-    try {
-      const res = await axios.post(backendUrl, { url });
-      return res.data;
-    } catch (error: any) {
-      // return error.response.data.type;
-      throw new Error(error.response?.data?.message);
-    }
+    const data = await scrapeSite(url);
+    return { data, status: 'success', url };
   }
 );
 
@@ -33,13 +26,6 @@ const reportSlice = createSlice({
   initialState,
   reducers: {
     resetReport(state) {
-      // state.report = {
-      //   status: '',
-      //   url: '',
-      //   data: {
-      //     ...emptyReport,
-      //   },
-      // };
       state.report = {
         status: '',
         url: '',

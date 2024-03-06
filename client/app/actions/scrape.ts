@@ -174,4 +174,47 @@ class WebScraper {
   }
 }
 
-export default WebScraper;
+const scrapeSite = async (url: string) => {
+  const scraper = new WebScraper(url);
+  const siteData = await scraper.scrape();
+
+  try {
+    const { error } = siteData;
+
+    if (!error) return siteData.data;
+
+    let customError = '';
+    const errorMessage = error.message;
+    const erroType = error.type;
+
+    if (errorMessage === 'ConnectionError') {
+      customError =
+        'Failed to resolve the URL! Please check it and try again.';
+    } else if (errorMessage?.includes('getaddrinfo ENOTFOUND')) {
+      customError = `URL not found! Please check it and try again.`;
+    } else if (errorMessage === 'TimeoutError') {
+      customError = 'Request timed out! Please try again.';
+    } else {
+      customError = error.message || 'An error occurred';
+    }
+
+    throw new Error(customError);
+    // return res.status(500).json({
+    //   status: 'error',
+    //   type: erroType || 'unknown',
+    //   message: customError,
+    // });
+  } catch (err: any) {
+    console.log({ err });
+    throw new Error(err.message || 'An unknown error occurred');
+    // return { error: err.message || 'An unknown error occurred' };
+    // console.log({ err });
+    // res.status(500).json({
+    //   status: 'error',
+    //   type: err.type || 'unknown',
+    //   message: err.message || 'An unknown error occurred',
+    // });
+  }
+};
+
+export default scrapeSite;

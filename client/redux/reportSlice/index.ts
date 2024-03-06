@@ -12,9 +12,7 @@ export const getReport = createAsyncThunk(
       return res.data;
     } catch (error: any) {
       // return error.response.data.type;
-      throw Error(error.response.data.type);
-      // return error.response.data;
-      // console.log(error.response.data);
+      throw new Error(error.response?.data?.message);
     }
   }
 );
@@ -67,11 +65,10 @@ const reportSlice = createSlice({
     });
     builder.addCase(getReport.rejected, (state, action) => {
       state.loading = false;
-      if (action.error.message === 'ConnectionError') {
-        state.error = 'Failed to resolve the URL! Please check it and try again.';
-        return;
-      }
-      state.error = action.error.message || 'An error occurred';
+      console.log(action.error.message);
+
+      state.error =
+        action.error.message || 'An unknown error occured';
     });
   },
 });

@@ -10,8 +10,6 @@ class WebScraper {
     this.url = url;
     this.data = {};
     this.error = null;
-
-    this.scrape();
   }
 
   async scrape() {
@@ -30,11 +28,13 @@ class WebScraper {
       this.data.form_fields = this.extractFormFields();
 
       this.saveToJson(this.data);
-      console.log(JSON.stringify({ data: this.data }));
+      // console.log(JSON.stringify({ data: this.data }));
+      return { data: this.data, error: null };
     } catch (error) {
       const { name, message } = error;
       this.error = { type: name, message };
       console.log(JSON.stringify({ error: this.error }));
+      return { error: this.error, data: null };
     }
   }
 
@@ -182,5 +182,7 @@ class WebScraper {
   }
 }
 
-new WebScraper('http://127.0.0.1:5500/index.html');
+// new WebScraper('http://127.0.0.1:5500/index.html');
 // new WebScraper('https://www.google.com');
+// new WebScraper('https://hassanshakur.vercel.app');
+module.exports = WebScraper;

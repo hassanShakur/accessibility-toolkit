@@ -11,10 +11,9 @@ import { getReport } from '@/redux/reportSlice';
 import { useEffect } from 'react';
 
 const Report = () => {
-  const { report, loading, error } = useSelector<
-    RootState,
-    ReportState
-  >((state) => state.report);
+  const reportState = useSelector<RootState, ReportState>(
+    (state) => state.report
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,6 +25,15 @@ const Report = () => {
 
     dispatch(getReport(hashUrl) as any); // Explicitly type dispatch as any
   }, [dispatch]);
+
+  // if (!reportState) return <p>No report found!</p>;
+
+  const { report, loading, error } = reportState;
+
+  // const { report, loading, error } = useSelector<
+  //   RootState,
+  //   ReportState
+  // >((state) => state.report);
 
   if (loading) return <Spinner />;
 

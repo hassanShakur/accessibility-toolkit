@@ -28,7 +28,7 @@
     { "href": "https://drive.google.com/?tab=wo", "text": "Hifadhi" },
     {
       "href": "https://www.google.co.ke/intl/en/about/products?tab=wh",
-      "text": "Mengineyo \u00bb"
+      "text": "Mengineyo »"
     },
     {
       "href": "http://www.google.co.ke/history/optout?hl=sw",
@@ -44,7 +44,7 @@
       "text": "Utafutaji wa kina"
     },
     {
-      "href": "https://www.google.com/setprefs?sig=0_r7SSNhTyI0sX7xnTGds5OWLtlc8%3D&hl=en&source=homepage&sa=X&ved=0ahUKEwjUh5fLh9-EAxVYkIkEHWTzAnEQ2ZgBCAU",
+      "href": "https://www.google.com/setprefs?sig=0_J-OpY5buA7cySmREIQzFsfhTKkM%3D&hl=en&source=homepage&sa=X&ved=0ahUKEwjbntXqht-EAxUfpIkEHa8eDOIQ2ZgBCAU",
       "text": "English"
     },
     { "href": "/intl/sw/ads/", "text": "Matangazo" },
@@ -53,7 +53,7 @@
       "text": "Kila Kitu Kuhusu Google"
     },
     {
-      "href": "https://www.google.com/setprefs?sig=0_r7SSNhTyI0sX7xnTGds5OWLtlc8%3D&hl=en",
+      "href": "https://www.google.com/setprefs?sig=0_J-OpY5buA7cySmREIQzFsfhTKkM%3D&hl=en",
       "text": "Google.com in English"
     }
   ],
@@ -64,30 +64,14 @@
     },
     { "src": "/textinputassistant/tia.png", "alt": "" }
   ],
-  "heading_structure": {
-    "article": [],
-    "aside": [],
-    "div": [[], [], [], [], [], [], [], [], [], [], [], [], [], []],
-    "footer": [],
-    "form": [[]],
-    "header": [],
-    "li": [],
-    "main": [],
-    "nav": [],
-    "ol": [],
-    "p": [[]],
-    "pre": [],
-    "section": [],
-    "table": [[]],
-    "ul": []
-  },
+  "heading_structure": [],
   "form_fields": [
     { "name": "ie", "label": "", "type": "hidden" },
     { "name": "hl", "label": "", "type": "hidden" },
     { "name": "source", "label": "", "type": "hidden" },
     { "name": "biw", "label": "", "type": "hidden" },
     { "name": "bih", "label": "", "type": "hidden" },
-    { "name": "q", "label": "", "type": "" },
+    { "name": "q", "label": "", "type": "text" },
     { "name": "btnG", "label": "", "type": "submit" },
     { "name": "btnI", "label": "", "type": "submit" },
     { "name": "iflsig", "label": "", "type": "hidden" },

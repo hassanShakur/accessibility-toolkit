@@ -1,42 +1,43 @@
-import Report from '@/types/report';
+import ReportType from '@/types/report';
 import {
-  PageStructure,
-  PageInfo,
-  FormField,
-  HeadingStructure,
-  ImageStructure,
-  LinkStructure,
+  PageStructureType,
+  PageInfoType,
+  FormFieldType,
+  HeadingStructureType,
+  ImageStructureType,
+  LinkStructureType,
 } from '@/types/report';
 
 // const roundNum = (num: number) =>
 //   Math.round((num + Number.EPSILON) * 100) / 100;
 const roundNum = (num: number) => Math.ceil(num);
 
-const analyzer = (report: Report) => {
+const analyzer = (report: ReportType) => {
   const {
-    page_info,
-    page_structure,
-    form_fields,
-    heading_structure,
+    pageInfo,
+    pageStructure,
+    formFields,
+    headingStructure,
     images,
     links,
   } = report;
-  const pageInfo = pageInfoAnalyzer(page_info);
-  const pageStruct = pageStructAnalyzer(page_structure);
-  const formField = formFieldAnalyzer(form_fields);
-  const headingStruct = headingStructAnalyzer(heading_structure);
+
+  const pageInfoStruct = pageInfoAnalyzer(pageInfo);
+  const pageStruct = pageStructAnalyzer(pageStructure);
+  const formField = formFieldAnalyzer(formFields);
+  const headingStruct = headingStructAnalyzer(headingStructure);
   const imageStruct = imageStructAnalyzer(images);
   const linkStruct = linkStructAnalyzer(links);
 
   const total =
-    pageInfo.total +
+    pageInfoStruct.total +
     pageStruct.total +
     formField.total +
     headingStruct.total +
     imageStruct.total +
     linkStruct.total;
   const score =
-    (pageInfo.score +
+    (pageInfoStruct.score +
       pageStruct.score +
       formField.score +
       headingStruct.score +
@@ -45,7 +46,7 @@ const analyzer = (report: Report) => {
     6;
 
   const itemsCount =
-    pageInfo.itemsCount +
+    pageInfoStruct.itemsCount +
     pageStruct.itemsCount +
     formField.itemsCount +
     formField.itemsCount +
@@ -53,12 +54,12 @@ const analyzer = (report: Report) => {
     imageStruct.itemsCount +
     linkStruct.itemsCount;
 
-    const siteDetails = getSiteDetails(page_info);
+  const siteDetails = getSiteDetails(pageInfo);
 
   return {
     total,
     score: roundNum(score),
-    pageInfo,
+    pageInfo: pageInfoStruct,
     pageStruct,
     formField,
     headingStruct,
@@ -69,7 +70,7 @@ const analyzer = (report: Report) => {
   };
 };
 
-const pageStructAnalyzer = (pageStructure: PageStructure) => {
+const pageStructAnalyzer = (pageStructure: PageStructureType) => {
   const { header, footer, nav, main } = pageStructure;
   const itemsCount = Object.keys(pageStructure).length;
   const headerCount = header ? 1 : 0;
@@ -89,7 +90,7 @@ const pageStructAnalyzer = (pageStructure: PageStructure) => {
   };
 };
 
-const pageInfoAnalyzer = (pageInfo: PageInfo) => {
+const pageInfoAnalyzer = (pageInfo: PageInfoType) => {
   const { title, description, viewport, language } = pageInfo;
   const itemsCount = Object.keys(pageInfo).length;
   const titleCount = title ? 1 : 0;
@@ -110,7 +111,7 @@ const pageInfoAnalyzer = (pageInfo: PageInfo) => {
   };
 };
 
-const formFieldAnalyzer = (formFields: FormField[]) => {
+const formFieldAnalyzer = (formFields: FormFieldType[]) => {
   const fieldsCount = formFields.length;
   let itemsCount = fieldsCount * 3;
   let missingLabel = 0;
@@ -148,7 +149,9 @@ const formFieldAnalyzer = (formFields: FormField[]) => {
   };
 };
 
-const headingStructAnalyzer = (headingStruct: HeadingStructure) => {
+const headingStructAnalyzer = (
+  headingStruct: HeadingStructureType
+) => {
   let total = 0;
   let emptyBlocks = 0;
   let wrongOrder = 0;
@@ -196,7 +199,7 @@ const headingStructAnalyzer = (headingStruct: HeadingStructure) => {
   };
 };
 
-const imageStructAnalyzer = (imageStruct: ImageStructure[]) => {
+const imageStructAnalyzer = (imageStruct: ImageStructureType[]) => {
   const total = imageStruct.length * 2;
   const itemsCount = imageStruct.length;
   let missingSrc = 0;
@@ -228,7 +231,7 @@ const imageStructAnalyzer = (imageStruct: ImageStructure[]) => {
   };
 };
 
-const linkStructAnalyzer = (linkStruct: LinkStructure[]) => {
+const linkStructAnalyzer = (linkStruct: LinkStructureType[]) => {
   const total = linkStruct.length;
   let missingHref = 0;
   let hashHref = 0;
@@ -268,7 +271,7 @@ const linkStructAnalyzer = (linkStruct: LinkStructure[]) => {
 };
 
 const getSiteDetails = (
-  pageInfo: PageInfo
+  pageInfo: PageInfoType
 ): { title: string; description: string } => {
   const { title, description } = pageInfo;
   return {

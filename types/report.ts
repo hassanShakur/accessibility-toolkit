@@ -1,37 +1,37 @@
-export interface Report {
-  page_info: PageInfo;
-  page_structure: PageStructure;
-  links: LinkStructure[];
-  images: ImageStructure[];
-  heading_structure: HeadingStructure;
-  form_fields: FormField[];
+export interface ReportType {
+  pageInfo: PageInfoType;
+  pageStructure: PageStructureType;
+  links: LinkStructureType[];
+  images: ImageStructureType[];
+  headingStructure: HeadingStructureType;
+  formFields: FormFieldType[];
 }
 
-export interface PageInfo {
+export interface PageInfoType {
   title: string;
   description: string;
   viewport: string;
   language: string;
 }
 
-export interface PageStructure {
+export interface PageStructureType {
   header: boolean;
   footer: boolean;
   nav: boolean;
   main: boolean;
 }
 
-export interface LinkStructure {
+export interface LinkStructureType {
   href: string;
   text: string;
 }
 
-export interface ImageStructure {
+export interface ImageStructureType {
   src: string;
   alt: string;
 }
 
-export interface HeadingStructure {
+export interface HeadingStructureType {
   article: number[];
   aside: number[][];
   div: number[][];
@@ -49,20 +49,20 @@ export interface HeadingStructure {
   ul: number[][];
 }
 
-export interface FormField {
+export interface FormFieldType {
   name: string;
   label: string;
   type: string;
 }
 
 export const emptyReport = {
-  page_info: {
+  pageInfo: {
     title: '',
     description: '',
     viewport: '',
     language: '',
   },
-  page_structure: {
+  pageStructure: {
     header: false,
     footer: false,
     nav: false,
@@ -70,7 +70,7 @@ export const emptyReport = {
   },
   links: [],
   images: [],
-  heading_structure: {
+  headingStructure: {
     article: [],
     aside: [],
     div: [],
@@ -87,7 +87,7 @@ export const emptyReport = {
     table: [],
     ul: [],
   },
-  form_fields: [],
+  formFields: [],
 };
 
-export default Report;
+export default ReportType;

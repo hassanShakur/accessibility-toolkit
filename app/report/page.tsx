@@ -28,7 +28,7 @@ const Report = () => {
 
   // if (!reportState) return <p>No report found!</p>;
 
-  const { report, loading, error } = reportState;
+  const { data, url, loading, error } = reportState;
 
   // const { report, loading, error } = useSelector<
   //   RootState,
@@ -39,9 +39,9 @@ const Report = () => {
 
   if (error) return <p>Error occured: {error}</p>;
 
-  if (!report || !report.data) return <p>No report found!</p>;
+  if (!data) return <p>No report found!</p>;
 
-  return <ReportAnalysis report={report} />;
+  return <ReportAnalysis data={data} url={url} />;
 };
 
 export default Report;

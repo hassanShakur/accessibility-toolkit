@@ -5,20 +5,23 @@ import scrapeSite from '@/app/actions/scrape';
 export const getReport = createAsyncThunk(
   'report/getReport',
   async (url: string) => {
-    const data = await scrapeSite(url);
-    return { data, status: 'success', url };
+    const { data, error } = await scrapeSite(url);
+    return { data, error, url };
   }
 );
 
-const initialState = {
-  report: {
-    status: '',
-    url: '',
-    data: null,
-  },
-  // report: null,
+interface InitialState {
+  url: string;
+  data: any;
+  loading: boolean;
+  error: string | null;
+}
+
+const initialState: InitialState = {
+  url: '',
+  data: null,
   loading: false,
-  error: '',
+  error: null,
 };
 
 const reportSlice = createSlice({
@@ -26,31 +29,33 @@ const reportSlice = createSlice({
   initialState,
   reducers: {
     resetReport(state) {
-      state.report = {
-        status: '',
-        url: '',
-        data: null,
-      };
+      state.loading = false;
+      state.url = '';
+      state.data = null;
     },
 
     resetError(state) {
-      state.error = '';
-    },
-
-    setReport(state, action) {
-      state.report = action.payload;
+      state.error = null;
     },
   },
   extraReducers: (builder) => {
     builder.addCase(getReport.pending, (state, action) => {
       state.loading = true;
     });
+
     builder.addCase(getReport.fulfilled, (state, action) => {
       state.loading = false;
-      state.report = action.payload;
+      const { data, error, url } = action.payload;
+      state.data = data;
+      state.error = error;
+      state.url = url;
     });
+
     builder.addCase(getReport.rejected, (state, action) => {
       state.loading = false;
+      state.url = '';
+      state.data = null;
+
       console.log(action.error.message);
 
       state.error =

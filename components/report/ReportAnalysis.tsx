@@ -2,28 +2,25 @@ import GeneralChart from '../chart/GeneralChart';
 import PageInfo from '../chart/PageInfo';
 import PageStruct from '../chart/PageStruct';
 import analyzer from './analyzer';
-import type Report from '@/types/report';
+import type ReportType from '@/types/report';
 import FormField from '../chart/FormField';
 import HeadingStruct from '../chart/HeadingStruct';
 import ImageStruct from '../chart/ImageStruct';
 import LinkStruct from '../chart/LinkStruct';
 import SiteDetails from './SiteDetails';
-import './reportAnalysis.scss'
-import './reportCard.scss'
+import './reportAnalysis.scss';
+import './reportCard.scss';
 
 interface PropType {
-  report: {
-    status: string;
-    url: string;
-    data: Report | null;
-  };
+  url: string;
+  data: ReportType;
 }
 
 const ReportAnalysis = (props: PropType) => {
-  const report = props.report.data;
-  const url = props.report.url;
-  const analyzedData = report ? analyzer(report) : null;
-
+  const report = props.data;
+  const url = props.url;
+  const analyzedData = analyzer(report);
+  // const analyzedData = report ? analyzer(report) : null;
 
   return (
     <div id='analysis-page'>

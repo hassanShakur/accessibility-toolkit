@@ -4,6 +4,8 @@ import fs from 'fs';
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
 
+import ReportType from '@/types/report';
+
 class WebScraper {
   private url: string;
   private data: any;
@@ -12,7 +14,6 @@ class WebScraper {
 
   constructor(url: string) {
     this.url = url;
-    this.data = {};
     this.error = null;
   }
 
@@ -22,16 +23,11 @@ class WebScraper {
       const dom = new JSDOM(response.data);
       this.document = dom.window.document;
 
-      this.data.page_info = this.extractPageInfo();
-      this.data.page_structure = this.extractPageStructure();
-      this.data.links = this.extractLinks();
-      this.data.images = this.extractImages();
-      this.data.heading_structure = this.extractHeadingStructure();
-      this.data.form_fields = this.extractFormFields();
+      const siteData: ReportType = this.extractData();
 
       // this.saveToJson(this.data);
 
-      return { data: this.data, error: null };
+      return { data: siteData, error: null };
     } catch (error: any) {
       const { name, message } = error;
       this.error = { type: name, message };
@@ -39,32 +35,49 @@ class WebScraper {
     }
   }
 
-  private extractPageInfo() {
+  private extractData(): ReportType {
+    const pageInfo = this.extractPageInfo();
+    const pageStructure = this.extractPageStructure();
+    const links = this.extractLinks();
+    const images = this.extractImages();
+    const headingStructure = this.extractHeadingStructure();
+    const formFields = this.extractFormFields();
+
+    return {
+      pageInfo,
+      pageStructure,
+      links,
+      images,
+      headingStructure,
+      formFields,
+    };
+  }
+
+  private extractPageInfo(): ReportType['pageInfo'] {
     const { title, documentElement } = this.document;
-    const pageInfo: any = {
+    const pageInfo: ReportType['pageInfo'] = {
       title,
       language: documentElement?.lang || '',
+      description: '',
+      viewport: '',
     };
 
-    const metaTags = [
-      'description',
-      'keywords',
-      'author',
-      'viewport',
-    ];
+    const metaTags = ['description', 'viewport'];
+
     for (let tag of metaTags) {
       const metaElement = this.document.querySelector(
         `meta[name="${tag}"]`
       );
       if (metaElement) {
-        pageInfo[tag] = metaElement.getAttribute('content') || '';
+        pageInfo[tag as keyof ReportType['pageInfo']] =
+          metaElement.getAttribute('content') || '';
       }
     }
 
     return pageInfo;
   }
 
-  private extractPageStructure() {
+  private extractPageStructure(): ReportType['pageStructure'] {
     const pageStructure: any = {};
     const structureElements = ['header', 'footer', 'nav', 'main'];
     for (let element of structureElements) {
@@ -75,7 +88,7 @@ class WebScraper {
     return pageStructure;
   }
 
-  private extractLinks() {
+  private extractLinks(): ReportType['links'] {
     const links = Array.from(this.document.querySelectorAll('a')).map(
       (link: HTMLAnchorElement) => {
         const { href, textContent } = link;
@@ -89,7 +102,7 @@ class WebScraper {
     return links;
   }
 
-  private extractImages() {
+  private extractImages(): ReportType['images'] {
     const images = Array.from(
       this.document.querySelectorAll('img')
     ).map((img: HTMLImageElement) => {
@@ -103,7 +116,7 @@ class WebScraper {
     return images;
   }
 
-  private extractHeadingStructure() {
+  private extractHeadingStructure(): ReportType['headingStructure'] {
     const body = this.document.querySelector('body');
     const blockElements = [
       'article',
@@ -152,7 +165,7 @@ class WebScraper {
     return elementsHeadingsDict;
   }
 
-  private extractFormFields() {
+  private extractFormFields(): ReportType['formFields'] {
     const formFields = Array.from(
       this.document.querySelectorAll('input')
     ).map((input: HTMLInputElement) => {
@@ -181,7 +194,7 @@ const scrapeSite = async (url: string) => {
   try {
     const { error } = siteData;
 
-    if (!error) return siteData.data;
+    if (!error) return { data: siteData.data, error: null };
 
     let customError = '';
     const errorMessage = error.message;
@@ -206,7 +219,11 @@ const scrapeSite = async (url: string) => {
     // });
   } catch (err: any) {
     console.log({ err });
-    throw new Error(err.message || 'An unknown error occurred');
+    // throw new Error(err.message || 'An unknown error occurred');
+    return {
+      error: err.message || 'An unknown error occurred',
+      data: null,
+    };
     // return { error: err.message || 'An unknown error occurred' };
     // console.log({ err });
     // res.status(500).json({

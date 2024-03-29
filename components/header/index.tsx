@@ -1,14 +1,15 @@
 'use client';
 
-import SearchBar from './SearchBar';
-import './header.scss';
+import Image from 'next/image';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { AuthState, userSignIn } from '@/redux/authSlice';
 import { authActions } from '@/redux/authSlice';
 import { RootState } from '@/redux/store';
 import { getSession } from '@/app/actions/auth';
-import Image from 'next/image';
+import SearchBar from './SearchBar';
+import './header.scss';
 
 const Header = () => {
   const dispatch = useDispatch();

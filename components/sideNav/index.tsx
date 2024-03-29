@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import './sideNav.scss';
 import { useDispatch } from 'react-redux';
+
 import { userSignOut } from '@/redux/authSlice';
+import './sideNav.scss';
 
 const SideNav = () => {
   const dispatch = useDispatch();

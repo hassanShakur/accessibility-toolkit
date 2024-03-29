@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getUser, signIn, signOut } from '@/app/actions/auth';
-import { UserMetadata, UserResponse } from '@supabase/supabase-js';
+import { UserMetadata } from '@supabase/supabase-js';
 
 export const userSignIn = createAsyncThunk(
   'auth/signIn',

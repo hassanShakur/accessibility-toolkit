@@ -1,53 +1,44 @@
 'use client';
 
-import { createClient } from '@supabase/supabase-js';
 import SearchBar from './SearchBar';
 import './header.scss';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { AuthState, userSignIn } from '@/redux/authSlice';
+import { authActions } from '@/redux/authSlice';
+import { RootState } from '@/redux/store';
+import { getSession } from '@/app/actions/auth';
 
 const Header = () => {
-  const supabaseUrl = 'https://petdmhhtxrcenqsdbyhl.supabase.co';
-  const supabaseKey =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBldGRtaGh0eHJjZW5xc2RieWhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDQzNjA3NTQsImV4cCI6MjAxOTkzNjc1NH0.ZKU-orJJsiKm37eKGYrItSNjNUh7NLmS2GpjOEuPHBU';
-  const supabase = createClient(supabaseUrl, supabaseKey);
-  const [userData, setUserData] = useState<any>(null);
-
-  const signIn = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        queryParams: {
-          access_type: 'offline',
-          prompt: 'consent',
-        },
-      },
-    });
-  };
+  const dispatch = useDispatch();
+  const { user, error, loading } = useSelector<RootState, AuthState>(
+    (state) => state.auth
+  );
 
   useEffect(() => {
-    supabase.auth.getUser().then((user) => {
-      setUserData(user);
+    getSession().then((session) => {
+      if (session) {
+        dispatch(authActions.setUser(session?.user?.user_metadata));
+      }
     });
-  }, [supabase.auth]);
-
-  const signOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    console.log({ error });
-  };
+  }, [dispatch]);
 
   return (
     <header>
       <SearchBar />
       <nav>
-        <ul>
-          <li>
-            <button onClick={signIn}>Sign In</button>
-          </li>
-          <li>
-            <button>Sign Up</button>
-          </li>
-        </ul>
+        {!user?.data?.user && (
+          <ul>
+            <li>
+              <button onClick={() => dispatch(userSignIn() as any)}>
+                Sign In
+              </button>
+            </li>
+            <li>
+              <button>Sign Up</button>
+            </li>
+          </ul>
+        )}
       </nav>
     </header>
   );

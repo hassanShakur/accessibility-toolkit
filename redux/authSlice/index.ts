@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getUser, signIn, signOut } from '@/app/actions/auth';
-import { UserResponse } from '@supabase/supabase-js';
+import { UserMetadata, UserResponse } from '@supabase/supabase-js';
 
 export const userSignIn = createAsyncThunk(
   'auth/signIn',
   async () => {
     await signIn();
     const user = await getUser();
-    return user;
+    return user || null;
   }
 );
 
@@ -21,7 +21,7 @@ export const userSignOut = createAsyncThunk(
 );
 
 type InitialStateType = {
-  user: UserResponse | null;
+  user: UserMetadata | null;
   loading: boolean;
   error: string;
 };
@@ -82,3 +82,5 @@ const authSlice = createSlice({
 
 export const authActions = authSlice.actions;
 export type AuthState = ReturnType<typeof authSlice.reducer>;
+
+export default authSlice.reducer;

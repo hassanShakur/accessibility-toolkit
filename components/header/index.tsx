@@ -8,6 +8,7 @@ import { AuthState, userSignIn } from '@/redux/authSlice';
 import { authActions } from '@/redux/authSlice';
 import { RootState } from '@/redux/store';
 import { getSession } from '@/app/actions/auth';
+import Image from 'next/image';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,19 @@ const Header = () => {
     <header>
       <SearchBar />
       <nav>
-        {!user?.data?.user && (
+        {user ? (
+          <span>
+            <Image
+              loader={() => user.avatar_url}
+              src={user.avatar_url}
+              alt={user.full_name}
+              width={40}
+              height={40}
+              className='rounded-full'
+              title={user.full_name}
+            />
+          </span>
+        ) : (
           <ul>
             <li>
               <button onClick={() => dispatch(userSignIn() as any)}>

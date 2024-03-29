@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import './sideNav.scss';
+import { useDispatch } from 'react-redux';
+import { userSignOut } from '@/redux/authSlice';
 
 const SideNav = () => {
+  const dispatch = useDispatch();
+
   return (
     <aside>
       <h1 id='logo'>AxeTool</h1>
@@ -14,7 +18,13 @@ const SideNav = () => {
       </div>
 
       <div id='logout'>
-        <Link href='/logout'>Logout</Link>
+        <button
+          onClick={() => {
+            dispatch(userSignOut() as any);
+          }}
+        >
+          Logout
+        </button>
       </div>
     </aside>
   );

@@ -1,6 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { UserMetadata } from '@supabase/supabase-js';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import scrapeSite from '@/app/actions/scrape';
+import { saveReport } from '@/app/actions/reports';
 
 export const getReport = createAsyncThunk(
   'report/getReport',
@@ -10,11 +13,20 @@ export const getReport = createAsyncThunk(
   }
 );
 
+export const saveCurrReport = createAsyncThunk(
+  'report/saveCurrReport',
+  async ({ user, report }: { user: UserMetadata; report: any }) => {
+    if (!report.data) return;
+    saveReport(user, report);
+  }
+);
+
 const initialState = {
   report: {
     status: '',
     url: '',
     data: null,
+    timeStamp: '',
   },
   // report: null,
   loading: false,
@@ -30,6 +42,7 @@ const reportSlice = createSlice({
         status: '',
         url: '',
         data: null,
+        timeStamp: '',
       };
     },
 
@@ -47,7 +60,9 @@ const reportSlice = createSlice({
     });
     builder.addCase(getReport.fulfilled, (state, action) => {
       state.loading = false;
-      state.report = action.payload;
+      const timeStamp = new Date()
+        .toISOString();
+      state.report = { ...action.payload, timeStamp };
     });
     builder.addCase(getReport.rejected, (state, action) => {
       state.loading = false;

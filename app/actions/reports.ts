@@ -1,12 +1,10 @@
-'use server';// Import the functions you need from the SDKs you need
+'use server';
+
+// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, set } from 'firebase/database';
-import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { UserMetadata } from '@supabase/supabase-js';
 
-// Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: 'AIzaSyBOQUScpNcqbQaPqCn10B9449VM6yZfhsM',
@@ -19,25 +17,27 @@ const firebaseConfig = {
   measurementId: 'G-TNL3B6CGD1',
 };
 
-const Home = () => {
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
+type SimpleReport = {
+  status: string;
+  url: string;
+  data: any;
+  timeStamp: string;
+};
+
+export const saveReport = (
+  user: UserMetadata,
+  report: SimpleReport
+) => {
   const db = getDatabase();
+  const cleanedReportUrl = report.url.replace(/[^a-zA-Z0-9]/g, '');
 
-  const user = useSelector((state) => state.auth.user);
-  console.log(user?.sub);
+  const reference = ref(
+    db,
+    `reports/${user.sub}/${cleanedReportUrl}`
+  );
 
-  useEffect(() => {
-    if (!user || !user?.sub) return;
-
-    const saveData = (sub: any, data: any) => {
-      const reference = ref(db, 'reports/' + user.sub);
-
-      set(reference, {...data, sub});
-    };
-
-    saveData(user.sub, {
-      email: user.email,
-    });
-  }, [db, user]);
+  set(reference, report);
+};

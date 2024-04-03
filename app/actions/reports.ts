@@ -1,16 +1,4 @@
-'use client';
-
-// import type { Metadata } from 'next';
-import Form from '@/components/home/Form';
-
-import './page.scss';
-
-// export const metadata: Metadata = {
-//   title: 'Accessibility Toolkit',
-//   description: 'A toolkit for making your site more accessible.',
-// };
-
-// Import the functions you need from the SDKs you need
+'use server';// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, set } from 'firebase/database';
 import { useSelector } from 'react-redux';
@@ -53,16 +41,3 @@ const Home = () => {
       email: user.email,
     });
   }, [db, user]);
-
-  return (
-    <>
-      <div className='hero'>
-        <h1>AxeTool</h1>
-        <p>The accessibility toolkit handler</p>
-      </div>
-      <Form />
-    </>
-  );
-};
-
-export default Home;

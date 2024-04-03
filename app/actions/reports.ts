@@ -2,7 +2,7 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, set } from 'firebase/database';
+import { get, getDatabase, onValue, ref, set } from 'firebase/database';
 import { UserMetadata } from '@supabase/supabase-js';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -17,15 +17,15 @@ const firebaseConfig = {
   measurementId: 'G-TNL3B6CGD1',
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
 type SimpleReport = {
   status: string;
   url: string;
   data: any;
   timeStamp: string;
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
 export const saveReport = (
   user: UserMetadata,
@@ -41,3 +41,15 @@ export const saveReport = (
 
   set(reference, report);
 };
+
+export const getReports = async (user: UserMetadata) => {
+  const db = getDatabase();
+  const reference = ref(db, `reports/${user.sub}`);
+  
+  onValue(reference, (snapshot) => {
+    const data = snapshot.val();
+    console.log(data);
+  });
+
+  
+}

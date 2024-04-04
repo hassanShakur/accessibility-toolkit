@@ -2,8 +2,9 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { get, getDatabase, onValue, ref, set } from 'firebase/database';
+import { get, getDatabase, ref, set } from 'firebase/database';
 import { UserMetadata } from '@supabase/supabase-js';
+import { SavedReport } from '@/types';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -17,19 +18,12 @@ const firebaseConfig = {
   measurementId: 'G-TNL3B6CGD1',
 };
 
-type SimpleReport = {
-  status: string;
-  url: string;
-  data: any;
-  timeStamp: string;
-};
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 export const saveReport = (
   user: UserMetadata,
-  report: SimpleReport
+  report: SavedReport
 ) => {
   const db = getDatabase();
   const cleanedReportUrl = report.url.replace(/[^a-zA-Z0-9]/g, '');
@@ -45,11 +39,15 @@ export const saveReport = (
 export const getReports = async (user: UserMetadata) => {
   const db = getDatabase();
   const reference = ref(db, `reports/${user.sub}`);
-  
-  onValue(reference, (snapshot) => {
-    const data = snapshot.val();
-    console.log(data);
-  });
 
-  
-}
+  const snapshot = await get(reference);
+  const reports: SavedReport[] = [];
+
+  if (snapshot.exists()) {
+    snapshot.forEach((child) => {
+      reports.push(child.val());
+    });
+  }
+
+  return reports;
+};

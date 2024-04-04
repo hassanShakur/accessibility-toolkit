@@ -8,7 +8,7 @@ import { RootState } from '@/redux/store';
 import { getReport } from '@/redux/reportSlice';
 import type { ReportState } from '@/redux/reportSlice';
 import ReportAnalysis from '@/components/report/ReportAnalysis';
-import { reportActions, saveCurrReport } from '@/redux/reportSlice';
+import { reportActions } from '@/redux/reportSlice';
 
 const Report = () => {
   const reportState = useSelector<RootState, ReportState>(
@@ -26,22 +26,8 @@ const Report = () => {
     const hashUrl = window && window.location.hash.slice(1);
     if (!hashUrl) return;
 
-    dispatch(getReport(hashUrl) as any); // Explicitly type dispatch as any
-  }, [dispatch]);
-
-  // save report to user's report history
-  useEffect(() => {
-    if (!reportState.report || !currUser) return;
-
-    dispatch(
-      saveCurrReport({
-        user: currUser,
-        report: reportState.report,
-      }) as any
-    );
-  }, [dispatch, currUser, reportState]);
-
-  // if (!reportState) return <p>No report found!</p>;
+    dispatch(getReport({ url: hashUrl, user: currUser }) as any); // Explicitly type dispatch as any
+  }, [dispatch, currUser]);
 
   const { report, loading, error } = reportState;
 

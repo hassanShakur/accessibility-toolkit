@@ -9,11 +9,12 @@ TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo('en-US');
 
 import { SavedReport } from '@/types';
-import { deleteReport } from '../actions/reports';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
+import { deleteSavedReport } from '@/redux/reportSlice';
 
 const SingleReport = ({ report }: { report: SavedReport }) => {
+  const dispatch = useDispatch();
   const currUser = useSelector<RootState, any>(
     (state) => state.auth.user
   );
@@ -24,7 +25,14 @@ const SingleReport = ({ report }: { report: SavedReport }) => {
   const reportTimeStamp = timeAgo.format(new Date(report.timeStamp));
 
   const deleteReportHandler = async () => {
-    await deleteReport(currUser, report.url);
+    if (!currUser) return;
+
+    dispatch(
+      deleteSavedReport({
+        user: currUser,
+        reportUrl: report.url,
+      }) as any
+    );
   };
 
   return (

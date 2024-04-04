@@ -3,14 +3,24 @@ import { UserMetadata } from '@supabase/supabase-js';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import scrapeSite from '@/app/actions/scrape';
-import { getReports, saveReport } from '@/app/actions/reports';
+import {
+  deleteReport,
+  getReports,
+  saveReport,
+} from '@/app/actions/reports';
 import { SavedReport } from '@/types';
 
 export const getReport = createAsyncThunk(
   'report/getReport',
-  async (url: string) => {
+  async ({ url, user }: { url: string; user: UserMetadata }) => {
     const data = await scrapeSite(url);
-    return { data, status: 'success', url };
+    const timeStamp = new Date().toISOString();
+
+    const fullReport = { data, status: 'success', url, timeStamp };
+
+    if (user) saveReport(user, fullReport);
+
+    return fullReport;
   }
 );
 
@@ -28,6 +38,19 @@ export const fetchSavedReports = createAsyncThunk(
     const data = await getReports(user);
 
     return data;
+  }
+);
+
+export const deleteSavedReport = createAsyncThunk(
+  'report/deleteSavedReport',
+  async ({
+    user,
+    reportUrl,
+  }: {
+    user: UserMetadata;
+    reportUrl: string;
+  }) => {
+    deleteReport(user, reportUrl);
   }
 );
 
@@ -71,8 +94,7 @@ const reportSlice = createSlice({
     });
     builder.addCase(getReport.fulfilled, (state, action) => {
       state.loading = false;
-      const timeStamp = new Date().toISOString();
-      state.report = { ...action.payload, timeStamp };
+      state.report = action.payload;
     });
     builder.addCase(getReport.rejected, (state, action) => {
       state.loading = false;

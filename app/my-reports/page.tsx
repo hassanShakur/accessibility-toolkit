@@ -33,12 +33,7 @@ const MyReports = () => {
   }
 
   if (savedReports.length === 0) {
-    return (
-      <div className='h-[90%] w-full mt-10 p-5'>
-        <h1 className='mb-10 text-lg md:text-xl'>My Reports</h1>
-        <p>No reports saved yet.</p>
-      </div>
-    );
+    return <p>No reports saved yet.</p>;
   }
 
   return (

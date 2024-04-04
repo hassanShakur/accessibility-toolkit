@@ -14,8 +14,6 @@ const SideNav = () => {
       <div className='aside-links'>
         <Link href='/'>Home</Link>
         <Link href='/my-reports'>My Reports</Link>
-        <Link href='/about'>About</Link>
-        <Link href='/contact'>Contact</Link>
       </div>
 
       <div id='logout'>
@@ -23,6 +21,7 @@ const SideNav = () => {
           onClick={() => {
             dispatch(userSignOut() as any);
           }}
+          className='bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded-md w-full'
         >
           Logout
         </button>

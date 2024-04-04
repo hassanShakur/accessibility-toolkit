@@ -23,11 +23,9 @@ const MyReports = () => {
     });
   }, [currUser]);
 
-  
-
   return (
-    <div className='h-[90%] w-full mt-10'>
-      <h1>My Reports</h1>
+    <div className='h-[90%] w-full mt-10 p-5'>
+      <h1 className='mb-10 text-lg md:text-xl'>My Reports</h1>
 
       <div className='w-full h-fit max-h-full flex flex-wrap items-start justify-start gap-10'>
         {reports.map((report) => (

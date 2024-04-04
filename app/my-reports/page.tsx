@@ -1,15 +1,19 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { getReports } from '../actions/reports';
 import { RootState } from '@/redux/store';
 import { SavedReport } from '@/types';
 import SingleReport from './SingleReport';
+import Spinner from '@/components/spinner';
+import { fetchSavedReports } from '@/redux/reportSlice';
 
 const MyReports = () => {
-  const [reports, setReports] = useState<SavedReport[]>([]); // [1
+  const dispatch = useDispatch();
+  const { savedReports, loading } = useSelector<RootState, any>(
+    (state) => state.report
+  );
   const currUser = useSelector<RootState, any>(
     (state) => state.auth.user
   );
@@ -17,44 +21,37 @@ const MyReports = () => {
   useEffect(() => {
     if (!currUser) return;
 
-    getReports(currUser).then((data) => {
-      setReports(data);
-      console.log(data);
-    });
-  }, [currUser]);
+    dispatch(fetchSavedReports(currUser) as any);
+  }, [currUser, dispatch]);
+
+  if (loading) {
+    return <Spinner />;
+  }
+
+  if (!currUser) {
+    return <p>Please sign in to view your saved reports.</p>;
+  }
+
+  if (savedReports.length === 0) {
+    return (
+      <div className='h-[90%] w-full mt-10 p-5'>
+        <h1 className='mb-10 text-lg md:text-xl'>My Reports</h1>
+        <p>No reports saved yet.</p>
+      </div>
+    );
+  }
 
   return (
     <div className='h-[90%] w-full mt-10 p-5'>
       <h1 className='mb-10 text-lg md:text-xl'>My Reports</h1>
 
       <div className='w-full h-fit max-h-full flex flex-wrap items-start justify-start gap-10'>
-        {reports.map((report) => (
+        {savedReports.map((report: SavedReport) => (
           <SingleReport report={report} key={report.url} />
         ))}
       </div>
     </div>
   );
 };
-
-{
-  /* <span>
-              {/* {`${report.data.page_info.title.slice(0, 40)}...` ||
-                report.url} */
-}
-//   {report.data.page_info.title
-//     ? report.data.page_info.title.length > 40
-//       ? report.data.page_info.title.slice(0, 40) + '...'
-//       : report.data.page_info.title
-//     : report.url}
-// </span>
-
-// <span className='text-sm'>
-//   {report.data.page_info.description
-//     ? report.data.page_info.description.length > 80
-//       ? report.data.page_info.description.slice(0, 80) +
-//         '...'
-//       : report.data.page_info.description
-//     : ''}
-// </span> */}
 
 export default MyReports;

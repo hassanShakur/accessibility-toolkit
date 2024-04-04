@@ -9,12 +9,23 @@ TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo('en-US');
 
 import { SavedReport } from '@/types';
+import { deleteReport } from '../actions/reports';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/redux/store';
 
 const SingleReport = ({ report }: { report: SavedReport }) => {
+  const currUser = useSelector<RootState, any>(
+    (state) => state.auth.user
+  );
+
   const onlineFavIcon = `${report.url}/favicon.ico`;
   const pageTitle = report.data.page_info.title;
   const pageDescription = report.data.page_info.description;
   const reportTimeStamp = timeAgo.format(new Date(report.timeStamp));
+
+  const deleteReportHandler = async () => {
+    await deleteReport(currUser, report.url);
+  };
 
   return (
     <Link
@@ -56,7 +67,10 @@ const SingleReport = ({ report }: { report: SavedReport }) => {
 
         <div className='text-sm flex items-center justify-between w-full'>
           <span>{reportTimeStamp}</span>
-          <span className='opacity-100'>
+          <span
+            className='opacity-100 z-20'
+            onClick={deleteReportHandler}
+          >
             <Image
               src={deleteIcon}
               alt='delete'

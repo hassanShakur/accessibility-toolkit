@@ -3,7 +3,8 @@ import { UserMetadata } from '@supabase/supabase-js';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import scrapeSite from '@/app/actions/scrape';
-import { saveReport } from '@/app/actions/reports';
+import { getReports, saveReport } from '@/app/actions/reports';
+import { SavedReport } from '@/types';
 
 export const getReport = createAsyncThunk(
   'report/getReport',
@@ -21,6 +22,15 @@ export const saveCurrReport = createAsyncThunk(
   }
 );
 
+export const fetchSavedReports = createAsyncThunk(
+  'report/getSavedReports',
+  async (user: UserMetadata) => {
+    const data = await getReports(user);
+
+    return data;
+  }
+);
+
 const initialState = {
   report: {
     status: '',
@@ -28,6 +38,7 @@ const initialState = {
     data: null,
     timeStamp: '',
   },
+  savedReports: <SavedReport[]>[],
   // report: null,
   loading: false,
   error: '',
@@ -60,14 +71,39 @@ const reportSlice = createSlice({
     });
     builder.addCase(getReport.fulfilled, (state, action) => {
       state.loading = false;
-      const timeStamp = new Date()
-        .toISOString();
+      const timeStamp = new Date().toISOString();
       state.report = { ...action.payload, timeStamp };
     });
     builder.addCase(getReport.rejected, (state, action) => {
       state.loading = false;
       console.log(action.error.message);
+      state.error =
+        action.error.message || 'An unknown error occured';
+    });
 
+    builder.addCase(saveCurrReport.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(saveCurrReport.fulfilled, (state, action) => {
+      state.loading = false;
+    });
+    builder.addCase(saveCurrReport.rejected, (state, action) => {
+      state.loading = false;
+      console.log(action.error.message);
+      state.error =
+        action.error.message || 'An unknown error occured';
+    });
+
+    builder.addCase(fetchSavedReports.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchSavedReports.fulfilled, (state, action) => {
+      state.loading = false;
+      state.savedReports = action.payload;
+    });
+    builder.addCase(fetchSavedReports.rejected, (state, action) => {
+      state.loading = false;
+      console.log(action.error.message);
       state.error =
         action.error.message || 'An unknown error occured';
     });

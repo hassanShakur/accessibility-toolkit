@@ -51,3 +51,18 @@ export const getReports = async (user: UserMetadata) => {
 
   return reports;
 };
+
+export const deleteReport = async (
+  user: UserMetadata,
+  reportUrl: string
+) => {
+  const db = getDatabase();
+  const cleanedReportUrl = reportUrl.replace(/[^a-zA-Z0-9]/g, '');
+
+  const reference = ref(
+    db,
+    `reports/${user.sub}/${cleanedReportUrl}`
+  );
+
+  await set(reference, null);
+};

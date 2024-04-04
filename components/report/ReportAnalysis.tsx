@@ -8,8 +8,8 @@ import HeadingStruct from '../chart/HeadingStruct';
 import ImageStruct from '../chart/ImageStruct';
 import LinkStruct from '../chart/LinkStruct';
 import SiteDetails from './SiteDetails';
-import './reportAnalysis.scss'
-import './reportCard.scss'
+import './reportAnalysis.scss';
+import './reportCard.scss';
 
 interface PropType {
   report: {
@@ -23,7 +23,6 @@ const ReportAnalysis = (props: PropType) => {
   const report = props.report.data;
   const url = props.report.url;
   const analyzedData = report ? analyzer(report) : null;
-
 
   return (
     <div id='analysis-page'>

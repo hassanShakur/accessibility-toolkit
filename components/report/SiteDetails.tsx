@@ -1,8 +1,8 @@
-import { SiteDetails } from '@/types/analyzedData';
+import { SiteDetailsType } from '@/types/analyzedData';
 import './siteDetails.scss';
 
 interface PropType {
-  data: SiteDetails | undefined;
+  data: SiteDetailsType | undefined;
   url: string;
 }
 

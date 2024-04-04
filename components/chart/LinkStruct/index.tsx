@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Chart, ArcElement, Legend, Tooltip } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 
-import { LinkStruct } from '@/types/analyzedData';
+import { LinkStructType } from '@/types/analyzedData';
 import linkImg from '@/public/images/http.png';
 import removeImg from '@/public/images/remove.png';
 import checkImg from '@/public/images/verification.png';
@@ -12,7 +12,7 @@ import ColoredScore from '../ColoredScore';
 Chart.register(ArcElement, Legend, Tooltip);
 
 interface PropType {
-  data: LinkStruct;
+  data: LinkStructType;
 }
 
 const LinkStruct = (props: PropType) => {
@@ -57,7 +57,9 @@ const LinkStruct = (props: PropType) => {
                   ) : (
                     <Image src={removeImg} alt='Remove icon' />
                   )}
-                  <span>{infoItems[key as keyof typeof infoItems]}</span>
+                  <span>
+                    {infoItems[key as keyof typeof infoItems]}
+                  </span>
                 </li>
               ) : null;
             })}

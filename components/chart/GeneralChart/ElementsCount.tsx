@@ -8,7 +8,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
-import AnalyzedData from '@/types/analyzedData';
+import AnalyzedDataType from '@/types/analyzedData';
 
 ChartJS.register(
   BarElement,
@@ -19,14 +19,14 @@ ChartJS.register(
 );
 
 interface propsType {
-  data: AnalyzedData;
+  data: AnalyzedDataType;
 }
 
 const ElementsCount = (props: propsType) => {
   const siteData = props.data;
   let structElementsCount = {
-    'Links': siteData.linkStruct.itemsCount,
-    'Images': siteData.imageStruct.itemsCount,
+    Links: siteData.linkStruct.itemsCount,
+    Images: siteData.imageStruct.itemsCount,
     // 'Block Elements': siteData.headingStruct.itemsCount,
     'Form Fields': siteData.formField.itemsCount,
     // 'Page Info': siteData.pageInfo.itemsCount,

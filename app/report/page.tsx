@@ -18,11 +18,11 @@ const Report = () => {
     (state) => state.auth.user
   );
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(reportActions.resetError());
     dispatch(reportActions.resetReport());
-
+    
     const hashUrl = window && window.location.hash.slice(1);
     if (!hashUrl) return;
 

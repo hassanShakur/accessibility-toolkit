@@ -18,6 +18,7 @@ const SideNav = () => {
       <div className='aside-links'>
         <Link href='/'>Home</Link>
         <Link href='/my-reports'>My Reports</Link>
+        <Link href='/resources'>Axe Resources</Link>
       </div>
 
       <div id='logout'>

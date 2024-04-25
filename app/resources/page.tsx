@@ -59,17 +59,19 @@ const Resources = () => {
             href={resource.href}
             target='_blank'
             key={index}
-            className='rounded shadow p-4 bg-slate-900'
+            className='rounded shadow bg-slate-900'
           >
             <Image
               src={resource.image}
               alt={resource.name}
-              className='w-full h-48 object-cover mb-4'
+              className='w-full h-56 object-cover mb-4'
             />
-            <h2 className='text-xl font-semibold mb-2'>
-              {resource.name}
-            </h2>
-            <p className='text-gray-600'>{resource.description}</p>
+            <div className='p-4'>
+              <h2 className='text-xl font-semibold mb-2'>
+                {resource.name}
+              </h2>
+              <p className='text-gray-600'>{resource.description}</p>
+            </div>
           </Link>
         ))}
       </div>

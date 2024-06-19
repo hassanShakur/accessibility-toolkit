@@ -1,11 +1,9 @@
-'use client'
+'use client';
 import './globals.scss';
 import Header from '@/components/header';
 import SideNav from '@/components/sideNav';
 import { Provider } from 'react-redux';
 import store from '@/redux/store';
-
-
 
 export default function RootLayout({
   children,
@@ -26,3 +24,5 @@ export default function RootLayout({
     </Provider>
   );
 }
+
+// add tailwind estimation classes based on the scss code commented below

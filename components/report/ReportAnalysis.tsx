@@ -17,10 +17,9 @@ interface PropType {
 }
 
 const ReportAnalysis = (props: PropType) => {
-  const report = props.data;
-  const url = props.url;
-  const analyzedData = analyzer(report);
-  // const analyzedData = report ? analyzer(report) : null;
+  const report = props.report.data;
+  const url = props.report.url;
+  const analyzedData = report ? analyzer(report) : null;
 
   return (
     <div id='analysis-page'>

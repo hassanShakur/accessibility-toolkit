@@ -1,16 +1,19 @@
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { getReport } from '@/redux/reportSlice';
-import type { AppDispatch } from '@/redux/store';
-import { reportActions } from '@/redux/reportSlice';
+import type { AppDispatch, RootState } from '@/redux/store';
+import { getReport, reportActions } from '@/redux/reportSlice';
 import { fixUrl } from '@/helpers';
 
 const SearchBar = () => {
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
   const [url, setUrl] = useState('');
+
+  const currUser = useSelector<RootState, any>(
+    (state) => state.auth.user
+  );
 
   const urlSubmitHandler = async (e: FormEvent) => {
     e.preventDefault();
@@ -20,10 +23,11 @@ const SearchBar = () => {
     dispatch(reportActions.resetError());
     dispatch(reportActions.resetReport());
 
-    const fixedUrl = fixUrl(url);
-    
-    router.push(`/report#${fixedUrl}`);
-    dispatch(getReport(fixedUrl));
+    const hashUrl = fixUrl(url);
+
+    router.push(`/report#${hashUrl}`);
+    dispatch(getReport({ url: hashUrl, user: currUser }) as any);
+
     setUrl(() => '');
   };
 

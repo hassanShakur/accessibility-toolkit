@@ -1,4 +1,4 @@
-export interface PageInfo {
+export interface PageInfoType {
   score: number;
   total: number;
   itemsCount: number;
@@ -8,7 +8,7 @@ export interface PageInfo {
   languageCount: number;
 }
 
-export interface PageStruct {
+export interface PageStructType {
   score: number;
   total: number;
   itemsCount: number;
@@ -18,7 +18,7 @@ export interface PageStruct {
   mainCount: number;
 }
 
-export interface FormField {
+export interface FormFieldType {
   score: number;
   total: number;
   fieldsCount: number;
@@ -28,7 +28,7 @@ export interface FormField {
   missingType: number;
 }
 
-export interface HeadingStruct {
+export interface HeadingStructType {
   score: number;
   total: number;
   itemsCount: number;
@@ -36,7 +36,7 @@ export interface HeadingStruct {
   wrongOrder: number;
 }
 
-export interface ImageStruct {
+export interface ImageStructType {
   score: number;
   total: number;
   itemsCount: number;
@@ -44,7 +44,7 @@ export interface ImageStruct {
   missingAlt: number;
 }
 
-export interface LinkStruct {
+export interface LinkStructType {
   score: number;
   total: number;
   itemsCount: number;
@@ -52,24 +52,24 @@ export interface LinkStruct {
   hashHref: number;
 }
 
-export interface SiteDetails {
+export interface SiteDetailsType {
   title: string;
   description: string;
 }
 
-export interface AnalyzedData {
+export interface AnalyzedDataType {
   total: number;
   score: number;
   itemsCount: number;
-  pageInfo: PageInfo;
-  pageStruct: PageStruct;
-  formField: FormField;
-  headingStruct: HeadingStruct;
-  imageStruct: ImageStruct;
-  linkStruct: LinkStruct;
+  pageInfo: PageInfoType;
+  pageStruct: PageStructType;
+  formField: FormFieldType;
+  headingStruct: HeadingStructType;
+  imageStruct: ImageStructType;
+  linkStruct: LinkStructType;
 }
 
-export const emptyAnalyzedData = {
+export const emptyAnalyzedDataType = {
   total: 0,
   score: 0,
   itemsCount: 0,
@@ -112,4 +112,4 @@ export const emptyAnalyzedData = {
   },
 };
 
-export default AnalyzedData;
+export default AnalyzedDataType;

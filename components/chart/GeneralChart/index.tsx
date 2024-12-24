@@ -1,10 +1,10 @@
-import AnalyzedData from '@/types/analyzedData';
+import AnalyzedDataType from '@/types/analyzedData';
 import AccessDough from './AccessDough';
 import ElementsCount from './ElementsCount';
-import './generalChart.scss'
+import './generalChart.scss';
 
 interface propsType {
-  siteData: AnalyzedData;
+  siteData: AnalyzedDataType;
 }
 
 const sampleData = {

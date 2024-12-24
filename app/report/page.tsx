@@ -1,39 +1,35 @@
 'use client';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '@/redux/store';
+import { useDispatch } from 'react-redux';
+
 import Spinner from '@/components/spinner';
+import { RootState } from '@/redux/store';
+import { getReport } from '@/redux/reportSlice';
 import type { ReportState } from '@/redux/reportSlice';
 import ReportAnalysis from '@/components/report/ReportAnalysis';
-import { usePathname } from 'next/dist/client/components/navigation';
-import { useDispatch } from 'react-redux';
 import { reportActions } from '@/redux/reportSlice';
-import { getReport } from '@/redux/reportSlice';
-import { useEffect } from 'react';
 
 const Report = () => {
   const reportState = useSelector<RootState, ReportState>(
     (state) => state.report
   );
+  const currUser = useSelector<RootState, any>(
+    (state) => state.auth.user
+  );
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(reportActions.resetError());
     dispatch(reportActions.resetReport());
-
+    
     const hashUrl = window && window.location.hash.slice(1);
     if (!hashUrl) return;
 
-    dispatch(getReport(hashUrl) as any); // Explicitly type dispatch as any
-  }, [dispatch]);
-
-  // if (!reportState) return <p>No report found!</p>;
+    dispatch(getReport({ url: hashUrl, user: currUser }) as any); // Explicitly type dispatch as any
+  }, [dispatch, currUser]);
 
   const { data, url, loading, error } = reportState;
-
-  // const { report, loading, error } = useSelector<
-  //   RootState,
-  //   ReportState
-  // >((state) => state.report);
 
   if (loading) return <Spinner />;
 

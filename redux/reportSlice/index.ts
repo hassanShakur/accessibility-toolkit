@@ -1,25 +1,68 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { UserMetadata } from '@supabase/supabase-js';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import scrapeSite from '@/app/actions/scrape';
+import {
+  deleteReport,
+  getReports,
+  saveReport,
+} from '@/app/actions/reports';
+import { SavedReport } from '@/types';
 
 export const getReport = createAsyncThunk(
   'report/getReport',
-  async (url: string) => {
-    const { data, error } = await scrapeSite(url);
-    return { data, error, url };
+  async ({ url, user }: { url: string; user: UserMetadata }) => {
+    const data = await scrapeSite(url);
+    const timeStamp = new Date().toISOString();
+
+    const fullReport = { data, status: 'success', url, timeStamp };
+
+    if (user) saveReport(user, fullReport);
+
+    return fullReport;
   }
 );
 
-interface InitialState {
-  url: string;
-  data: any;
-  loading: boolean;
-  error: string | null;
-}
+export const saveCurrReport = createAsyncThunk(
+  'report/saveCurrReport',
+  async ({ user, report }: { user: UserMetadata; report: any }) => {
+    if (!report.data) return;
+    saveReport(user, report);
+  }
+);
 
-const initialState: InitialState = {
-  url: '',
-  data: null,
+export const fetchSavedReports = createAsyncThunk(
+  'report/getSavedReports',
+  async (user: UserMetadata) => {
+    const data = await getReports(user);
+
+    return data;
+  }
+);
+
+export const deleteSavedReport = createAsyncThunk(
+  'report/deleteSavedReport',
+  async ({
+    user,
+    reportUrl,
+  }: {
+    user: UserMetadata;
+    reportUrl: string;
+  }) => {
+    deleteReport(user, reportUrl);
+  }
+);
+
+const initialState = {
+  report: {
+    status: '',
+    url: '',
+    data: null,
+    timeStamp: '',
+  },
+  savedReports: <SavedReport[]>[],
+  // report: null,
   loading: false,
   error: null,
 };
@@ -29,9 +72,12 @@ const reportSlice = createSlice({
   initialState,
   reducers: {
     resetReport(state) {
-      state.loading = false;
-      state.url = '';
-      state.data = null;
+      state.report = {
+        status: '',
+        url: '',
+        data: null,
+        timeStamp: '',
+      };
     },
 
     resetError(state) {
@@ -57,7 +103,33 @@ const reportSlice = createSlice({
       state.data = null;
 
       console.log(action.error.message);
+      state.error =
+        action.error.message || 'An unknown error occured';
+    });
 
+    builder.addCase(saveCurrReport.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(saveCurrReport.fulfilled, (state, action) => {
+      state.loading = false;
+    });
+    builder.addCase(saveCurrReport.rejected, (state, action) => {
+      state.loading = false;
+      console.log(action.error.message);
+      state.error =
+        action.error.message || 'An unknown error occured';
+    });
+
+    builder.addCase(fetchSavedReports.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchSavedReports.fulfilled, (state, action) => {
+      state.loading = false;
+      state.savedReports = action.payload;
+    });
+    builder.addCase(fetchSavedReports.rejected, (state, action) => {
+      state.loading = false;
+      console.log(action.error.message);
       state.error =
         action.error.message || 'An unknown error occured';
     });

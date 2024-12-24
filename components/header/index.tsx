@@ -1,19 +1,58 @@
+'use client';
+
+import Image from 'next/image';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { AuthState, userSignIn } from '@/redux/authSlice';
+import { authActions } from '@/redux/authSlice';
+import { RootState } from '@/redux/store';
+import { getSession } from '@/app/actions/auth';
 import SearchBar from './SearchBar';
 import './header.scss';
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const { user, error, loading } = useSelector<RootState, AuthState>(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    getSession().then((session) => {
+      if (session) {
+        dispatch(authActions.setUser(session?.user?.user_metadata));
+      }
+    });
+  }, [dispatch]);
+
   return (
     <header>
       <SearchBar />
       <nav>
-        <ul>
-          <li>
-            <a href='#'>Sign In</a>
-          </li>
-          <li>
-            <a href='#'>Sign Up</a>
-          </li>
-        </ul>
+        {user ? (
+          <span>
+            <Image
+              loader={() => user.avatar_url}
+              src={user.avatar_url}
+              alt={user.full_name}
+              width={40}
+              height={40}
+              className='rounded-full'
+              title={user.full_name}
+            />
+          </span>
+        ) : (
+          <ul>
+            <li>
+              <button onClick={() => dispatch(userSignIn() as any)}>
+                Sign In
+              </button>
+            </li>
+            <li>
+              <button>Sign Up</button>
+            </li>
+          </ul>
+        )}
       </nav>
     </header>
   );
